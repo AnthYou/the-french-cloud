@@ -1,0 +1,21 @@
+  <div class="navbar">
+    <div class="container">
+      <div class="logo">
+        <%= link_to root_path, action: 'go' do  %>
+          <h1>The French<br>Club</h1>
+        <% end %>
+      </div>
+      <div class="links">
+        <a href="#">About the club</a>
+        <a href="#">Testimonials</a>
+        <a href="#">Pricing</a>
+        <% if user_signed_in? %>
+          <%= link_to "Edit profile", edit_user_registration_path(current_user) %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
