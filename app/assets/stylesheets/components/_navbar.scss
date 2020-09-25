@@ -1,0 +1,22 @@
+.navbar {
+
+  height: $navbar-height;
+  width: 100%;
+  margin: 0px;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+}
+
+.links a {
+  margin-left: 15px;
+}
