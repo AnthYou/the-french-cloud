@@ -2,61 +2,33 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/variables";
+@import "config/bootstrap_variables";
 
-// CSS partials
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
 @import "components/index";
-
-// Style
-
-body {
-
-  h1, h2 {
-    color: $my-blue;
-    font-family: 'Chivo', sans-serif;
-  }
-
-  a {
-
-    text-decoration: none;
-    color: $my-blue;
-
-    &:hover {
-      color: $my-red;
-    }
-
-  }
-
-  margin: 0px;
-  padding: 0px;
-  background-color: $my-white;
-  color: $my-black;
-  font-family: 'Overpass', sans-serif;
-
-}
+@import "pages/index";
 
 .container-view {
   margin-top: calc(#{$navbar-height} + 5vh);
   min-height: calc(100vh - #{$footer-height} - #{$navbar-height});
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+
+h1, h2 {
+  color: $my-blue;
+  font-family: 'Chivo', sans-serif;
 }
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
+
+a {
+  text-decoration: none;
+  color: $my-blue;
+
+  &:hover {
+    color: $my-red;
   }
 }
