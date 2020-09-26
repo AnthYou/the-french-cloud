@@ -1,22 +1,62 @@
-.navbar {
-
+.navbar-lewagon {
+  justify-content: space-between;
   height: $navbar-height;
-  width: 100%;
-  margin: 0px;
   background-color: white;
-  position: fixed;
-  top: 0px;
-  display: flex;
-  align-items: center;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .dropdown-menu {
+    overflow: hidden;
   }
-
+  .avatar {
+    margin-left: 15px;
+  }
+  h1 {
+    font-weight: bold;
+  }
 }
 
-.links a {
-  margin-left: 15px;
+.navbar-nav .dropdown-menu {
+  @include media-breakpoint-down(xs) {
+    min-width: 300px;
+  }
+  min-width: 400px;
+  position: absolute;
+}
+
+.navbar-lewagon .navbar-collapse {
+  @include media-breakpoint-down(xs) {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    .avatar {
+      margin-left: 0px;
+    }
+  }
+  flex-grow: 0;
+  top: 80px;
+  right: 0px;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $my-blue;
+  &:hover {
+    color: $my-red;
+  }
+}
+
+.dropdown-item {
+  color: $my-blue;
+  &:hover {
+    color: $my-red;
+  }
+}
+
+// To remplace when importing a true logo
+@media (max-width: 576px) {
+  .navbar-lewagon h1 {
+    font-size: 16px;
+  }
 }
