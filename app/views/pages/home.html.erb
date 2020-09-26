@@ -1,22 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4051&q=80);">
   <div class="container">
     <h1>Welcome to the <strong>French Club</strong>!</h1>
-    <p>Join our community of <%= User.count %> French learners!</p>
+    <p>Join our community of <%= User.count %> French learners</p>
     <a class="btn btn-primary" href="#">Apply now</a>
   </div>
 </div>
 
 <div class="container my-5">
-  <h1>Hello</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga eos mollitia deserunt inventore aspernatur, dolore ut voluptatem. Sit odio incidunt error sequi doloribus magni in obcaecati hic, unde a.
-  Rem nisi amet maxime, nesciunt sunt facilis laborum officia officiis quidem distinctio natus eveniet illum. Labore provident nulla aliquam nam vitae adipisci, doloribus quis dolor reprehenderit voluptatem optio, nihil odio.
-  Consectetur totam deserunt aliquid aspernatur consequuntur inventore distinctio ut, sapiente quos iusto adipisci sunt quia minus ab est rem hic maxime quae natus. Totam, earum. Quaerat esse officiis amet, in.
-  Veniam blanditiis nostrum dicta similique qui quod sit vel laboriosam voluptas unde porro repellat accusantium harum accusamus, suscipit voluptatem! Incidunt perspiciatis blanditiis amet, odio quae dolores, provident qui! Placeat, repellendus!
-  Animi, consectetur officiis! Iste quaerat vero illo, ex iusto dolorem officiis qui nisi nihil quibusdam praesentium saepe doloremque numquam optio, ducimus modi dolor fugit quis unde. Aut, tenetur porro? Culpa.
-  Aspernatur possimus corrupti odio, praesentium iusto repudiandae vel nisi quod? Velit voluptatum, illo deleniti, amet reiciendis id modi at consequuntur, temporibus labore esse quibusdam autem exercitationem dignissimos cumque magni. Eligendi!
-  Distinctio rerum molestiae amet autem enim quas rem reprehenderit dolore blanditiis nobis. Odio magnam necessitatibus facilis quibusdam, perferendis quas corrupti sunt accusamus? Minima et consequatur atque provident porro numquam deserunt.
-  In eos dolore voluptate temporibus quasi odio tempora exercitationem velit culpa quaerat! Aliquid voluptatum assumenda dignissimos minus expedita mollitia ipsa tempore nemo modi unde doloribus praesentium quidem, ipsam, fugit, architecto.
-  Laudantium neque accusamus mollitia nesciunt aliquam sapiente laborum ipsa, rem. Voluptatum repudiandae minus deleniti eveniet pariatur, at officia ipsam, enim alias dicta. Sed laboriosam explicabo aut sit, optio porro, quod!
-  Similique animi, libero! Omnis pariatur provident, sint corporis vel rerum ea esse aliquid quam officia, voluptates corrupti iure, veniam est non qui ad debitis, itaque illum saepe similique error? Doloribus.</p>
+  <h2>Why join the club?</h2>
+  <div class="key-selling-points">
+    <div class="ksp">
+      <%= image_tag "humanity.png", alt: "community", width: 125 %>
+      <p>A community of motivated and friendly French learners from all around the world</p>
+    </div>
+    <div class="ksp">
+      <%= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
+      <p>Certified French teachers to answer all your questions, suggest exercises, correct your mistakes and lead conversations sessions</p>
+    </div>
+    <div class="ksp">
+      <%= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
+      <p>Conversation sessions every week in small groups of level, oral & written comprehension and expression</p>
+    </div>
+  </div>
 </div>
 

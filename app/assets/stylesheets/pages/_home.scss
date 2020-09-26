@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.key-selling-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.ksp {
+  text-align: center;
+  padding: 15px;
+  p {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .key-selling-points {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
