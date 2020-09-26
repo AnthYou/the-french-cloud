@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   height: $navbar-height;
-  background-color: white;
+  background-color: $my-blue;
   .dropdown-menu {
     overflow: hidden;
   }
@@ -10,6 +10,7 @@
   }
   h1 {
     font-weight: bold;
+    color: white;
   }
 }
 
@@ -45,6 +46,12 @@
   &:hover {
     color: $my-red;
   }
+}
+
+.navbar-light .navbar-toggler {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-item {
