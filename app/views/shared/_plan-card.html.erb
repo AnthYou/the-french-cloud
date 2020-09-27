@@ -1,0 +1,12 @@
+<div class="plan-card">
+  <div class="plan-card-top">
+    <h2><%= plan.name %></h2>
+  </div>
+  <div class="plan-card-body">
+    <% out = "<ul>" %>
+    <% plan.description.split('- ')[1..-1].each {|s| out += ("<li>" + s.to_s + "</li>")} %>
+    <% out += "</ul>" %>
+    <%= out.html_safe %>
+    <h2><%= humanized_money_with_symbol(plan.price) %><span>/month</span></h2>
+  </div>
+</div>
