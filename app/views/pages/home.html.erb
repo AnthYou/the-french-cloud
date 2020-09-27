@@ -22,5 +22,12 @@
       <p>Conversation sessions every week in small groups of level, oral & written comprehension and expression</p>
     </div>
   </div>
+
+  <h2>Pricing</h2>
+  <div class="plan-cards-container mt-4">
+    <% Plan.all.each do |plan| %>
+      <%= render 'shared/plan-card', plan: plan %>
+    <% end %>
+  </div>
 </div>
 
