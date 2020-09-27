@@ -29,6 +29,7 @@ a {
   color: $my-blue;
 
   &:hover {
+    text-decoration: none;
     color: $my-red;
   }
 }
