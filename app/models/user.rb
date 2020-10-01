@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :country, presence: true
   validates :level, presence: true, inclusion: { in: User::LEVEL }
+  has_one :subscription
 end

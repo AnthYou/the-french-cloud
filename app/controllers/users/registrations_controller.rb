@@ -12,7 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    Stripe::Customer.create(email: current_user.email)
+    customer = Stripe::Customer.create(email: current_user.email)
+    current_user.stripe_id = customer.id
+    current_user.save!
   end
 
   # GET /resource/edit
