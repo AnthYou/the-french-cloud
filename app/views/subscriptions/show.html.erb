@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <h1>Subscription #<%= @subscription.id %> <small><span class="badge badge-primary"><%= @subscription.active ? 'Active' : 'Inactive' %></span></small></h1>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @subscription.created_at.to_date %></li>
+        <li><strong>PLAN</strong> <%= @subscription.plan.name %> [<%= @subscription.plan.sku %>]</li>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @subscription.plan.price %></li>
+        </li>
+      </ul>
+      <p>You can cancel your subscription from <strong><%= @subscription.current_period_ends_at.strftime("%A, %b %d") %></strong></p>
+    </div>
+  </div>
+</div>

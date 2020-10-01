@@ -21,6 +21,8 @@ Plan.create!(sku: 'curieux',
              - Access to the Slack exchange platform
              - Access to content, exchanges and advice from teachers
              - Access to weekly conversation sessions',
+             stripe_id: 'prod_I6eLG1NxlBSthS',
+             stripe_price_id: 'price_1HWR2fAFmCis7vEtwGNfX3iP',
              price_cents: 990)
 Plan.create!(sku: 'ptit-french',
              name: 'Le p\'tit French',
@@ -31,6 +33,8 @@ Plan.create!(sku: 'ptit-french',
              - Personalized follow-up in your progress
              - An additional zoom session in a small group every week
              - Access to a toolbox (mental maps, grammar cards, methodology support)',
+             stripe_id: 'prod_I6eL3CkmGcbLrl',
+             stripe_price_id: 'price_1HWR2oAFmCis7vEt4OVu9K7a',
              price_cents: 1490)
 Plan.create!(sku: 'excellent',
              name: 'L\'excellent',
@@ -43,6 +47,8 @@ Plan.create!(sku: 'excellent',
              - Access to a toolbox (mental maps, grammar cards, methodology support)
              - A “one-on-one” session per week
              - Personalized exercises and follow-up',
+             stripe_id: 'prod_I6eLSH81j678jV',
+             stripe_price_id: 'price_1HWR2vAFmCis7vEt236T8XeZ',
              price_cents: 5990)
 
 puts 'Done! 🍺'
