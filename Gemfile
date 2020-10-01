@@ -12,6 +12,7 @@ gem 'money-rails'
 gem 'country_select'
 gem 'dotenv-rails'
 gem 'stripe'
+gem 'stripe_event'
 # ================
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

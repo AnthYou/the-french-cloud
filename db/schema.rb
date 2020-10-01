@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_130703) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.boolean "active", default: true
+    t.boolean "active", default: false
     t.datetime "current_period_ends_at"
     t.string "stripe_id"
     t.bigint "plan_id", null: false
