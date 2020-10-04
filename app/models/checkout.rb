@@ -1,4 +1,4 @@
-class Subscription < ApplicationRecord
+class Checkout < ApplicationRecord
   belongs_to :user
   belongs_to :plan
 end

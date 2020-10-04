@@ -7,9 +7,12 @@ Rails.application.routes.draw do
 
   resources :plans, only: [:show]
 
-  resources :subscriptions, only: [:create, :show] do
+  resources :checkouts, only: [:create] do
     resources :charges, only: [:new]
   end
+
+  get 'subscriptions', to: 'subscriptions#create', as: 'create_subscriptions'
+  get 'charges', to: 'charges#cancelled', as: 'payment_cancelled'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
