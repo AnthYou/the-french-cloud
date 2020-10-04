@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   has_many :checkouts
   belongs_to :plan
+
+  def subscribed?
+    subscription_id?
+  end
 end

@@ -6,8 +6,16 @@
   <%= out.html_safe %>
   <h2><%= humanized_money_with_symbol(@plan.price) %><span>/month</span></h2>
 
-  <%= form_tag checkouts_path do %>
-    <%= hidden_field_tag 'plan_id', @plan.id %>
-    <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
+  <% if user_signed_in? && current_user.plan == @plan %>
+    <p><em>You already subscribed to <%= @plan.name %>!</em></p>
+  <% else %>
+    <%= form_tag checkouts_path do %>
+      <%= hidden_field_tag 'plan_id', @plan.id %>
+      <% if user_signed_in? && current_user.subscribed? %>
+        <%= submit_tag 'Change plan', class: 'btn btn-primary', data: { confirm: "Are you sure to change plan to #{@plan.name}?\nYou don't need to re-enter your card." } %>
+      <% else %>
+        <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
