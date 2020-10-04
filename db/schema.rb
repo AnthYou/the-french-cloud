@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_130703) do
+ActiveRecord::Schema.define(version: 2020_10_04_170829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checkouts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "state"
+    t.string "checkout_session_id"
+    t.bigint "plan_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_checkouts_on_plan_id"
+    t.index ["user_id"], name: "index_checkouts_on_user_id"
+  end
 
   create_table "plans", force: :cascade do |t|
     t.string "sku"
@@ -24,20 +35,6 @@ ActiveRecord::Schema.define(version: 2020_10_01_130703) do
     t.integer "price_cents", default: 0, null: false
     t.string "stripe_id"
     t.string "stripe_price_id"
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.boolean "active", default: false
-    t.datetime "current_period_ends_at"
-    t.string "stripe_id"
-    t.bigint "plan_id", null: false
-    t.string "stripe_plan_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "checkout_session_id"
-    t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
-    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,10 +52,14 @@ ActiveRecord::Schema.define(version: 2020_10_01_130703) do
     t.string "level"
     t.text "description"
     t.string "stripe_id"
+    t.string "subscription_id"
+    t.bigint "plan_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["plan_id"], name: "index_users_on_plan_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "subscriptions", "plans"
-  add_foreign_key "subscriptions", "users"
+  add_foreign_key "checkouts", "plans"
+  add_foreign_key "checkouts", "users"
+  add_foreign_key "users", "plans"
 end

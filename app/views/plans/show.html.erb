@@ -6,7 +6,7 @@
   <%= out.html_safe %>
   <h2><%= humanized_money_with_symbol(@plan.price) %><span>/month</span></h2>
 
-  <%= form_tag subscriptions_path do %>
+  <%= form_tag checkouts_path do %>
     <%= hidden_field_tag 'plan_id', @plan.id %>
     <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
   <% end %>
