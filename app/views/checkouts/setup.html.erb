@@ -5,35 +5,30 @@
 
       <div class="my-2">
         <h2>Subscription</h2>
-        <ul>
-          <li>Plan: <%= @plan.name %></li>
-          <li>Price: <%= humanized_money_with_symbol(@plan.price) %><span>/month</span></li>
-          <li>Start date: <%= Time.at(@subscription.start_date).strftime("%A, %d %b %Y %l:%M %p") %></li>
-          <li>Billing card: <%= @default_payment_method["card"]["brand"].capitalize %>****<%= @default_payment_method["card"]["last4"] %> <em>(exp <%= @default_payment_method["card"]["exp_month"] %>/<%= @default_payment_method["card"]["exp_year"] %>)</em></li>
-        </ul>
+        <% if user_signed_in? && current_user.subscribed? %>
+          <ul>
+            <li>Plan: <%= @plan.name %></li>
+            <li>Price: <%= humanized_money_with_symbol(@plan.price) %><span>/month</span></li>
+            <li>Start date: <%= Time.at(@subscription.start_date).strftime("%A, %d %b %Y %l:%M %p") %></li>
+            <li>Billing card: <%= @default_payment_method["card"]["brand"].capitalize %>****<%= @default_payment_method["card"]["last4"] %> <em>(exp <%= @default_payment_method["card"]["exp_month"] %>/<%= @default_payment_method["card"]["exp_year"] %>)</em></li>
+          </ul>
+        <% else %>
+          <p>You have no subscription yet.</p>
+        <% end %>
       </div>
 
       <hr>
       <div class="my-2">
-        <h2>Cards (<%= @cards.size %>) </h2>
-        <ul>
+        <div class="d-flex justify-content-between mb-3">
+          <h2>Payment cards (<%= @cards.size %>) </h2>
+          <button id="add-card" class="btn btn-primary">Add a new card</button>
+        </div>
+        <ul style="list-style: none;">
           <% @cards.each do |card| %>
-            <li>
-              <%= card["card"]["brand"].capitalize %>****<%= card["card"]["last4"] %> <em>(exp <%= card["card"]["exp_month"] %>/<%= card["card"]["exp_year"] %>)</em>
-              <%= form_tag subscription_change_payment_method_path do %>
-                <%= hidden_field_tag 'card_id', card["id"] %>
-                <%= submit_tag 'Change to this card', class: 'btn btn-primary', data: { confirm: "Are you sure to switch billing to this card? (#{card["card"]["brand"].capitalize}***#{card["card"]["last4"]})" } %>
-              <% end %>
-              <%= form_tag remove_payment_method_path do %>
-                <%= hidden_field_tag 'card_id', card["id"] %>
-                <%= submit_tag 'Delete this card', class: 'btn btn-danger', data: { confirm: "Are you sure to delete this card? (#{card["card"]["brand"].capitalize}***#{card["card"]["last4"]})" } %>
-              <% end %>
-            </li>
+            <li class="mb-2"><%= render 'shared/selectpaymentcard', card: card %></li>
           <% end %>
         </ul>
 
-        <hr>
-        <button id="add-card" class="btn btn-primary">Add a new card</button>
       </div>
 
       <script src="https://js.stripe.com/v3/"></script>

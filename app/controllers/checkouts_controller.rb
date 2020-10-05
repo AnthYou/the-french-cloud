@@ -52,7 +52,7 @@ class CheckoutsController < ApplicationController
   end
 
   def setup
-    if user_signed_in?
+    if user_signed_in? && current_user.subscribed?
       cards = Stripe::PaymentMethod.list({ customer: current_user.stripe_id, type: 'card' })
       @cards = JSON.parse(cards.data.to_json)
 
@@ -71,7 +71,7 @@ class CheckoutsController < ApplicationController
       )
       @session.checkout_session_id = @session.id
     else
-      flash[:alert] = "You need to be signed in first"
+      flash[:alert] = "You need to subscribe to a plan first."
       redirect_to root_path
     end
   end

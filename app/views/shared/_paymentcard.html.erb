@@ -1,0 +1,14 @@
+<div class="paymentcard-container">
+  <div class="paymentcard">
+    <i class="fas fa-credit-card"></i>
+    <div class="content">
+      <div class="card-numbers">
+        <%= card["card"]["brand"].capitalize %>****<%= card["card"]["last4"] %>
+      </div>
+      <div class="card-exp">
+        Valid until <%= '0' if card["card"]["exp_month"] < 10 %><%= card["card"]["exp_month"] %>/<%= card["card"]["exp_year"] %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Change", setup_payment_path, class: 'btn btn-primary changecard' %>
+</div>

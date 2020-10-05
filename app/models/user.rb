@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :country, presence: true
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   has_many :checkouts
-  belongs_to :plan
+  belongs_to :plan, optional: true
 
   def subscribed?
     subscription_id?
