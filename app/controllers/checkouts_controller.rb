@@ -50,4 +50,29 @@ class CheckoutsController < ApplicationController
   def show
     @checkout = current_user.checkouts.find(params[:id])
   end
+
+  def setup
+    if user_signed_in?
+      cards = Stripe::PaymentMethod.list({ customer: current_user.stripe_id, type: 'card' })
+      @cards = JSON.parse(cards.data.to_json)
+
+      if current_user.subscribed?
+        @subscription = Stripe::Subscription.retrieve(current_user.subscription_id)
+        @plan = Plan.find_by(stripe_id: @subscription.plan.product)
+        @default_payment_method = Stripe::PaymentMethod.retrieve(@subscription.default_payment_method)
+      end
+
+      @session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        mode: 'setup',
+        customer: current_user.stripe_id,
+        success_url: root_url,
+        cancel_url: root_url
+      )
+      @session.checkout_session_id = @session.id
+    else
+      flash[:alert] = "You need to be signed in first"
+      redirect_to root_path
+    end
+  end
 end

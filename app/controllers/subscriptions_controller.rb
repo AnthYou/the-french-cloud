@@ -14,4 +14,17 @@ class SubscriptionsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def change_payment_method
+    payment_method_id = params[:card_id]
+
+    Stripe::Subscription.update(
+      current_user.subscription_id, {
+        default_payment_method: payment_method_id
+      }
+    )
+
+    flash[:notice] = "You have successfully changed your billing card"
+    redirect_to setup_payment_path
+  end
 end
