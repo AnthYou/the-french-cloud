@@ -3,9 +3,12 @@
     <img src="https://p16-tiktokcdn-com.akamaized.net/aweme/1080x1080/tiktok-obj/1664570296033282.jpeg" />
     <div class="usercard-infos">
       <h2><%= user.first_name %> <%= user.last_name %></h2>
+      <% if user.plan %>
+        <span class="badge badge-pill <%= (user.plan.sku == 'curieux') ? 'badge-light' : 'badge-dark' %>" style="position: absolute; bottom: 15px; right: 15px"><%= user.plan.name.upcase %></span>
+      <% end %>
       <span class="badge badge-secondary" style="position: absolute; top: 15px; right: 15px"><%= user.country[0..2].upcase %></span>
       <span class="badge badge-primary" style="position: absolute; top: 15px; right: 50px"><%= user.level %></span>
-      <p><%= user.description %></p>
+      <p><%= user.description.truncate(50) %></p>
     </div>
   </div>
 <% end %>

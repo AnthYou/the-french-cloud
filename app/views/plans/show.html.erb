@@ -22,7 +22,6 @@
   <% if user_signed_in? && current_user.subscribed? %>
     <hr>
     <h3>Default payment card</h3>
-    <%= @default_payment_method["card"]["brand"].capitalize %>****<%= @default_payment_method["card"]["last4"] %> <em>(exp <%= @default_payment_method["card"]["exp_month"] %>/<%= @default_payment_method["card"]["exp_year"] %>)</em>
-    <%= link_to "Change", setup_payment_path %>
+    <%= render 'shared/paymentcard', card: @default_payment_method %>
   <% end %>
 </div>
