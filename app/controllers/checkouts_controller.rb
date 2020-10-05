@@ -34,6 +34,7 @@ class CheckoutsController < ApplicationController
           price: plan.stripe_price_id,
           quantity: 1
         }],
+        allow_promotion_codes: true,
         subscription_data: { trial_from_plan: true },
         mode: 'subscription',
         customer: current_user.stripe_id,
