@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     resources :charges, only: [:new]
   end
 
+  get 'setup', to: 'checkouts#setup', as: 'setup_payment'
+  post 'delete_card', to: 'checkouts#delete_payment_method', as: 'remove_payment_method'
+
   get 'subscriptions', to: 'subscriptions#create', as: 'create_subscriptions'
+  post 'subscriptions', to: 'subscriptions#change_payment_method', as: 'subscription_change_payment_method'
   get 'charges', to: 'charges#cancelled', as: 'payment_cancelled'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'

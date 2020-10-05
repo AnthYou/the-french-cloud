@@ -12,10 +12,17 @@
     <%= form_tag checkouts_path do %>
       <%= hidden_field_tag 'plan_id', @plan.id %>
       <% if user_signed_in? && current_user.subscribed? %>
-        <%= submit_tag 'Change plan', class: 'btn btn-primary', data: { confirm: "Are you sure to change plan to #{@plan.name}?\nYou don't need to re-enter your card." } %>
+        <%= submit_tag 'Change plan', class: 'btn btn-primary', data: { confirm: "Are you sure to change plan to #{@plan.name}?\nYou don't need to re-enter your card (#{@default_payment_method["card"]["brand"].capitalize}****#{@default_payment_method["card"]["last4"]})." } %>
       <% else %>
         <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
       <% end %>
     <% end %>
+  <% end %>
+
+  <% if user_signed_in? && current_user.subscribed? %>
+    <hr>
+    <h3>Default payment card</h3>
+    <%= @default_payment_method["card"]["brand"].capitalize %>****<%= @default_payment_method["card"]["last4"] %> <em>(exp <%= @default_payment_method["card"]["exp_month"] %>/<%= @default_payment_method["card"]["exp_year"] %>)</em>
+    <%= link_to "Change", setup_payment_path %>
   <% end %>
 </div>
