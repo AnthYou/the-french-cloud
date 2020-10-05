@@ -21,18 +21,22 @@
               <%= card["card"]["brand"].capitalize %>****<%= card["card"]["last4"] %> <em>(exp <%= card["card"]["exp_month"] %>/<%= card["card"]["exp_year"] %>)</em>
               <%= form_tag subscription_change_payment_method_path do %>
                 <%= hidden_field_tag 'card_id', card["id"] %>
-                <%= submit_tag 'Change to this card', class: 'btn btn-primary', data: { confirm: "Are you sure to switch billing to this card? (***#{card["card"]["last4"]})" } %>
+                <%= submit_tag 'Change to this card', class: 'btn btn-primary', data: { confirm: "Are you sure to switch billing to this card? (#{card[""]}***#{card["card"]["last4"]})" } %>
+              <% end %>
+              <%= form_tag remove_payment_method_path do %>
+                <%= hidden_field_tag 'card_id', card["id"] %>
+                <%= submit_tag 'Delete this card', class: 'btn btn-danger', data: { confirm: "Are you sure to delete this card? (#{card[""]}***#{card["card"]["last4"]})" } %>
               <% end %>
             </li>
           <% end %>
         </ul>
 
-        <button id="pay" class="btn btn-primary">Add a new card</button>
+        <button id="add-card" class="btn btn-primary">Add a new card</button>
       </div>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
-        const paymentButton = document.getElementById('pay');
+        const paymentButton = document.getElementById('add-card');
         paymentButton.addEventListener('click', () => {
           const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
           stripe.redirectToCheckout({

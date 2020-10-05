@@ -66,13 +66,28 @@ class CheckoutsController < ApplicationController
         payment_method_types: ['card'],
         mode: 'setup',
         customer: current_user.stripe_id,
-        success_url: root_url,
-        cancel_url: root_url
+        success_url: setup_payment_url,
+        cancel_url: setup_payment_url
       )
       @session.checkout_session_id = @session.id
     else
       flash[:alert] = "You need to be signed in first"
       redirect_to root_path
+    end
+  end
+
+  def delete_payment_method
+    payment_method_id = params[:card_id]
+
+    subscription = Stripe::Subscription.retrieve(current_user.subscription_id)
+
+    if payment_method_id == subscription.default_payment_method
+      flash[:alert] = "This card is currently used on your current subscription. Please add or change to a new card first."
+      redirect_to setup_payment_path
+    else
+      Stripe::PaymentMethod.detach(payment_method_id)
+      flash[:notice] = "You have successfully deleted this card"
+      redirect_to setup_payment_path
     end
   end
 end
