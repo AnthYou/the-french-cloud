@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row py-4">
     <div class="col">
-      <h1 class="mb-5">Billing information & settings</h1>
+      <h1 class="mb-5 text-center" style="font-weight: bold;">Billing information & settings</h1>
 
       <div class="my-2">
-        <h2>Subscription</h2>
+        <h2 class="mb-3">Subscription details</h2>
         <% if user_signed_in? && current_user.subscribed? %>
-          <ul>
-            <li>Plan: <%= @plan.name %></li>
-            <li>Price: <%= humanized_money_with_symbol(@plan.price) %><span>/month</span></li>
-            <li>Start date: <%= Time.at(@subscription.start_date).strftime("%A, %d %b %Y %l:%M %p") %></li>
-            <li>Billing card: <%= @default_payment_method["card"]["brand"].capitalize %>****<%= @default_payment_method["card"]["last4"] %> <em>(exp <%= @default_payment_method["card"]["exp_month"] %>/<%= @default_payment_method["card"]["exp_year"] %>)</em></li>
+          <ul style="list-style: none;">
+            <li><strong>Plan:</strong> <%= @plan.name %></li>
+            <li><strong>Price:</strong> <%= humanized_money_with_symbol(@plan.price) %><span>/month</span></li>
+            <li><strong>Start date:</strong> <%= Time.at(@subscription.start_date).strftime("%A, %d %b %Y %l:%M %p") %></li>
+            <li><strong>Billing card:</strong> <%= @default_payment_method["card"]["brand"].capitalize %>****<%= @default_payment_method["card"]["last4"] %> <em>(valid until <%= '0' if @default_payment_method["card"]["exp_month"] < 10 %><%= @default_payment_method["card"]["exp_month"] %>/<%= @default_payment_method["card"]["exp_year"] %>)</em></li>
           </ul>
         <% else %>
           <p>You have no subscription yet.</p>
         <% end %>
       </div>
 
-      <hr>
+      <hr class="mt-5">
       <div class="my-2">
         <div class="d-flex justify-content-between mb-3">
           <h2>Payment cards (<%= @cards.size %>) </h2>
@@ -25,7 +25,7 @@
         </div>
         <ul style="list-style: none;">
           <% @cards.each do |card| %>
-            <li class="mb-2"><%= render 'shared/selectpaymentcard', card: card %></li>
+            <li class="mb-2"><%= render 'shared/selectpaymentcard', card: card, default_payment_method: @default_payment_method %></li>
           <% end %>
         </ul>
 
