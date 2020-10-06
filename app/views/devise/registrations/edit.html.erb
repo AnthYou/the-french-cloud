@@ -12,6 +12,7 @@
         <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, required: true %>
         <%= f.input :description %>
         <%= f.input :level, as: :radio_buttons, collection: User::LEVEL, hint: "A0: I never took French lessons before. C2: I am bilingual.", required: true %>
+        <%= f.input :photo, as: :file %>
 
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
