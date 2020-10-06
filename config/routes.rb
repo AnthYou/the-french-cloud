@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get 'testimonials', to: 'pages#testimonials', as: 'testimonials'
+  get 'about_me', to: 'pages#about_me', as: 'about_me'
 
   resources :users, only: [:index, :show]
 
