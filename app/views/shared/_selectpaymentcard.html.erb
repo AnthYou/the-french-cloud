@@ -10,12 +10,17 @@
       </div>
     </div>
   </div>
-  <%= form_tag subscription_change_payment_method_path, class: 'changecard' do %>
-    <%= hidden_field_tag 'card_id', card["id"] %>
-    <%= submit_tag 'Change to this card', class: 'btn btn-primary', data: { confirm: "Are you sure to switch billing to this card? (#{card["card"]["brand"].capitalize}***#{card["card"]["last4"]})" } %>
-  <% end %>
-  <%= form_tag remove_payment_method_path, class: 'deletecard' do %>
-    <%= hidden_field_tag 'card_id', card["id"] %>
-    <%= submit_tag 'Delete this card', class: 'btn btn-danger', data: { confirm: "Are you sure to delete this card? (#{card["card"]["brand"].capitalize}***#{card["card"]["last4"]})" } %>
+  <% if card["id"] == default_payment_method["id"] %>
+    <i class="fas fa-check-circle changecard"></i>
+    <p class="changecard">This card is currently used for your subscription</p>
+  <% else %>
+    <%= form_tag subscription_change_payment_method_path, class: 'changecard' do %>
+      <%= hidden_field_tag 'card_id', card["id"] %>
+      <%= submit_tag 'Change to this card', class: 'btn btn-primary', data: { confirm: "Are you sure to switch billing to this card? (#{card["card"]["brand"].capitalize}***#{card["card"]["last4"]})" } %>
+    <% end %>
+    <%= form_tag remove_payment_method_path, class: 'deletecard' do %>
+      <%= hidden_field_tag 'card_id', card["id"] %>
+      <%= submit_tag 'Delete this card', class: 'btn btn-danger', data: { confirm: "Are you sure to delete this card? (#{card["card"]["brand"].capitalize}***#{card["card"]["last4"]})" } %>
+    <% end %>
   <% end %>
 </div>
