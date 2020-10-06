@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   has_many :checkouts
   belongs_to :plan, optional: true
+  has_one_attached :photo
 
   def subscribed?
     subscription_id?

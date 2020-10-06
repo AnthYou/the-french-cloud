@@ -6,7 +6,7 @@
       <% if user.plan %>
         <span class="badge badge-pill <%= (user.plan.sku == 'curieux') ? 'badge-light' : 'badge-dark' %>" style="position: absolute; bottom: 15px; right: 15px"><%= user.plan.name.upcase %></span>
       <% end %>
-      <span class="badge badge-secondary" style="position: absolute; top: 15px; right: 15px"><%= user.country[0..2].upcase %></span>
+      <span class="badge badge-secondary" style="position: absolute; top: 15px; right: 15px"><%= user.country %></span>
       <span class="badge badge-primary" style="position: absolute; top: 15px; right: 50px"><%= user.level %></span>
       <p><%= user.description.truncate(50) %></p>
     </div>

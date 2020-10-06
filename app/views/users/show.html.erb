@@ -1,7 +1,26 @@
 <div class="container">
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <h2><%= @user.country %></h2>
-  <h3><%= @user.level %></h3>
-  <h4><%= ((Date.today - @user.birth_date) / 365).to_i %> years old</h4>
-  <p><%= @user.description %></p>
+  <div class="card-usershow">
+    <div class="card-usershow-top">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, class: 'avatar-profile' %>
+      <% else %>
+        <%= image_tag 'unknown-user.png', class: 'avatar-profile' %>
+      <% end %>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h4><%= ((Date.today - @user.birth_date) / 365).to_i %> years old</h4>
+      <p><em>Member since <%= @user.created_at.strftime('%B %Y') %></em></p>
+      <% if @user == current_user %>
+        <%= link_to 'Edit profile', edit_registration_path(current_user), class: 'btn btn-primary', style: "position: absolute; top: 15px; left: 15px;" %>
+      <% end %>
+      <% if @user.plan %>
+        <span class="badge badge-pill <%= (@user.plan.sku == 'curieux') ? 'badge-light' : 'badge-dark' %>" style="position: absolute; bottom: 15px; right: 15px"><%= @user.plan.name.upcase %></span>
+      <% end %>
+      <span class="badge badge-secondary" style="position: absolute; top: 15px; right: 15px"><%= @user.country %></span>
+      <span class="badge badge-primary" style="position: absolute; top: 15px; right: 50px"><%= @user.level %></span>
+    </div>
+    <div class="card-usershow-body">
+      <h4>A few words about me...</h4>
+      <p><%= @user.description %></p>
+    </div>
+  </div>
 </div>
