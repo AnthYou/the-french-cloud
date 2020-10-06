@@ -1,6 +1,10 @@
 <%= link_to user_path(user), action: 'go' do  %>
   <div class="usercard">
-    <img src="https://p16-tiktokcdn-com.akamaized.net/aweme/1080x1080/tiktok-obj/1664570296033282.jpeg" />
+    <% if user.photo.attached? %>
+      <%= cl_image_tag user.photo.key %>
+    <% else %>
+      <%= image_tag "unknown-user.png" %>
+    <% end %>
     <div class="usercard-infos">
       <h2><%= user.first_name %> <%= user.last_name %></h2>
       <% if user.plan %>
