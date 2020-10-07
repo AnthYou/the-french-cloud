@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="lesson-showcard">
+    <h1 class="text-center mb-5"><%= @lesson.title %></h1>
+    <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= @lesson.level %></span>
+    <h3>Remember!</h3>
+    <div class="description-cards">
+      <div class="description-card" style="border-radius: 0px 15px 15px 15px;">
+        <p><%= @lesson.description_en %></p>
+      </div>
+      <div class="description-card">
+        <p><em><%= @lesson.description_fr %></em></p>
+      </div>
+    </div>
+    <div class="content">
+      <% case @lesson.sku %>
+        <% when "present-indicatif" %>
+          <%= render 'lessons/content/present-indicatif' %>
+      <% end %>
+    </div>
+  </div>
+</div>
