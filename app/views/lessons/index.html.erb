@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center mb-5">Toolbox</h1>
+  <% @lessons.each do |lesson| %>
+    <%= link_to lesson_path(lesson) do  %>
+      <div class="lesson-card">
+        <h1><%= lesson.title %></h1>
+        <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+        <p><%= lesson.description_en.truncate(150) %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
