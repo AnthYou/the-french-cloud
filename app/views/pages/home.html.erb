@@ -1,9 +1,51 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4051&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4051&q=80); position: relative;">
   <div class="container">
     <div class="whitesq">
       <h1>A NEW WAY TO PRACTICE FRENCH</h1>
       <p>Join our community of <%= User.count %> French learners</p>
       <%= link_to "FREE TRIAL", "#", class: "btn btn-primary", style: "width: 300px;"  %>
+    </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide container" data-ride="carousel" style="position: absolute; bottom: 30px;">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="7000">
+          <p><em>
+            "I am glad that I found this group with Nelly, it has been very helpful.
+            I am grateful to Nelly for being so patient; bringing materials and resources that will benefit us.
+            I am happy to add The French Club to my french journey!"
+          </em>
+          <br>
+          <strong>
+            Maia, USA, 27 years old, level of French A2
+          </strong></p>
+        </div>
+        <div class="carousel-item" data-interval="7000">
+            <p>
+            <em>
+              “I really like this group because we learn by communicating live with other persons and correct each other when we are wrong.
+              Also it's fun to understand and memorize words or structures in context (either movies, music or books)“
+            </em>
+            <br>
+            <strong>
+              Alex, Romania, 24 years old, level of French B1
+            </strong>
+          </p>
+        </div>
+        <div class="carousel-item" data-interval="7000">
+          <p>
+            <em>
+              “I'm glad I found this club.
+              It is really helpful to improve your french.
+              Our teacher Nelly is wonderful and really patient with us.
+              Also, we come to know people of different cultures from different parts of the world!
+              Everyone, including our teacher, is really friendly here."
+            </em>
+            <br>
+            <strong>
+              Ankan, India, 19 years old, level of French A2/B1
+            </strong>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
