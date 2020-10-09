@@ -64,5 +64,10 @@ Lesson.create!(sku: "imparfait",
                level: "A2",
                description_en: "The Imparfait tense is used to describe past descriptions, or habitual actions in the past.",
                description_fr: "Le temps de l'imparfait est utilisé pour décrire des descriptions du passé, ou des actions habituelles dans le passé.")
+Lesson.create!(sku: "passe-compose",
+               title: "Le passé composé",
+               level: "A2",
+               description_en: "The passé composé is the most commonly used tense to refer to actions completed in the past. The action is precise and complete.\nThis tense is called the passé composé because it is composed of two elements: the auxiliary verbs avoir or être followed by the past participle (le participe passé) of the verb.",
+               description_fr: "Le passé composé est le temps le plus couramment utilisé pour désigner les actions réalisées dans le passé. L'action est précise et complète.\nCe temps est appelé \"passé composé\" parce qu'il est composé de deux éléments: les verbes auxiliaires « être » ou « avoir » suivis du participe passé du verbe.")
 
 puts 'Done! 🍺'
