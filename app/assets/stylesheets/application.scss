@@ -33,3 +33,11 @@ a {
     color: $my-red;
   }
 }
+
+mark {
+  color: $my-blue;
+  background-color: yellow;
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+}
