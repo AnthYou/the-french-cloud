@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-  resources :plans, only: [:show]
+  resources :plans, only: [:index, :show]
   resources :lessons, only: [:index, :show]
 
   resources :checkouts, only: [:create] do

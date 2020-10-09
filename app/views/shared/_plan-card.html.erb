@@ -7,7 +7,7 @@
     <% plan.description.split('- ')[1..-1].each {|s| out += ("<li>" + s.to_s + "</li>")} %>
     <% out += "</ul>" %>
     <%= out.html_safe %>
-    <h2><%= humanized_money_with_symbol(plan.price) %><span>/month</span></h2>
+    <h2 class="text-center"><%= humanized_money_with_symbol(plan.price) %><span>/month</span></h2>
   </div>
   <%= link_to "Subscribe", plan_path(plan), class: 'btn btn-primary mt-3', style: 'width: 350px;' %>
 </div>
