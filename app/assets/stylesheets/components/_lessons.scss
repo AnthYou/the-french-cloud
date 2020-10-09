@@ -75,8 +75,20 @@
     }
   }
   .example-image {
-    width: 100%;
+    border-radius: 15px 0px 0px 15px;
+    height: 350px;
+    width: 50%;
     object-fit: cover;
     object-position: center;
+  }
+  .example-text {
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+    align-items: center;
+    height: 350px;
+    margin: 0px;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
   }
 }

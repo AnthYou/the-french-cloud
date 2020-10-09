@@ -249,10 +249,14 @@
 </table>
 
 <h2 class="my-5">Fiche exemple</h2>
-<%= image_tag "https://images.unsplash.com/photo-1557456373-8ccab8f407da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4287&q=80", alt: "Sophie", class: 'example-image' %>
-<p class="text-center bg-white p-3">La fille s’<strong>appelle</strong> Sophie. Elle <strong>habite</strong> à Montpellier.
-  Elle <strong>a</strong> 14 ans.
-  Elle <strong>pratique</strong> le football.
-  Tous les mercredis, elle <strong>va</strong> à l’entraînement.
-  Elle <strong>gagne</strong> tous les matchs.
-  Elle <strong>adore</strong> le sport et elle <strong>joue</strong> aussi du piano.</p>
+<div class="d-flex align-items-center">
+  <%= image_tag "https://images.unsplash.com/photo-1557456373-8ccab8f407da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4287&q=80", alt: "Sophie", class: 'example-image' %>
+  <div class="example-text">
+    <p>La fille s’<strong>appelle</strong> Sophie. Elle <strong>habite</strong> à Montpellier.
+      Elle <strong>a</strong> 14 ans.
+      Elle <strong>pratique</strong> le football.
+      Tous les mercredis, elle <strong>va</strong> à l’entraînement.
+      Elle <strong>gagne</strong> tous les matchs.
+      Elle <strong>adore</strong> le sport et elle <strong>joue</strong> aussi du piano.</p>
+  </div>
+</div>

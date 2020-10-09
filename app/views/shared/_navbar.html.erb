@@ -2,7 +2,6 @@
   <div class="container">
     <%= link_to root_path do %>
       <%= image_tag 'logo3.png', width: 200 %>
-      <!-- <h1>The French<br>Club</h1> -->
       <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,18 +14,25 @@
         <li class="nav-item">
           <%= link_to "About me", about_me_path, class: "nav-link" %>
         </li>
+        <% if user_signed_in? && current_user.subscribed? %>
+          <li class="nav-item">
+            <%= link_to "Slack", "https://thefrenchclub.slack.com/", class: 'nav-link'  %>
+          </li>
+        <% end %>
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Classmates", users_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
             <%= link_to "Toolbox", lessons_path, class: "nav-link" %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Testimonials", testimonials_path, class: "nav-link" %>
           </li>
         <% end %>
         <li class="nav-item">
-          <%= link_to "Pricing", "#", class: "nav-link" %>
+          <%= link_to "Pricing", plans_path, class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
