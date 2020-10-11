@@ -18,5 +18,8 @@ module TheFrenchClub
 
     # Add videos folder in the asset pipeline
     config.assets.paths << "#{Rails.root}/app/assets/videos"
+
+    # Add audios folder in the asset pipeline
+    config.assets.paths << "#{Rails.root}/app/assets/audios"
   end
 end
