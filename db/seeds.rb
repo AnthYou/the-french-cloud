@@ -74,5 +74,10 @@ Lesson.create!(sku: "se-presenter",
                level: "A1",
                description_en: "Knowing how to talk about yourself is essential to being able to communicate with others. In this lesson, you will find the basics to introduce yourself. Don't hesitate to listen to the audio files to work on pronunciation.",
                description_fr: "Savoir parler de toi est essentiel pour pouvoir communiquer avec les autres. Tu trouveras, dans cette leçon les bases pour te présenter. N'hésite pas à écouter les fichiers audios pour travailler la prononciation.")
+Lesson.create!(sku: "passe-compose-imparfait",
+               title: "Passé composé ou imparfait ?",
+               level: "A2",
+               description_en: "When we want to talk about an event in the past tense, it is sometimes difficult to choose between imparfait or passé composé. Thanks to these tips, you can learn how to choose easily between these two tenses.",
+               description_fr: "Quand on veut parler d'un événement au passé, il est parfois difficile de choisir entre imparfait ou passé composé. Grâce à ces quelques petites astuces, tu peux apprendre à choisir facilement entre ces deux temps.")
 
 puts 'Done! 🍺'
