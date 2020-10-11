@@ -69,5 +69,10 @@ Lesson.create!(sku: "passe-compose",
                level: "A2",
                description_en: "The passé composé is the most commonly used tense to refer to actions completed in the past. The action is precise and complete.\nThis tense is called the passé composé because it is composed of two elements: the auxiliary verbs avoir or être followed by the past participle (le participe passé) of the verb.",
                description_fr: "Le passé composé est le temps le plus couramment utilisé pour désigner les actions réalisées dans le passé. L'action est précise et complète.\nCe temps est appelé \"passé composé\" parce qu'il est composé de deux éléments: les verbes auxiliaires « être » ou « avoir » suivis du participe passé du verbe.")
+Lesson.create!(sku: "se-presenter",
+               title: "Se présenter",
+               level: "A1",
+               description_en: "Knowing how to talk about yourself is essential to being able to communicate with others. In this lesson, you will find the basics to introduce yourself. Don't hesitate to listen to the audio files to work on pronunciation.",
+               description_fr: "Savoir parler de toi est essentiel pour pouvoir communiquer avec les autres. Tu trouveras, dans cette leçon les bases pour te présenter. N'hésite pas à écouter les fichiers audios pour travailler la prononciation.")
 
 puts 'Done! 🍺'

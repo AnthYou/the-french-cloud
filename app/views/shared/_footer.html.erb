@@ -3,18 +3,17 @@
     <div class="d-md-flex justify-content-between align-items-center">
       <div class="d-flex left-side">
         <div class="column mr-5">
-          <li>About the club</li>
-          <li>Who am I?</li>
-          <li>Contact us</li>
+          <li><%= link_to "Subscribe", plans_path %></li>
+          <li><%= link_to "About me", about_me_path %></li>
+          <li><a href="mailto:thefrenchcloud@gmail.com">Contact us</a></li>
         </div>
         <div class="column mr-5">
-          <li>F. A. Q.</li>
-          <li>Terms & conditions</li>
-          <li>Legal</li>
+          <li><%= link_to "F. A. Q.", faq_path %></li>
+          <li><%= link_to "Terms & conditions", legal_path %></li>
         </div>
       </div>
       <div class="right-side mt-4 mt-md-0 d-flex flex-column justify-content-center">
-        <%= image_tag 'logo2-red.png', width: 200 %>
+        <%= image_tag 'logonelw.png', width: 200 %>
         <!-- <h2>The French Club</h2> -->
         <div class="follow">
           <p>Follow us <i class="fab fa-facebook"></i>

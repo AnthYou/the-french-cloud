@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'testimonials', to: 'pages#testimonials', as: 'testimonials'
   get 'about_me', to: 'pages#about_me', as: 'about_me'
   get 'faq', to: 'pages#faq', as: 'faq'
+  get 'legal', to: 'pages#legal', as: 'legal'
 
   resources :users, only: [:index, :show]
 
