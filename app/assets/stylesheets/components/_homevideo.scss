@@ -1,0 +1,25 @@
+.home_video {
+  height: 70vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+.home-video-wrapper {
+  position: relative;
+
+  .container .whitesq {
+    color: white;
+    // background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    position: absolute;
+    top: 33%;
+
+    h1 {
+      color: white;
+    }
+  }
+
+}
