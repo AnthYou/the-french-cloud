@@ -1,8 +1,15 @@
   <div class="container">
-    <h2 class="text-center mb-5">Pricing</h2>
-    <div class="plan-cards-container mt-4">
+    <h2 class="text-center mb-5">Subscription plans</h2>
+    <div class="plan-cards-container my-4">
       <% @plans.each do |plan| %>
         <%= render 'shared/plan-card', plan: plan %>
       <% end %>
+    </div>
+    <hr>
+    <h2 class="text-center mb-4">Private lessons</h2>
+    <div class="d-flex flex-column align-items-center">
+      <p>Book an 1-hour private lesson with Nelly, no matter your level</p>
+      <h2><%= humanized_money_with_symbol(34.9) %><span style="font-size: 24px;">/hour</span></h2>
+      <%= link_to "Book now", new_order_path, class: 'btn btn-primary' %>
     </div>
   </div>

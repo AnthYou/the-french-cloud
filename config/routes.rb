@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :charges, only: [:new]
   end
 
+  resources :orders, only: [:new, :create, :show]
+  get 'order_cancelled', to: 'orders#cancelled', as: 'order_cancelled'
+  get 'order_success', to: 'orders#success', as: 'order_success'
+
   get 'setup', to: 'checkouts#setup', as: 'setup_payment'
   post 'delete_card', to: 'checkouts#delete_payment_method', as: 'remove_payment_method'
 
