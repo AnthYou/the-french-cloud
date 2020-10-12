@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :country, presence: true
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   has_many :checkouts
+  has_many :orders
   belongs_to :plan, optional: true
   has_one_attached :photo
 

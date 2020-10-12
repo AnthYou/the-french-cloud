@@ -1,6 +1,6 @@
 class StripeCheckoutSessionService
   def call(event)
-    subscription = Subscription.find_by(checkout_session_id: event.data.object.id)
-    subscription.update(active: true)
+    order = Order.find_by(checkout_session_id: event.data.object.id)
+    order.update(state: 'paid')
   end
 end
