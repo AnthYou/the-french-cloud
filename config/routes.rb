@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'about_me', to: 'pages#about_me', as: 'about_me'
   get 'faq', to: 'pages#faq', as: 'faq'
   get 'legal', to: 'pages#legal', as: 'legal'
+  get 'rules', to: 'pages#rules', as: 'rules'
 
   resources :users, only: [:index, :show]
 

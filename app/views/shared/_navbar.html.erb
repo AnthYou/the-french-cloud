@@ -17,6 +17,9 @@
         <li class="nav-item">
           <%= link_to "F.A.Q.", faq_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Rules", rules_path, class: "nav-link" %>
+        </li>
         <% if user_signed_in? && current_user.subscribed? %>
           <li class="nav-item">
             <%= link_to "Slack", "https://thefrenchclub.slack.com/", class: 'nav-link'  %>
