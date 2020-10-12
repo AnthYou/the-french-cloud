@@ -79,5 +79,15 @@ Lesson.create!(sku: "passe-compose-imparfait",
                level: "A2",
                description_en: "When we want to talk about an event in the past tense, it is sometimes difficult to choose between imparfait or passé composé. Thanks to these tips, you can learn how to choose easily between these two tenses.",
                description_fr: "Quand on veut parler d'un événement au passé, il est parfois difficile de choisir entre imparfait ou passé composé. Grâce à ces quelques petites astuces, tu peux apprendre à choisir facilement entre ces deux temps.")
+Lesson.create!(sku: "demander-chemin",
+               title: "Demander son chemin",
+               level: "A2",
+               description_en: "You are lost, your phone has no battery and you have no sense of orientation? You will have to ask a passer-by for directions. Don't panic, here is a practical guide to help you, with all the necessary vocabulary and an example with audio.",
+               description_fr: "Vous êtes perdu, votre portable n’a plus de batterie et vous n’avez pas le sens de l’orientation ? Il va falloir demander votre chemin à un passant. Pas de panique, voici un guide pratique pour vous aider, avec tout le vocabulaire nécessaire et un exemple avec son audio.")
+Lesson.create!(sku: "rencontre-bar",
+               title: "Première rencontre au bar",
+               level: "A2",
+               description_en: "Has it ever happened to you to meet someone but not be able to speak French? How do you approach someone for the first time? What do you order to drink in a bar in France?",
+               description_fr: "Est-ce que ça t'est déjà arrivé de rencontrer quelqu'un mais de ne pas arriver à parler en français ? Comment aborder quelqu'un pour la première fois ? Qu'est-ce que tu commandes à boire dans un bar en France ?")
 
 puts 'Done! 🍺'

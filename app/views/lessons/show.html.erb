@@ -12,18 +12,7 @@
       </div>
     </div>
     <div class="content">
-      <% case @lesson.sku %>
-        <% when "present-indicatif" %>
-          <%= render 'lessons/content/present-indicatif' %>
-        <% when "imparfait" %>
-          <%= render 'lessons/content/imparfait' %>
-        <% when "passe-compose" %>
-          <%= render 'lessons/content/passe-compose' %>
-        <% when "se-presenter" %>
-          <%= render 'lessons/content/se-presenter' %>
-        <% when "passe-compose-imparfait" %>
-          <%= render 'lessons/content/passe-compose-imparfait' %>
-      <% end %>
+      <%= render "lessons/content/#{@lesson.sku}" %>
     </div>
   </div>
 </div>
