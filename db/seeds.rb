@@ -90,4 +90,50 @@ Lesson.create!(sku: "rencontre-bar",
                description_en: "Has it ever happened to you to meet someone but not be able to speak French? How do you approach someone for the first time? What do you order to drink in a bar in France?",
                description_fr: "Est-ce que ça t'est déjà arrivé de rencontrer quelqu'un mais de ne pas arriver à parler en français ? Comment aborder quelqu'un pour la première fois ? Qu'est-ce que tu commandes à boire dans un bar en France ?")
 
+puts "Seeding exercises..."
+ex1 = Exercise.create!(sku: "champs-elysees",
+                       title: "Les Champs-Elysées",
+                       level: "A1")
+q1 = Question.create!(prompt: "Qu'est-ce qu'on peut acheter dans les magasins de souvenirs ?",
+                      exercise: ex1)
+Answer.create!(content: "Des magnets",
+               question: q1,
+               is_correct: true)
+Answer.create!(content: "Des baguettes",
+               question: q1,
+               is_correct: false)
+Answer.create!(content: "Des livres sur Paris",
+               question: q1,
+               is_correct: false)
+q2 = Question.create!(prompt: "Sur les Champs-Elysées, il y a de la richesse et de la pauvreté.",
+                      exercise: ex1)
+Answer.create!(content: "Vrai",
+               question: q2,
+               is_correct: true)
+Answer.create!(content: "Faux",
+               question: q2,
+               is_correct: false)
+q3 = Question.create!(prompt: "Quelle est la spécialité du restaurant ?",
+                      exercise: ex1)
+Answer.create!(content: "Le Roquefort",
+               question: q3,
+               is_correct: false)
+Answer.create!(content: "Les pâtisseries",
+               question: q3,
+               is_correct: false)
+Answer.create!(content: "Les moules frites",
+               question: q3,
+               is_correct: true)
+q4 = Question.create!(prompt: "Comment s'appelle le dessert ?",
+                      exercise: ex1)
+Answer.create!(content: "La crème brûlée",
+               question: q4,
+               is_correct: true)
+Answer.create!(content: "Le Roquefort",
+               question: q4,
+               is_correct: false)
+Answer.create!(content: "Le croissant",
+               question: q4,
+               is_correct: false)
+
 puts 'Done! 🍺'

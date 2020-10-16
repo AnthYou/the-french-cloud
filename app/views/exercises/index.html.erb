@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="usercard-container">
+    <% @exercises.each do |exercise| %>
+      <%= link_to exercise_path(exercise) do  %>
+        <div class="lesson-card">
+          <h1><%= exercise.title %></h1>
+          <p><%= exercise.level %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

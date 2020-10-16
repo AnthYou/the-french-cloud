@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1><%= @exercise.title %></h1>
+    <%= render "exercises/content/#{@exercise.sku}" %>
+    <hr>
+    <div class="text-left">
+      <% @exercise.questions.each do |question| %>
+        <%= question.prompt %>
+        <ol>
+          <% question.answers.shuffle.each do |answer| %>
+            <li style="color: <%= "green" if answer.is_correct %>"><%= answer.content %></li>
+          <% end %>
+        </ol>
+      <% end %>
+    </div>
+  </div>
+</div>

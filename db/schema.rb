@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_153103) do
+ActiveRecord::Schema.define(version: 2020_10_16_191742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_10_12_153103) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "answers", force: :cascade do |t|
+    t.string "content"
+    t.bigint "question_id", null: false
+    t.boolean "is_correct"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
   create_table "checkouts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "state"
@@ -45,6 +54,14 @@ ActiveRecord::Schema.define(version: 2020_10_12_153103) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plan_id"], name: "index_checkouts_on_plan_id"
     t.index ["user_id"], name: "index_checkouts_on_user_id"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "sku"
+    t.string "title"
+    t.string "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -77,6 +94,14 @@ ActiveRecord::Schema.define(version: 2020_10_12_153103) do
     t.string "stripe_price_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string "prompt"
+    t.bigint "exercise_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_questions_on_exercise_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -100,8 +125,10 @@ ActiveRecord::Schema.define(version: 2020_10_12_153103) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "questions"
   add_foreign_key "checkouts", "plans"
   add_foreign_key "checkouts", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "questions", "exercises"
   add_foreign_key "users", "plans"
 end
