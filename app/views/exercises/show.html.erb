@@ -1,8 +1,8 @@
 <div class="container">
   <div class="d-flex flex-column justify-content-center align-items-center">
-    <h1><%= @exercise.title %></h1>
+    <h1 class="mb-5"><%= @exercise.title %></h1>
     <%= render "exercises/content/#{@exercise.sku}" %>
-    <hr>
+    <h2 class="my-5">Questions</h2>
     <div class="text-left">
       <% @exercise.questions.each do |question| %>
         <%= question.prompt %>
