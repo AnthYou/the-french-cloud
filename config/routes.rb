@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :plans, only: [:index, :show]
   resources :lessons, only: [:index, :show]
+  resources :exercises, only: [:index, :show]
 
   resources :checkouts, only: [:create] do
     resources :charges, only: [:new]

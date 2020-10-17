@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="text-center mb-5">Exercises</h1>
+  <div class="usercard-container">
+    <% @exercises.each do |exercise| %>
+      <%= link_to exercise_path(exercise) do  %>
+        <div class="lesson-card">
+          <h1><%= exercise.title %></h1>
+          <p><%= exercise.level %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
