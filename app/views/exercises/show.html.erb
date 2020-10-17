@@ -8,10 +8,13 @@
         <%= question.prompt %>
         <ol>
           <% question.answers.shuffle.each do |answer| %>
-            <li style="color: <%= "green" if answer.is_correct %>"><%= answer.content %></li>
+            <li class="<%= "good-answer" if answer.is_correct %>"><%= answer.content %></li>
           <% end %>
         </ol>
       <% end %>
     </div>
+    <div class="btn btn-primary" id="reveal-answers">Show answers</div>
+    <%#= link_to "Show answers", "#", class: "btn btn-primary", id: "reveal-answers" %>
   </div>
 </div>
+

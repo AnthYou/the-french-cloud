@@ -20,7 +20,8 @@ require("channels")
 import 'bootstrap';
 
 // Internal imports
+import { revealAnswers } from '../components/revealanswers';
 
 document.addEventListener('turbolinks:load', () => {
-
+  revealAnswers();
 })
