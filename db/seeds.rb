@@ -89,6 +89,11 @@ Lesson.create!(sku: "rencontre-bar",
                level: "A2",
                description_en: "Has it ever happened to you to meet someone but not be able to speak French? How do you approach someone for the first time? What do you order to drink in a bar in France?",
                description_fr: "Est-ce que ça t'est déjà arrivé de rencontrer quelqu'un mais de ne pas arriver à parler en français ? Comment aborder quelqu'un pour la première fois ? Qu'est-ce que tu commandes à boire dans un bar en France ?")
+Lesson.create!(sku: "arrivee-paris",
+               title: "L'arrivée à Paris",
+               level: "A2",
+               description_en: "Arriving in Paris is an unforgettable moment (especially the first time) but it can be quickly spoiled by the stress of getting around and communicating with others. Here are some sentences and information that can save you!",
+               description_fr: "L'arrivée en Paris est un moment inoubliable (surtout la première fois) mais il peut être vite gâché par le stress de se déplacer et de communiquer. Voici quelques phrases et informations qui peuvent te sauver !")
 
 puts "Seeding exercises..."
 ex1 = Exercise.create!(sku: "champs-elysees",

@@ -1,0 +1,37 @@
+<h2 class="my-5">Vocabulaire</h2>
+<div class="description-cards">
+  <div class="description-card">
+    <ul>
+      <li>I can't find my suitcase, can you help me?</li>
+      <li>I would like to buy a subway ticket, how much is it?</li>
+      <li>What is the number of the bus going to the center of Paris?</li>
+      <li>Which subway line should I take?</li>
+      <li>I would like a RER ticket for Denfert Rochereau, please.</li>
+      <li>Please, I'm lost. How do I get to Nation?</li>
+      <li>At what time is the next bus?</li>
+      <li>Which terminal should I go to to take a cab?</li>
+      <li>The address of my hotel is 12 rue la république, in the 14th arrondissement.</li>
+    </ul>
+  </div>
+  <div class="description-card">
+    <ul>
+      <li>Je ne retrouve pas ma valise, pouvez-vous m'aider ?</li>
+      <li>Je voudrais acheter un ticket de métro, quel est le prix ?</li>
+      <li>Quel est le numéro du bus pour aller au centre de Paris ?</li>
+      <li>Quel ligne de métro faut-il prendre ?</li>
+      <li>Je voudrais un ticket de RER pour Denfert Rochereau, s'il vous plaît.</li>
+      <li>S'il vous plaît, je suis perdue. Comment aller à Nation ?</li>
+      <li>A quelle heure est le prochain bus ?</li>
+      <li>A quel terminal dois-je me rendre pour prendre un taxi ?</li>
+      <li>L'adresse de mon hôtel est 12 rue de la république, dans le 14ème arrondissement.</li>
+    </ul>
+    <%= audio_tag 'arrivee-paris.mp3', controls: true %>
+  </div>
+</div>
+<%= image_tag "https://images.unsplash.com/photo-1510751190565-de07085fcad6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1788&q=80", class: "my-5 standalone-image" %>
+<div class="d-flex align-items-center justify-content-around">
+  <%= image_tag "memo-arrivee-paris.png", alt: "memo" %>
+  <div>
+    <p>To move around the city, listen to the dialogue <%= link_to "here", lesson_path(Lesson.find_by(sku: 'demander-chemin' )) %>.</p>
+  </div>
+</div>
