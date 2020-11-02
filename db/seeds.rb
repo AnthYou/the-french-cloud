@@ -94,6 +94,11 @@ Lesson.create!(sku: "arrivee-paris",
                level: "A2",
                description_en: "Arriving in Paris is an unforgettable moment (especially the first time) but it can be quickly spoiled by the stress of getting around and communicating with others. Here are some sentences and information that can save you!",
                description_fr: "L'arrivée en Paris est un moment inoubliable (surtout la première fois) mais il peut être vite gâché par le stress de se déplacer et de communiquer. Voici quelques phrases et informations qui peuvent te sauver !")
+Lesson.create!(sku: "restaurant",
+               title: "Au restaurant",
+               level: "A2",
+               description_en: "If you come to France, enjoy the local gastronomy! The French cuisine is very varied with many influences. But for this, you will have to order at the restaurant. It's not always easy when the waiters are in a hurry with a lot of noise, right?",
+               description_fr: "Si tu viens en France, profite-en pour goûter la gastronomie locale ! La cuisine française est très variée, elle se nourrit de beaucoup d'influences. Mais pour cela, il te faudra commander au restaurant. Ce n’est pas toujours évident quand les serveurs sont pressés et qu'il y a beaucoup de bruit pas vrai ?")
 
 puts "Seeding exercises..."
 ex1 = Exercise.create!(sku: "champs-elysees",

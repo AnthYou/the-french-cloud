@@ -1,0 +1,29 @@
+<div class="d-flex align-items-center justify-content-around mt-5">
+  <%= image_tag "tips-pour-boire.png" %>
+  <%= image_tag "tips-cuisson-viande.png" %>
+</div>
+
+<h2 class="my-5">Dialogue</h2>
+<div class="d-flex align-items-center">
+  <%= image_tag "https://images.unsplash.com/photo-1590091507389-d3af462e59d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80", alt: "restaurant", class: "example-image2" %>
+  <div class="example-text2 text-left">
+    <ul>
+      <li style="color: red">Bonjour, quel est le plat du jour ?</li>
+      <li style="color: blue">Aujourd&rsquo;hui, le chef propose une bavette avec des frites et des petits l&eacute;gumes.</li>
+      <li style="color: red">Très bien, je vais prendre la bavette.</li>
+      <li style="color: blue">Quelle cuisson pour la viande madame ?</li>
+      <li style="color: red">&Agrave; point s&rsquo;il vous pla&icirc;t !</li>
+      <li style="color: blue">C&rsquo;est not&eacute;. Il y a un peu d&rsquo;attente car il y a beaucoup de monde aujourd&rsquo;hui.</li>
+      <li style="color: red">D&rsquo;accord ce n&rsquo;est pas grave. Pourrais-je avoir de l&rsquo;eau et du pain en attendant ?</li>
+      <li style="color: blue">De l&rsquo;eau plate, gazeuse ou une carafe ?</li>
+      <li style="color: red">Une carafe s&rsquo;il vous pla&icirc;t.</li>
+      <li style="color: blue">Bien madame.</li>
+      <li style="color: red">Et pour le dessert, je voudrais une mousse au chocolat.</li>
+      <li style="color: blue">D&eacute;sol&eacute; madame, il n&rsquo;y en a plus.</li>
+      <li style="color: red">Ah, mince... Dans ce cas... Une crème brûl&eacute;e !</li>
+      <li style="color: blue">Très bien, une crème brûl&eacute;e. A tout &agrave; l&rsquo;heure.</li>
+      <li style="color: red">Merci, &agrave; tout &agrave; l&rsquo;heure.</li>
+      <%= audio_tag 'dialogue-restaurant.mp3', controls: true, class: 'mt-2' %>
+    </ul>
+  </div>
+</div>
