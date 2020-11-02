@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :check_if_ptit_french
+  before_action :check_if_ptit_french, only: [:show]
 
   def index
     @lessons = Lesson.all
