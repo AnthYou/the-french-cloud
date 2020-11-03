@@ -26,8 +26,8 @@ Rails.application.configure do
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed. [DEFAULT: false]
-  config.assets.compile = false
+  # Do not fallback to assets pipeline if a precompiled asset is missed. [DEFAULT: false, uncommented]
+  # config.assets.compile = false
 
   # For video addition, no precompiled [ADDED]
   config.assets.check_precompiled_asset = false
