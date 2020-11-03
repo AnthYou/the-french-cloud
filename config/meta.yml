@@ -1,0 +1,5 @@
+meta_product_name: "The French Cloud"
+meta_title: "The French Cloud | Join our community of French learners!"
+meta_description: "Learn French online in a friendly community. Get access to online conversation sessions, exclusive toolbox and exercises to perfect your French!"
+meta_image: "meta_image.png" # should exist in `app/assets/images/`
+twitter_account: "@AnthYou"   # required for Twitter Cards
