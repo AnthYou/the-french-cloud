@@ -19,7 +19,7 @@ puts "Seeding users..."
 puts "Seeding plans..."
 Plan.create!(sku: 'curieux',
              name: 'Le curieux',
-             description: '- Join the French Club community
+             description: '- Join the French Cloud community
              - Access to the Slack exchange platform
              - Access to content, exchanges and advice from teachers
              - Access to weekly conversation sessions',
@@ -28,7 +28,7 @@ Plan.create!(sku: 'curieux',
              price_cents: 990)
 Plan.create!(sku: 'ptit-french',
              name: 'Le p\'tit French',
-             description: '- Join the French Club community
+             description: '- Join the French Cloud community
              - Access to the Slack exchange platform
              - Access to content, exchanges and advice from teachers
              - Access to weekly conversation sessions
@@ -40,7 +40,7 @@ Plan.create!(sku: 'ptit-french',
              price_cents: 1990)
 # Plan.create!(sku: 'excellent',
 #              name: 'L\'excellent',
-#              description: '- Join the French Club community
+#              description: '- Join the French Cloud community
 #              - Access to the Slack exchange platform
 #              - Access to content, exchanges and advice from teachers
 #              - Access to weekly conversation sessions
