@@ -1,12 +1,12 @@
 <div class="home-video-wrapper">
   <%= video_tag "banner_video_blur.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
-  <div class="container">
+  <div class="container d-flex flex-column align-items-center">
     <div class="whitesq">
       <h1>A NEW WAY TO PRACTICE FRENCH</h1>
       <p>Join our community of <%= User.count %> French learners</p>
       <%= link_to "FREE TRIAL", "#", class: "btn btn-primary", style: "width: 300px;"  %>
     </div>
-    <div id="carouselExampleSlidesOnly" class="carousel slide container" data-ride="carousel" style="position: absolute; bottom: 30px; opacity: .8; color: white;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide container text-center responsive-hidden" data-ride="carousel" style="position: absolute; bottom: 30px; opacity: .8; color: white;">
       <div class="carousel-inner">
         <div class="carousel-item active" data-interval="7000">
           <p><em>
