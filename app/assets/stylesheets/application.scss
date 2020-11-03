@@ -41,3 +41,9 @@ mark {
   line-height: 0em;
   padding-bottom: 0.5em;
 }
+
+@media (max-width: 768px) {
+  .responsive-hidden {
+    display: none;
+  }
+}

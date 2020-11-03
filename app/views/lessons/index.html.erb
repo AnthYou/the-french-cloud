@@ -6,7 +6,8 @@
         <div class="lesson-card">
           <h1><%= lesson.title %></h1>
           <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
-          <p><%= lesson.description_en.truncate(150) %></p>
+          <p><%= lesson.description_en.truncate(100) %></p>
+          <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
         </div>
       <% end %>
     <% end %>
