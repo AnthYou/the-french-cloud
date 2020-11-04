@@ -3,6 +3,10 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    @grammarlessons = Lesson.where(category: Lesson::CATEGORIES[0]).sort_by(&:title).sort_by(&:level)
+    @verballessons = Lesson.where(category: Lesson::CATEGORIES[1]).sort_by(&:title).sort_by(&:level)
+    @voclessons = Lesson.where(category: Lesson::CATEGORIES[2]).sort_by(&:title).sort_by(&:level)
+    raise StandardError unless @lessons.size == @grammarlessons.size + @verballessons.size + @voclessons.size
   end
 
   def show

@@ -4,4 +4,15 @@ class Lesson < ApplicationRecord
   validates :sku, presence: true, uniqueness: true
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   validates :category, inclusion: { in: CATEGORIES }
+
+  def color
+    case category
+    when CATEGORIES[0]
+      'purple'
+    when CATEGORIES[1]
+      'green'
+    when CATEGORIES[2]
+      'orange'
+    end
+  end
 end
