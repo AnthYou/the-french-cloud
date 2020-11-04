@@ -114,46 +114,94 @@ ex1 = Exercise.create!(sku: "champs-elysees",
                        title: "Les Champs-Elysées",
                        level: "A1",
                        category: Exercise::CATEGORIES[0])
-q1 = Question.create!(prompt: "Qu'est-ce qu'on peut acheter dans les magasins de souvenirs ?",
+ex1q1 = Question.create!(prompt: "Qu'est-ce qu'on peut acheter dans les magasins de souvenirs ?",
                       exercise: ex1)
 Answer.create!(content: "Des magnets",
-               question: q1,
+               question: ex1q1,
                is_correct: true)
 Answer.create!(content: "Des baguettes",
-               question: q1,
+               question: ex1q1,
                is_correct: false)
 Answer.create!(content: "Des livres sur Paris",
-               question: q1,
+               question: ex1q1,
                is_correct: false)
-q2 = Question.create!(prompt: "Sur les Champs-Elysées, il y a de la richesse et de la pauvreté.",
+ex1q2 = Question.create!(prompt: "Sur les Champs-Elysées, il y a de la richesse et de la pauvreté.",
                       exercise: ex1)
 Answer.create!(content: "Vrai",
-               question: q2,
+               question: ex1q2,
                is_correct: true)
 Answer.create!(content: "Faux",
-               question: q2,
+               question: ex1q2,
                is_correct: false)
-q3 = Question.create!(prompt: "Quelle est la spécialité du restaurant ?",
+ex1q3 = Question.create!(prompt: "Quelle est la spécialité du restaurant ?",
                       exercise: ex1)
 Answer.create!(content: "Le Roquefort",
-               question: q3,
+               question: ex1q3,
                is_correct: false)
 Answer.create!(content: "Les pâtisseries",
-               question: q3,
+               question: ex1q3,
                is_correct: false)
 Answer.create!(content: "Les moules frites",
-               question: q3,
+               question: ex1q3,
                is_correct: true)
-q4 = Question.create!(prompt: "Comment s'appelle le dessert ?",
+ex1q4 = Question.create!(prompt: "Comment s'appelle le dessert ?",
                       exercise: ex1)
 Answer.create!(content: "La crème brûlée",
-               question: q4,
+               question: ex1q4,
                is_correct: true)
 Answer.create!(content: "Le Roquefort",
-               question: q4,
+               question: ex1q4,
                is_correct: false)
 Answer.create!(content: "Le croissant",
-               question: q4,
+               question: ex1q4,
+               is_correct: false)
+ex2 = Exercise.create!(sku: "canal-stmartin",
+                       title: "Le Canal Saint-Martin",
+                       level: "A2",
+                       category: Exercise::CATEGORIES[0])
+ex2q1 = Question.create!(prompt: "Combien de temps dure le trajet en métro ?",
+                      exercise: ex2)
+Answer.create!(content: "2 minutes",
+               question: ex2q1,
+               is_correct: false)
+Answer.create!(content: "10 minutes",
+               question: ex2q1,
+               is_correct: false)
+Answer.create!(content: "20 minutes",
+               question: ex2q1,
+               is_correct: true)
+ex2q2 = Question.create!(prompt: "Où se trouvent les Pyrénées ?",
+                      exercise: ex2)
+Answer.create!(content: "En France",
+               question: ex2q2,
+               is_correct: false)
+Answer.create!(content: "En Espagne",
+               question: ex2q2,
+               is_correct: false)
+Answer.create!(content: "A la frontière entre la France et l'Espagne",
+               question: ex2q2,
+               is_correct: true)
+ex2q3 = Question.create!(prompt: "Quelle est ma photo préférée ?",
+                      exercise: ex2)
+Answer.create!(content: "Le couple à la fenêtre qui applaudit",
+               question: ex2q3,
+               is_correct: true)
+Answer.create!(content: "La fille qui fait du roller",
+               question: ex2q3,
+               is_correct: false)
+Answer.create!(content: "L'homme avec le drapeau français",
+               question: ex2q3,
+               is_correct: false)
+ex2q4 = Question.create!(prompt: "Que se passe-t-il sur la Place de la République ?",
+                      exercise: ex2)
+Answer.create!(content: "Il y a des expositions",
+               question: ex2q4,
+               is_correct: false)
+Answer.create!(content: "Il y a des manifestations",
+               question: ex2q4,
+               is_correct: true)
+Answer.create!(content: "Il y a un tournage de série",
+               question: ex2q4,
                is_correct: false)
 
 puts 'Done! 🍺'
