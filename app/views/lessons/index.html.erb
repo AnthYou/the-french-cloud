@@ -1,15 +1,54 @@
 <div class="container">
   <h1 class="text-center mb-5">Lessons</h1>
-  <div class="usercard-container">
-    <% @lessons.each do |lesson| %>
-      <%= link_to lesson_path(lesson) do  %>
-        <div class="lesson-card">
-          <h1><%= lesson.title %></h1>
-          <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
-          <p><%= lesson.description_en.truncate(100) %></p>
-          <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
-        </div>
+  <h2 class="text-center mt-5 mb-4">Grammar (<%= @grammarlessons.size %>)</h2>
+  <% if @grammarlessons.empty? %>
+    <p class="text-center">There is no grammar lessons available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @grammarlessons.each do |lesson| %>
+        <%= link_to lesson_path(lesson) do  %>
+          <div class="lesson-card">
+            <h1><%= lesson.title %></h1>
+            <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+            <p><%= lesson.description_en.truncate(100) %></p>
+            <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+  <h2 class="text-center mt-5 mb-4">Verbal tenses (<%= @verballessons.size %>)</h2>
+  <% if @verballessons.empty? %>
+    <p class="text-center">There is no verbal tenses lessons available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @verballessons.each do |lesson| %>
+        <%= link_to lesson_path(lesson) do  %>
+          <div class="lesson-card">
+            <h1><%= lesson.title %></h1>
+            <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+            <p><%= lesson.description_en.truncate(100) %></p>
+            <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  <h2 class="text-center mt-5 mb-4">Vocabulary & dialogue (<%= @voclessons.size %>)</h2>
+  <% if @voclessons.empty? %>
+    <p class="text-center">There is no vocabulary and dialogue lessons available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @voclessons.each do |lesson| %>
+        <%= link_to lesson_path(lesson) do  %>
+          <div class="lesson-card">
+            <h1><%= lesson.title %></h1>
+            <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+            <p><%= lesson.description_en.truncate(100) %></p>
+            <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

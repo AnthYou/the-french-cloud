@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :birth_date, presence: true
   validates :country, presence: true
-  validates :level, presence: true, inclusion: { in: User::LEVEL }
+  validates :level, presence: true, inclusion: { in: LEVEL }
   has_many :checkouts
   has_many :orders
   belongs_to :plan, optional: true

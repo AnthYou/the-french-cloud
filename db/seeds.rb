@@ -57,53 +57,63 @@ puts "Seeding lessons..."
 Lesson.create!(sku: "present-indicatif",
                title: "Le présent de l'indicatif",
                level: "A1",
+               category: Lesson::CATEGORIES[1],
                description_en: "Le présent is one of the most frequently used tenses in the French language. It corresponds to the English simple present, and we use it to talk about facts, current situations, and repeated actions, as well as scheduled future actions. To conjugate a verb in the present tense, we add specific endings to the infinitive of the verb depending on whether it ends in -er, -ir or -re.",
                description_fr: "Le présent est l'un des temps les plus utilisés dans la langue française. Il correspond au présent simple anglais, et nous l'utilisons pour parler de faits, de situations actuelles, et d'actions répétées, ainsi que d'actions futures programmées. Pour conjuguer un verbe au présent, nous ajoutons des terminaisons spécifiques à l'infinitif du verbe selon qu'il se termine par -er, -ir ou -re.")
 Lesson.create!(sku: "imparfait",
                title: "L'imparfait",
                level: "A2",
+               category: Lesson::CATEGORIES[1],
                description_en: "The Imparfait tense is used to describe past descriptions, or habitual actions in the past.",
                description_fr: "Le temps de l'imparfait est utilisé pour décrire des descriptions du passé, ou des actions habituelles dans le passé.")
 Lesson.create!(sku: "passe-compose",
                title: "Le passé composé",
                level: "A2",
+               category: Lesson::CATEGORIES[1],
                description_en: "The passé composé is the most commonly used tense to refer to actions completed in the past. The action is precise and complete.\nThis tense is called the passé composé because it is composed of two elements: the auxiliary verbs avoir or être followed by the past participle (le participe passé) of the verb.",
                description_fr: "Le passé composé est le temps le plus couramment utilisé pour désigner les actions réalisées dans le passé. L'action est précise et complète.\nCe temps est appelé \"passé composé\" parce qu'il est composé de deux éléments: les verbes auxiliaires « être » ou « avoir » suivis du participe passé du verbe.")
 Lesson.create!(sku: "se-presenter",
                title: "Se présenter",
                level: "A1",
+               category: Lesson::CATEGORIES[2],
                description_en: "Knowing how to talk about yourself is essential to being able to communicate with others. In this lesson, you will find the basics to introduce yourself. Don't hesitate to listen to the audio files to work on pronunciation.",
                description_fr: "Savoir parler de toi est essentiel pour pouvoir communiquer avec les autres. Tu trouveras, dans cette leçon les bases pour te présenter. N'hésite pas à écouter les fichiers audios pour travailler la prononciation.")
 Lesson.create!(sku: "passe-compose-imparfait",
                title: "Passé composé ou imparfait ?",
                level: "A2",
+               category: Lesson::CATEGORIES[1],
                description_en: "When we want to talk about an event in the past tense, it is sometimes difficult to choose between imparfait or passé composé. Thanks to these tips, you can learn how to choose easily between these two tenses.",
                description_fr: "Quand on veut parler d'un événement au passé, il est parfois difficile de choisir entre imparfait ou passé composé. Grâce à ces quelques petites astuces, tu peux apprendre à choisir facilement entre ces deux temps.")
 Lesson.create!(sku: "demander-chemin",
                title: "Demander son chemin",
                level: "A2",
+               category: Lesson::CATEGORIES[2],
                description_en: "You are lost, your phone has no battery and you have no sense of orientation? You will have to ask a passer-by for directions. Don't panic, here is a practical guide to help you, with all the necessary vocabulary and an example with audio.",
                description_fr: "Vous êtes perdu, votre portable n’a plus de batterie et vous n’avez pas le sens de l’orientation ? Il va falloir demander votre chemin à un passant. Pas de panique, voici un guide pratique pour vous aider, avec tout le vocabulaire nécessaire et un exemple avec son audio.")
 Lesson.create!(sku: "rencontre-bar",
                title: "Première rencontre au bar",
                level: "A2",
+               category: Lesson::CATEGORIES[2],
                description_en: "Has it ever happened to you to meet someone but not be able to speak French? How do you approach someone for the first time? What do you order to drink in a bar in France?",
                description_fr: "Est-ce que ça t'est déjà arrivé de rencontrer quelqu'un mais de ne pas arriver à parler en français ? Comment aborder quelqu'un pour la première fois ? Qu'est-ce que tu commandes à boire dans un bar en France ?")
 Lesson.create!(sku: "arrivee-paris",
                title: "L'arrivée à Paris",
                level: "A2",
+               category: Lesson::CATEGORIES[2],
                description_en: "Arriving in Paris is an unforgettable moment (especially the first time) but it can be quickly spoiled by the stress of getting around and communicating with others. Here are some sentences and information that can save you!",
                description_fr: "L'arrivée en Paris est un moment inoubliable (surtout la première fois) mais il peut être vite gâché par le stress de se déplacer et de communiquer. Voici quelques phrases et informations qui peuvent te sauver !")
 Lesson.create!(sku: "restaurant",
                title: "Au restaurant",
                level: "A2",
+               category: Lesson::CATEGORIES[2],
                description_en: "If you come to France, enjoy the local gastronomy! The French cuisine is very varied with many influences. But for this, you will have to order at the restaurant. It's not always easy when the waiters are in a hurry with a lot of noise, right?",
                description_fr: "Si tu viens en France, profite-en pour goûter la gastronomie locale ! La cuisine française est très variée, elle se nourrit de beaucoup d'influences. Mais pour cela, il te faudra commander au restaurant. Ce n’est pas toujours évident quand les serveurs sont pressés et qu'il y a beaucoup de bruit pas vrai ?")
 
 puts "Seeding exercises..."
 ex1 = Exercise.create!(sku: "champs-elysees",
                        title: "Les Champs-Elysées",
-                       level: "A1")
+                       level: "A1",
+                       category: Exercise::CATEGORIES[0])
 q1 = Question.create!(prompt: "Qu'est-ce qu'on peut acheter dans les magasins de souvenirs ?",
                       exercise: ex1)
 Answer.create!(content: "Des magnets",
