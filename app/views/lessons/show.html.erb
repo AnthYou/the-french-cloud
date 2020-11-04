@@ -1,7 +1,9 @@
 <div class="container">
   <div class="lesson-showcard">
+    <h2 class="text-center lead mb-5"><%= @lesson.category %></h2>
     <h1 class="text-center mb-5"><%= @lesson.title %></h1>
     <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= @lesson.level %></span>
+    <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= @lesson.color %>"></div>
     <h3>Remember!</h3>
     <div class="description-cards">
       <div class="description-card" style="border-radius: 0px 15px 15px 15px;">
