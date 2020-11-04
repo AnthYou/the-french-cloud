@@ -1,5 +1,11 @@
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
 .lesson-card {
-  height: 150px;
+  display: flex;
   border-radius: 15px;
   padding: 20px;
   background-color: $my-white;
@@ -12,6 +18,9 @@
     color: $my-blue;
     font-weight: bold;
     font-size: 24px;
+  }
+  .lesson-card-left {
+    max-width: 90%;
   }
 }
 

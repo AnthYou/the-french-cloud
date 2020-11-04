@@ -8,10 +8,15 @@
       <% @grammarlessons.each do |lesson| %>
         <%= link_to lesson_path(lesson) do  %>
           <div class="lesson-card">
-            <h1><%= lesson.title %></h1>
-            <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
-            <p><%= lesson.description_en.truncate(100) %></p>
-            <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+            <div class="lesson-card-left">
+              <h1><%= lesson.title %></h1>
+              <p><%= lesson.description_en.truncate(100) %></p>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= lesson.color %>"></div>
+              <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+            </div>
           </div>
         <% end %>
       <% end %>
@@ -25,10 +30,15 @@
       <% @verballessons.each do |lesson| %>
         <%= link_to lesson_path(lesson) do  %>
           <div class="lesson-card">
-            <h1><%= lesson.title %></h1>
-            <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
-            <p><%= lesson.description_en.truncate(100) %></p>
-            <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+            <div class="lesson-card-left">
+              <h1><%= lesson.title %></h1>
+              <p style="width: 75%"><%= lesson.description_en.truncate(100) %></p>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= lesson.color %>"></div>
+              <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+            </div>
           </div>
         <% end %>
       <% end %>
@@ -42,10 +52,15 @@
       <% @voclessons.each do |lesson| %>
         <%= link_to lesson_path(lesson) do  %>
           <div class="lesson-card">
-            <h1><%= lesson.title %></h1>
-            <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
-            <p><%= lesson.description_en.truncate(100) %></p>
-            <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+            <div class="lesson-card-left">
+              <h1><%= lesson.title %></h1>
+              <p><%= lesson.description_en.truncate(125) %></p>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= lesson.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= lesson.color %>"></div>
+              <strong style="position: absolute; bottom: 15px; right: 15px">Learn more</strong>
+            </div>
           </div>
         <% end %>
       <% end %>
