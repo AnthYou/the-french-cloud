@@ -1,13 +1,63 @@
 <div class="container">
   <h1 class="text-center mb-5">Exercises</h1>
-  <div class="usercard-container">
-    <% @exercises.each do |exercise| %>
-      <%= link_to exercise_path(exercise) do  %>
-        <div class="lesson-card">
-          <h1><%= exercise.title %></h1>
-          <p><%= exercise.level %></p>
-        </div>
+  <h2 class="text-center mt-5 mb-4">Listening (<%= @listeningexercises.size %>)</h2>
+  <% if @listeningexercises.empty? %>
+    <p class="text-center">There is no listening exercises available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @listeningexercises.each do |exercise| %>
+        <%= link_to exercise_path(exercise) do  %>
+          <div class="lesson-card">
+            <div class="lesson-card-left">
+              <h1><%= exercise.title %></h1>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= exercise.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= exercise.color %>"></div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+  <h2 class="text-center mt-5 mb-4">Reading (<%= @readingexercises.size %>)</h2>
+  <% if @readingexercises.empty? %>
+    <p class="text-center">There is no reading exercises available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @readingexercises.each do |exercise| %>
+        <%= link_to exercise_path(exercise) do  %>
+          <div class="lesson-card">
+            <div class="lesson-card-left">
+              <h1><%= exercise.title %></h1>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= exercise.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= exercise.color %>"></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  <h2 class="text-center mt-5 mb-4">Grammar (<%= @grammarexercises.size %>)</h2>
+  <% if @grammarexercises.empty? %>
+    <p class="text-center">There is no grammar exercises available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @grammarexercises.each do |exercise| %>
+        <%= link_to exercise_path(exercise) do  %>
+          <div class="lesson-card">
+            <div class="lesson-card-left">
+              <h1><%= exercise.title %></h1>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= exercise.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= exercise.color %>"></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

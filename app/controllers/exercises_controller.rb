@@ -3,6 +3,10 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = Exercise.all
+    @listeningexercises = Exercise.where(category: Exercise::CATEGORIES[0]).sort_by(&:title).sort_by(&:level)
+    @readingexercises = Exercise.where(category: Exercise::CATEGORIES[1]).sort_by(&:title).sort_by(&:level)
+    @grammarexercises = Exercise.where(category: Exercise::CATEGORIES[2]).sort_by(&:title).sort_by(&:level)
+    raise StandardError unless @exercises.size == @listeningexercises.size + @readingexercises.size + @grammarexercises.size
   end
 
   def show
