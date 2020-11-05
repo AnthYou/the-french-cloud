@@ -35,7 +35,6 @@ Plan.create!(sku: 'ptit-french',
              - Access to the Slack exchange platform
              - Access to content, exchanges and advice from teachers
              - Access to weekly conversation sessions
-             - Personalized follow-up in your progress
              - An additional zoom session in a small group every week
              - Access to a toolbox (mental maps, grammar cards, methodology support)',
              stripe_id: 'prod_I8rxveUWsnglsv',
@@ -47,7 +46,6 @@ Plan.create!(sku: 'ptit-french',
 #              - Access to the Slack exchange platform
 #              - Access to content, exchanges and advice from teachers
 #              - Access to weekly conversation sessions
-#              - Personalized follow-up in your progress
 #              - An additional zoom session in a small group every week
 #              - Access to a toolbox (mental maps, grammar cards, methodology support)
 #              - A “one-on-one” session per week
