@@ -11,6 +11,9 @@ User.destroy_all
 Plan.destroy_all
 Checkout.destroy_all
 Lesson.destroy_all
+Exercise.destroy_all
+Question.destroy_all
+Answer.destroy_all
 
 puts "Seeding users..."
 # User.create!(first_name: 'Anthony', last_name: 'You', email: 'you.anthony@yahoo.com', password: '123456', birth_date: '31/01/1995'.to_date, country: 'France', level: 'C2', description: 'Entrepreneur and Web Developer')

@@ -9,8 +9,8 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :country, presence: true
   validates :level, presence: true, inclusion: { in: LEVEL }
-  has_many :checkouts
-  has_many :orders
+  has_many :checkouts, dependent: :destroy
+  has_many :orders, dependent: :destroy
   belongs_to :plan, optional: true
   has_one_attached :photo
 
