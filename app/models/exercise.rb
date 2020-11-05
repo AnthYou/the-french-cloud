@@ -4,7 +4,7 @@ class Exercise < ApplicationRecord
   validates :title, presence: true
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   validates :category, presence: true, inclusion: { in: CATEGORIES }
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   def color
     case category
