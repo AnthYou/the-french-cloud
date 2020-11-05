@@ -1,4 +1,5 @@
-<div class="plan-card">
+<div class="plan-card" style="<%= 'border: 2px dashed tomato;' if plan.sku == 'ptit-french' %>">
+  <h3 class="most-popular"><%= 'MOST POPULAR' if plan.sku == 'ptit-french' %></h3>
   <div class="plan-card-top">
     <h2><%= plan.name %></h2>
   </div>
@@ -7,7 +8,10 @@
     <% plan.description.split('- ')[1..-1].each {|s| out += ("<li>" + s.to_s + "</li>")} %>
     <% out += "</ul>" %>
     <%= out.html_safe %>
-    <h2 class="text-center"><%= humanized_money_with_symbol(plan.price) %><span>/month</span></h2>
+    <h2 class="text-center" style="<%= 'margin-bottom: 10px;' if plan.sku == 'curieux' %>"><%= humanized_money_with_symbol(plan.price) %><span>/month</span></h2>
+    <% if plan.sku == 'curieux' %>
+      <h3 class="text-center lead">10 DAYS FREE TRIAL</h3>
+    <% end %>
   </div>
   <%= link_to "Subscribe", plan_path(plan), class: 'btn btn-primary mt-3', style: 'width: 350px;' %>
 </div>

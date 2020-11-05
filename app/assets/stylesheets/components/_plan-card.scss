@@ -11,6 +11,21 @@
   }
 }
 
+.plan-card {
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+
+  .most-popular {
+    color: tomato;
+    font-weight: 500;
+    font-size: 20px;
+    position: absolute;
+    top: -30px;
+    right: 15px;
+  }
+}
+
 .plan-card-top {
   background-color: $my-red;
   height: 75px;
