@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def subscribed?
     subscription_id?
   end
+
+  def admin?
+    admin
+  end
 end

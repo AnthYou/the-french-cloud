@@ -16,7 +16,7 @@ class ExercisesController < ApplicationController
   private
 
   def check_if_ptit_french
-    return if current_user.subscribed? && current_user.plan.sku == 'ptit-french'
+    return if (current_user.subscribed? && current_user.plan.sku == 'ptit-french') || current_user.admin?
 
     flash[:alert] = "You must be subscribed to Le P'tit French to access this content"
     redirect_to root_path
