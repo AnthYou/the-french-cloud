@@ -111,6 +111,12 @@ Lesson.create!(sku: "restaurant",
                category: Lesson::CATEGORIES[2],
                description_en: "If you come to France, enjoy the local gastronomy! The French cuisine is very varied with many influences. But for this, you will have to order at the restaurant. It's not always easy when the waiters are in a hurry with a lot of noise, right?",
                description_fr: "Si tu viens en France, profite-en pour goûter la gastronomie locale ! La cuisine française est très variée, elle se nourrit de beaucoup d'influences. Mais pour cela, il te faudra commander au restaurant. Ce n’est pas toujours évident quand les serveurs sont pressés et qu'il y a beaucoup de bruit pas vrai ?")
+Lesson.create!(sku: "emotions",
+               title: "Les émotions",
+               level: "B1",
+               category: Lesson::CATEGORIES[2],
+               description_en: "The vocabulary of feelings has a lot of shades of meaning, which allows us to express precisely what we feel. I offer you a mindmap which starts from the 6 primary emotions to the secondary emotions which result from them.",
+               description_fr: "Le vocabulaire des émotions est très riche en nuances de sens ce qui permet d'exprimer précisément ce que l'on ressent. Je te propose une carte mentale qui part des 6 émotions primaires et des émotions secondaires qui en découlent.")
 
 puts "Seeding exercises..."
 ex1 = Exercise.create!(sku: "champs-elysees",
