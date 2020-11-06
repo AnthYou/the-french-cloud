@@ -1,3 +1,26 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+@media (max-width: 576px) {
+  .about-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.about-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-text {
+  text-align: justify;
+}
+
 em.quote {
   color: grey;
   font-size: 28px;
