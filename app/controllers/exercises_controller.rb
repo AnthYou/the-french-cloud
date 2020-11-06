@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :check_if_ptit_french, only: [:show]
+  before_action :check_if_subscriber?, only: [:show]
 
   def index
     @exercises = Exercise.all
@@ -19,6 +19,13 @@ class ExercisesController < ApplicationController
     return if (current_user.subscribed? && current_user.plan.sku == 'ptit-french') || current_user.admin?
 
     flash[:alert] = "You must be subscribed to Le P'tit French to access this content"
+    redirect_to root_path
+  end
+
+  def check_if_subscriber?
+    return if current_user.subscribed? || current_user.admin?
+
+    flash[:alert] = "You must be subscribed to a plan to access this content"
     redirect_to root_path
   end
 end
