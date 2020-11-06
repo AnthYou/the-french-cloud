@@ -25,7 +25,8 @@ Plan.create!(sku: 'curieux',
              description: '- Join the French Cloud community
              - Access to the Slack exchange platform
              - Access to content, exchanges and advice from teachers
-             - Access to weekly conversation sessions',
+             - Access to weekly conversation sessions
+             - Access to a toolbox (mental maps, grammar cards, methodology support)',
              stripe_id: 'prod_I8rvVEhp0RXUvs',
              stripe_price_id: 'price_1HYaC0AFmCis7vEtIie47O7d',
              price_cents: 990)
@@ -35,8 +36,8 @@ Plan.create!(sku: 'ptit-french',
              - Access to the Slack exchange platform
              - Access to content, exchanges and advice from teachers
              - Access to weekly conversation sessions
-             - An additional zoom session in a small group every week
-             - Access to a toolbox (mental maps, grammar cards, methodology support)',
+             - Access to a toolbox (mental maps, grammar cards, methodology support)
+             - An additional zoom session in a small group every week',
              stripe_id: 'prod_I8rxveUWsnglsv',
              stripe_price_id: 'price_1HYaDgAFmCis7vEtJ9V7ip2X',
              price_cents: 1990)
