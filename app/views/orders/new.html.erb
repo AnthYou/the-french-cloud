@@ -7,18 +7,6 @@
     <li>Nelly will get back to you and send you all the information for the 1:1</li>
   </ol>
   <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'order_id', @order.id %>
     <%= submit_tag "Book now", class: 'btn btn-primary', id: 'pay' %>
   <% end -%>
 </div>
-
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-  const paymentButton = document.getElementById('pay');
-  paymentButton.addEventListener('click', () => {
-    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-    stripe.redirectToCheckout({
-      sessionId: '<%= @order.checkout_session_id %>'
-    });
-  });
-</script>

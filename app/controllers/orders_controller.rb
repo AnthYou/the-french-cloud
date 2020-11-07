@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   def new
-    @order = Order.create!(user: current_user, state: 'pending')
+  end
+
+  def create
+    order = Order.create!(user: current_user, state: 'pending')
     session = Stripe::Checkout::Session.create(
       client_reference_id: current_user.stripe_id,
       customer: current_user.stripe_id,
@@ -13,14 +16,16 @@ class OrdersController < ApplicationController
       success_url: order_success_url,
       cancel_url: order_cancelled_url
     )
-    @order.update(checkout_session_id: session.id)
-  end
-
-  def create
+    order.update(checkout_session_id: session.id)
+    redirect_to new_order_payment_path(order)
   end
 
   def show
     @order = current_user.orders.find(params[:id])
+  end
+
+  def index
+    @orders = current_user.orders.where(state: 'completed')
   end
 
   def cancelled
@@ -30,6 +35,7 @@ class OrdersController < ApplicationController
 
   def success
     @order = current_user.orders.last
+    @order.update(state: 'completed')
     payment_methods = JSON.parse(Stripe::PaymentMethod.list({
       customer: current_user.stripe_id,
       type: 'card'

@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resources :charges, only: [:new]
   end
 
-  resources :orders, only: [:new, :create, :show]
+  resources :orders, only: [:index, :new, :create, :show] do
+    resources :payments, only: :new
+  end
   get 'order_cancelled', to: 'orders#cancelled', as: 'order_cancelled'
   get 'order_success', to: 'orders#success', as: 'order_success'
 
@@ -29,5 +31,5 @@ Rails.application.routes.draw do
   post 'subscriptions', to: 'subscriptions#change_payment_method', as: 'subscription_change_payment_method'
   get 'charges', to: 'charges#cancelled', as: 'payment_cancelled'
 
-  mount StripeEvent::Engine, at: '/stripe-webhooks'
+  # mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

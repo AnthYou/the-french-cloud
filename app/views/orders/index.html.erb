@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="mb-5">My private lessons</h1>
+  <% unless @orders.empty? %>
+    <ul>
+    <% @orders.each do |order| %>
+      <%= link_to order_path(order) do %>
+        <li>Order n°<%= order.id %>, booked <%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  <% else %>
+    <p>You haven't booked any private lessons yet.</p>
+  <% end %>
+</div>
