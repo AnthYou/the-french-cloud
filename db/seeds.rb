@@ -27,8 +27,8 @@ Plan.create!(sku: 'curieux',
              - Access to discussions, challenges, quiz and exercises from the Slack platform
              - Access to the lessons and exercises on the website
              - Access to a weekly conversation class in a small group according to your level',
-             stripe_id: 'prod_I8rvVEhp0RXUvs',
-             stripe_price_id: 'price_1HYaC0AFmCis7vEtIie47O7d',
+             stripe_id: 'prod_ILVEM977z9nHAj',
+             stripe_price_id: 'price_1HkoERAFmCis7vEtquNhOcao',
              price_cents: 1290)
 Plan.create!(sku: 'ptit-french',
              name: 'Le p\'tit French',
@@ -37,8 +37,8 @@ Plan.create!(sku: 'ptit-french',
              - Access to the lessons and exercises on the website
              - Access to a weekly conversation class in a small group according to your level
              - 4 additional French classes per month in interaction and in small groups targeted to your needs',
-             stripe_id: 'prod_I8rxveUWsnglsv',
-             stripe_price_id: 'price_1HYaDgAFmCis7vEtJ9V7ip2X',
+             stripe_id: 'prod_ILVHlhmLTV96Sm',
+             stripe_price_id: 'price_1HkoGcAFmCis7vEtCZ3WiLjS',
              price_cents: 1990)
 
 puts "Seeding lessons..."
