@@ -22,38 +22,23 @@ User.create!(first_name: 'Nelly', last_name: 'Frisicaro', email: 'nelly.frisicar
 puts "Seeding plans..."
 Plan.create!(sku: 'curieux',
              name: 'Le curieux',
-             description: '- Join the French Cloud community
-             - Access to the Slack exchange platform
-             - Access to content, exchanges and advice from teachers
-             - Access to weekly conversation sessions
-             - Access to a toolbox (mental maps, grammar cards, methodology support)',
+             description: '- Be part of our community of French learners
+             - Access to discussions, challenges, quiz and exercises from the Slack platform
+             - Access to the lessons and exercises on the website
+             - Access to a weekly conversation class in a small group according to your level',
              stripe_id: 'prod_I8rvVEhp0RXUvs',
              stripe_price_id: 'price_1HYaC0AFmCis7vEtIie47O7d',
-             price_cents: 990)
+             price_cents: 1290)
 Plan.create!(sku: 'ptit-french',
              name: 'Le p\'tit French',
-             description: '- Join the French Cloud community
-             - Access to the Slack exchange platform
-             - Access to content, exchanges and advice from teachers
-             - Access to weekly conversation sessions
-             - Access to a toolbox (mental maps, grammar cards, methodology support)
-             - An additional zoom session in a small group every week',
+             description: '- Be part of our community of French learners
+             - Access to discussions, challenges, quiz and exercises from the Slack platform
+             - Access to the lessons and exercises on the website
+             - Access to a weekly conversation class in a small group according to your level
+             - 4 additional French classes per month in interaction and in small groups targeted to your needs',
              stripe_id: 'prod_I8rxveUWsnglsv',
              stripe_price_id: 'price_1HYaDgAFmCis7vEtJ9V7ip2X',
              price_cents: 1990)
-# Plan.create!(sku: 'excellent',
-#              name: 'L\'excellent',
-#              description: '- Join the French Cloud community
-#              - Access to the Slack exchange platform
-#              - Access to content, exchanges and advice from teachers
-#              - Access to weekly conversation sessions
-#              - An additional zoom session in a small group every week
-#              - Access to a toolbox (mental maps, grammar cards, methodology support)
-#              - A “one-on-one” session per week
-#              - Personalized exercises and follow-up',
-#              stripe_id: 'prod_I6eLSH81j678jV',
-#              stripe_price_id: 'price_1HWR2vAFmCis7vEt236T8XeZ',
-#              price_cents: 5990)
 
 puts "Seeding lessons..."
 Lesson.create!(sku: "present-indicatif",
