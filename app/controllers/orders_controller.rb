@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: [{
-        price: 'price_1HbSsuAFmCis7vEtMYq4Wyud',
+        price: 'price_1HkoImAFmCis7vEtKfijVfv7',
         quantity: 1
       }],
       success_url: order_success_url,
