@@ -25,7 +25,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders.where(state: 'completed')
+    if current_user.admin?
+      @orders = Order.where(state: 'completed')
+    else
+      @orders = current_user.orders.where(state: 'completed')
+    end
   end
 
   def cancelled

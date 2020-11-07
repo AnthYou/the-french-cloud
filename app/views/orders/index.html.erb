@@ -1,14 +1,28 @@
 <div class="container">
-  <h1 class="mb-5">My private lessons</h1>
-  <% unless @orders.empty? %>
-    <ul>
-    <% @orders.each do |order| %>
-      <%= link_to order_path(order) do %>
-        <li>Order n°<%= order.id %>, booked <%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %></li>
-      <% end %>
+  <h1 class="text-center mb-5">My private lessons</h1>
+  <% if current_user.admin? %>
+    <% if !@orders.empty? %>
+      <h2 class="mb-3">Hello <%= current_user.first_name %>, here are your booked lessons:</h2>
+      <ul>
+        <% @orders.each do |order| %>
+            <li>Order n°<%= order.id %> <em>(booked <%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %>)</em> from <%= order.user.first_name %> <%= order.user.last_name %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Nobody booked a private lessons yet! 😢</p>
     <% end %>
-    </ul>
   <% else %>
-    <p>You haven't booked any private lessons yet.</p>
+    <% if !@orders.empty? %>
+      <h2 class="mb-3">Hello <%= current_user.first_name %>, here are your booked lessons:</h2>
+      <ul>
+        <% @orders.each do |order| %>
+          <%= link_to order_path(order) do %>
+            <li>Order n°<%= order.id %> <em>(booked <%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %>)</em></li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>You haven't booked any private lessons yet.</p>
+    <% end %>
   <% end %>
 </div>
