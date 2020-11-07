@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
   def success
     @order = current_user.orders.last
     payment_methods = JSON.parse(Stripe::PaymentMethod.list({
-      customer: 'cus_I8tLVjvvw7WwuA',
+      customer: current_user.stripe_id,
       type: 'card'
     }).data.to_json)
     last_payment_method = payment_methods.first
