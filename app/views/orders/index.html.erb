@@ -9,7 +9,7 @@
         <% end %>
       </ul>
     <% else %>
-      <p>Nobody booked a private lessons yet! 😢</p>
+      <p>Nobody booked a private lesson yet! 😢</p>
     <% end %>
   <% else %>
     <% if !@orders.empty? %>
@@ -25,4 +25,6 @@
       <p>You haven't booked any private lessons yet.</p>
     <% end %>
   <% end %>
+  <hr>
+  <%= link_to "Book a private lesson", new_order_path, class: 'btn btn-primary' %>
 </div>
