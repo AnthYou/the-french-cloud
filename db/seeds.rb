@@ -193,3 +193,11 @@
 #                is_correct: false)
 
 # puts 'Done! 🍺'
+
+# 09/11/2020
+Lesson.create!(sku: "participe-passe-irreguliers",
+               title: "Principaux participes passés irréguliers",
+               level: "A2",
+               category: Lesson::CATEGORIES[1],
+               description_en: "We hear a lot about “participe passé” when we learn French. Indeed, it is essential to form the compound tenses: le passé composé, le plus-que-parfait, le passé antérieur or le futur antérieur. Here is the list of irregular past participle.",
+               description_fr: "Le « participe passé », on en entend beaucoup parler quand on apprend le français. En effet, il est indispensable pour former les temps composés : le passé-composé, le plus-que-parfait, le passé antérieur ou le futur antérieur. Voici la liste des participes passé irréguliers !")
