@@ -201,3 +201,99 @@ Lesson.create!(sku: "participe-passe-irreguliers",
                category: Lesson::CATEGORIES[1],
                description_en: "We hear a lot about “participe passé” when we learn French. Indeed, it is essential to form the compound tenses: le passé composé, le plus-que-parfait, le passé antérieur or le futur antérieur. Here is the list of irregular past participle.",
                description_fr: "Le « participe passé », on en entend beaucoup parler quand on apprend le français. En effet, il est indispensable pour former les temps composés : le passé-composé, le plus-que-parfait, le passé antérieur ou le futur antérieur. Voici la liste des participes passé irréguliers !")
+ex3 = Exercise.create!(sku: "texto-a2",
+                       title: "Vous avez reçu un SMS! (A2)",
+                       level: "A2",
+                       category: Exercise::CATEGORIES[1])
+ex3q1 = Question.create!(prompt: "C'est une conversation entre...",
+                      exercise: ex3)
+Answer.create!(content: "Deux amis",
+               question: ex3q1,
+               is_correct: true)
+Answer.create!(content: "Deux amies",
+               question: ex3q1,
+               is_correct: false)
+Answer.create!(content: "Une fille et un garçon",
+               question: ex3q1,
+               is_correct: false)
+ex3q2 = Question.create!(prompt: "De quoi parlent-ils ?",
+                      exercise: ex3)
+Answer.create!(content: "Du film Avengers",
+               question: ex3q2,
+               is_correct: false)
+Answer.create!(content: "De la photo Facebook de Martin",
+               question: ex3q2,
+               is_correct: true)
+Answer.create!(content: "D'un super restaurant",
+               question: ex3q2,
+               is_correct: false)
+ex3q3 = Question.create!(prompt: "Que propose-t-il à Benoit ?",
+                      exercise: ex3)
+Answer.create!(content: "Aller au cinéma avec Marc",
+               question: ex3q3,
+               is_correct: true)
+Answer.create!(content: "Aller au restaurant",
+               question: ex3q3,
+               is_correct: false)
+Answer.create!(content: "Changer sa photo de profil",
+               question: ex3q3,
+               is_correct: false)
+ex3q4 = Question.create!(prompt: "Benoit répond...",
+                      exercise: ex3)
+Answer.create!(content: "Non, il est occupé à jouer aux jeux vidéos",
+               question: ex3q4,
+               is_correct: false)
+Answer.create!(content: "Non, il a un autre événement",
+               question: ex3q4,
+               is_correct: true)
+Answer.create!(content: "Oui, il est d'accord",
+               question: ex3q4,
+               is_correct: false)
+ex4 = Exercise.create!(sku: "texto-b1",
+                       title: "Vous avez reçu un SMS! (B1)",
+                       level: "B1",
+                       category: Exercise::CATEGORIES[1])
+ex4q1 = Question.create!(prompt: "Quelle est la signification de « avoir la dalle » ?",
+                      exercise: ex4)
+Answer.create!(content: "Avoir faim",
+               question: ex4q1,
+               is_correct: true)
+Answer.create!(content: "Avoir envie",
+               question: ex4q1,
+               is_correct: false)
+Answer.create!(content: "En avoir marre",
+               question: ex4q1,
+               is_correct: false)
+ex4q2 = Question.create!(prompt: "Pourquoi Laura ne peut-elle pas aller au restaurant ?",
+                      exercise: ex4)
+Answer.create!(content: "Elle est malade",
+               question: ex4q2,
+               is_correct: false)
+Answer.create!(content: "Elle n'a pas d'argent",
+               question: ex4q2,
+               is_correct: true)
+Answer.create!(content: "Elle est occupée avec ses cours",
+               question: ex4q2,
+               is_correct: false)
+ex4q3 = Question.create!(prompt: "Trouve dans le texte un équivalent familier de « travailler » :",
+                      exercise: ex4)
+Answer.create!(content: "Taffer",
+               question: ex4q3,
+               is_correct: true)
+Answer.create!(content: "Engueuler",
+               question: ex4q3,
+               is_correct: false)
+Answer.create!(content: "Faucher",
+               question: ex4q3,
+               is_correct: false)
+ex4q4 = Question.create!(prompt: "Que signifie « c'est relou » en verlan ?",
+                      exercise: ex4)
+Answer.create!(content: "C'est pénible",
+               question: ex4q4,
+               is_correct: false)
+Answer.create!(content: "C'est lourd",
+               question: ex4q4,
+               is_correct: true)
+Answer.create!(content: "C'est dommage",
+               question: ex4q4,
+               is_correct: false)
