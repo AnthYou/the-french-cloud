@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :description, presence: true
   validates :birth_date, presence: true
   validates :country, presence: true
   validates :level, presence: true, inclusion: { in: LEVEL }

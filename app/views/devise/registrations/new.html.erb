@@ -6,9 +6,16 @@
       <%= f.error_notification %>
 
       <div class="form-inputs mt-3">
+        <%= f.input :first_name,
+                    placeholder: 'John',
+                    required: true %>
+        <%= f.input :last_name,
+                    placeholder: 'Doe',
+                    required: true %>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
+                    placeholder: 'john.doe@gmail.com',
                     input_html: { autocomplete: "email" }%>
         <%= f.input :password,
                     required: true,
@@ -17,17 +24,22 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :first_name,
-                    required: true %>
-        <%= f.input :last_name,
-                    required: true %>
+        <%= f.input :photo,
+                    as: :file,
+                    label: 'Avatar',
+                    hint: 'Add a picture of you' %>
         <%= f.input :description,
-                    hint: "Write a short description about yourself..." %>
+                    required: true,
+                    input_html: { style: 'height: 150px;' },
+                    placeholder: 'Who are you, what country do you come from, what languages do you speak, why do you want to learn French, what do you want to improve, what are your passions in life...',
+                    hint: "Write a short description about yourself." %>
         <%= f.input :birth_date,
+                    default: Date.parse('1990-01-01'),
                     start_year: Date.today.year - 90,
                     end_year: Date.today.year - 12,
                     required: true %>
         <%= f.input :country,
+                    hint: 'Your country of origin',
                     required: true %>
         <%= f.input :level,
                     as: :radio_buttons,
