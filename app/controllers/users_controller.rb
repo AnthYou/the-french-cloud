@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :access_my_profile_only, only: :show
 
   def index
-    @users = User.all.sort_by(&:first_name)
+    @users = User.all.select { |user| user.subscribed? || user.admin? }.sort_by(&:first_name)
   end
 
   def show
