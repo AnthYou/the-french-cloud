@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center mb-5" style="font-weight: bold;">Discover your <%= User.count %> classmates</h1>
+  <h1 class="text-center mb-5" style="font-weight: bold;">Discover your classmates</h1>
   <div class="usercard-container">
     <% @users.each do |user| %>
       <%= render 'shared/usercard', user: user %>
