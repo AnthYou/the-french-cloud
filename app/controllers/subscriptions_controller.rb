@@ -8,6 +8,8 @@ class SubscriptionsController < ApplicationController
     @user.subscription_id = JSON.parse(subscription.data[0].to_json)["id"]
     if @user.save
       flash[:notice] = "You have subscribed to #{@plan.name}"
+      mail = UserMailer.with(user: @user).welcome
+      mail.deliver_now
       redirect_to root_path
     else
       flash[:alert] = "Oops, something went wrong"
