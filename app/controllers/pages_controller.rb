@@ -18,4 +18,7 @@ class PagesController < ApplicationController
 
   def rules
   end
+
+  def calendar
+  end
 end

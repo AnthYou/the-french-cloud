@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'faq', to: 'pages#faq', as: 'faq'
   get 'legal', to: 'pages#legal', as: 'legal'
   get 'rules', to: 'pages#rules', as: 'rules'
+  get 'calendar', to: 'pages#calendar', as: 'calendar'
 
   resources :users, only: [:index, :show]
 

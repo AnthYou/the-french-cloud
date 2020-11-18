@@ -14,6 +14,9 @@
         <li class="nav-item">
           <%= link_to "About me", about_me_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Calendar", calendar_path, class: "nav-link" %>
+        </li>
         <% if user_signed_in? && current_user.subscribed? %>
           <li class="nav-item">
             <%= link_to "Slack", "https://thefrenchclub.slack.com/", class: 'nav-link'  %>
