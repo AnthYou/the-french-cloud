@@ -5,7 +5,7 @@
   <% out += "</ul>" %>
   <%= out.html_safe %>
 
-  <div class="d-flex flex-column align-items-center mt-4">
+  <div class="d-flex flex-column align-items-center mt-5">
     <h2><%= humanized_money_with_symbol(@plan.price) %><span>/month</span></h2>
     <h3 class="lead"><%= '10 DAYS FREE TRIAL' if @plan.sku == 'curieux' %></h3>
 

@@ -1,19 +1,28 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @checkout.plan.name %></strong> for <strong><%= humanized_money_with_symbol @checkout.plan.price %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @checkout.checkout_session_id %>'
-          });
+  <div class="d-flex flex-column align-items-center py-4">
+
+    <h1 class="mb-5 text-center">Checkout summary</h1>
+
+    <p class="text-center">Subscription to <strong><%= @checkout.plan.name %></strong>
+      <% if @checkout.plan.sku == 'curieux' %>
+        with <strong>10 days of free trial</strong>, then <strong><%= humanized_money_with_symbol @checkout.plan.price %></strong>/month
+      <% else %>
+        for <strong><%= humanized_money_with_symbol @checkout.plan.price %></strong>/month
+      <% end %>
+    </p>
+
+    <button id="pay" class="btn btn-primary"><%= @checkout.plan.sku == 'curieux' ? 'Start my free trial' : 'Subscribe now' %></button>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const paymentButton = document.getElementById('pay');
+      paymentButton.addEventListener('click', () => {
+        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+          sessionId: '<%= @checkout.checkout_session_id %>'
         });
-      </script>
-    </div>
+      });
+    </script>
+
   </div>
 </div>
