@@ -1,3 +1,4 @@
+<!-- Banner -->
 <div class="home-video-wrapper">
   <%= video_tag "banner_video_blur.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video", poster: "poster.jpg" %>
   <div class="container d-flex flex-column align-items-center">
@@ -6,74 +7,117 @@
       <p>Join our community of <%= User.count %> French learners</p>
       <%= link_to "FREE TRIAL", plan_path(Plan.find_by(sku: 'curieux')), class: "btn btn-primary", style: "width: 300px;"  %>
     </div>
-    <div id="carouselExampleSlidesOnly" class="carousel slide container text-center responsive-hidden" data-ride="carousel" style="position: absolute; bottom: 30px; opacity: .8; color: white;">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-interval="7000">
-          <p><em>
-            "I am glad that I found this group with Nelly, it has been very helpful.
-            I am grateful to Nelly for being so patient; bringing materials and resources that will benefit us.
-            I am happy to add The French Cloud to my french journey!"
-          </em>
-          <br>
-          <strong>
-            Maia, USA, 27 years old, level of French A2
-          </strong></p>
-        </div>
-        <div class="carousel-item" data-interval="7000">
-            <p>
-            <em>
-              “I really like this group because we learn by communicating live with other persons and correct each other when we are wrong.
-              Also it's fun to understand and memorize words or structures in context (either movies, music or books)“
-            </em>
-            <br>
-            <strong>
-              Alex, Romania, 24 years old, level of French B1
-            </strong>
-          </p>
-        </div>
-        <div class="carousel-item" data-interval="7000">
-          <p>
-            <em>
-              “I'm glad I found this club.
-              It is really helpful to improve your french.
-              Our teacher Nelly is wonderful and really patient with us.
-              Also, we come to know people of different cultures from different parts of the world!
-              Everyone, including our teacher, is really friendly here."
-            </em>
-            <br>
-            <strong>
-              Ankan, India, 19 years old, level of French A2/B1
-            </strong>
-          </p>
-        </div>
+  </div>
+</div>
+
+<!-- What is the club -->
+<div class="container my-5">
+  <div class="what-is-it-grid">
+    <div class="left-side-grid responsive-hidden">
+      <%= image_tag "zoom-example.jpg" %>
+    </div>
+    <div class="right-side-grid">
+      <h3 class="mb-3">Conversation sessions every week</h3>
+      <p>Conversation sessions are perfect to express yourself in French! There are different groups of levels, each session has a theme so you can prepare yourself if you wish. There is a restricted number of people, to make sure that everyone can express themselves. I am always there to lead the conversation, and to give you vocabulary or correct you if you wish. Each session lasts 1 hour, it takes place on Zoom. Good mood guaranteed!</p>
+      <%= link_to "Sessions of the month", calendar_path, class: 'btn btn-secondary' %>
+    </div>
+    <div class="left-side-grid responsive-hidden">
+      <%= image_tag "slack-mockups.png" %>
+    </div>
+    <div class="right-side-grid">
+      <h3 class="mb-3">Discuss in French from anywhere</h3>
+      <p>Slack is the collaborative platform that allows you to interact with each other, to complete exercises that I suggest and correct every day. You can ask all the questions you want, share your discoveries, your questions, or just discuss in French. Everything is sorted by thematic channels: you are free to see the content that interests you. For example, if you are a beginner, there is a dedicated channel in which I suggest adapted content. If you want to work on listening comprehension, the "listening" channel is made for you!</p>
+      <%= link_to "Join the community", plans_path, class: 'btn btn-secondary' %>
+    </div>
+    <div class="left-side-grid responsive-hidden">
+      <%= image_tag "lesson-example.png" %>
+    </div>
+    <div class="right-side-grid">
+      <h3 class="mb-3">Access to lessons and exercises</h3>
+      <p>On this website, once you have chosen your subscription, you will have access to a toolbox with grammar lessons, dialogues with pronunciation and exercises in French. All the theory you need to progress that you can consult at any time if you need it. You can switch your subscription plan to another at any time.</p>
+      <%= link_to "View lessons", lessons_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
+
+<!-- Why join the club -->
+<div class="background-colored my-5">
+  <div class="container">
+    <h2>Why join the club?</h2>
+    <div class="key-selling-points">
+      <div class="ksp">
+        <%= image_tag "humanity.png", alt: "community", width: 125 %>
+        <p>A community of motivated and friendly French learners from all around the world</p>
+      </div>
+      <div class="ksp">
+        <%= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
+        <p>Certified French teachers to answer all your questions, suggest exercises and correct your mistakes</p>
+      </div>
+      <div class="ksp">
+        <%= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
+        <p>Online conversation sessions every week in small groups of level lead by teachers</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container my-5">
-  <h2>Why join the club?</h2>
-  <div class="key-selling-points">
-    <div class="ksp">
-      <%= image_tag "humanity.png", alt: "community", width: 125 %>
-      <p>A community of motivated and friendly French learners from all around the world</p>
-    </div>
-    <div class="ksp">
-      <%= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
-      <p>Certified French teachers to answer all your questions, suggest exercises and correct your mistakes</p>
-    </div>
-    <div class="ksp">
-      <%= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
-      <p>Online conversation sessions every week in small groups of level lead by teachers</p>
-    </div>
+<div class="container">
+  <h2 class="text-center my-5">Join us now</h2>
+  <div class="plan-cards-container my-4">
+    <% Plan.all.each do |plan| %>
+      <%= render 'shared/plan-card', plan: plan %>
+    <% end %>
   </div>
-  <h2 class="my-5" id="month-sessions">Sessions of the month</h2>
-  <div class="row">
-    <div class="col-lg-6">
-      <%= image_tag "november-planning-curieux.png", alt: "Planning of the month: November 2020 (Le curieux)", style: 'width: 100%;' %>
-    </div>
-    <div class="col-lg-6">
-      <%= image_tag "november-planning-ptit-french.png", alt: "Planning of the month: November 2020 (Le p'tit French)", style: 'width: 100%;' %>
-    </div>
+</div>
+
+  <!-- Carousel -->
+<div class="background-colored mt-5">
+  <div class="container">
+    <h2 class="mb-4">They improved their French with us</h2>
+    <div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="7000">
+            <p><em>
+              "I am glad that I found this group with Nelly, it has been very helpful.
+              I am grateful to Nelly for being so patient; bringing materials and resources that will benefit us.
+              I am happy to add The French Cloud to my french journey!"
+            </em>
+            <br>
+            <strong>
+              Maia, USA, 27 years old, level of French A2
+            </strong></p>
+          </div>
+          <div class="carousel-item" data-interval="7000">
+              <p>
+              <em>
+                “I really like this group because we learn by communicating live with other persons and correct each other when we are wrong.
+                Also it's fun to understand and memorize words or structures in context (either movies, music or books)“
+              </em>
+              <br>
+              <strong>
+                Alex, Romania, 24 years old, level of French B1
+              </strong>
+            </p>
+          </div>
+          <div class="carousel-item" data-interval="7000">
+            <p>
+              <em>
+                “I'm glad I found this club.
+                It is really helpful to improve your french.
+                Our teacher Nelly is wonderful and really patient with us.
+                Also, we come to know people of different cultures from different parts of the world!
+                Everyone, including our teacher, is really friendly here."
+              </em>
+              <br>
+              <strong>
+                Ankan, India, 19 years old, level of French A2/B1
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
   </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Read the testimonials", testimonials_path, class: 'btn btn-secondary' %>
+    </div>
 </div>

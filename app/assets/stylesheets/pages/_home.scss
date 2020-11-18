@@ -24,3 +24,57 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.what-is-it-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 60px;
+  align-items: center;
+
+  .left-side-grid {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .right-side-grid {
+    text-align: center;
+    width: 100%;
+  }
+
+}
+
+.background-colored {
+  background-color: $my-white;
+  padding: 100px 0px;
+}
+
+@media (max-width: 768px) {
+  .what-is-it-grid {
+    grid-template-columns: repeat(1, 1fr);
+
+    .left-side-grid {
+    width: 100%;
+    margin-right: 0px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .right-side-grid {
+      width: 100%;
+      margin-left: 0px;
+    }
+  }
+}
+
+#pages-home .footer {
+  margin-top: 0px !important;
+}
