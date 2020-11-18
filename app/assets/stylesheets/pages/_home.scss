@@ -51,7 +51,7 @@
 }
 
 .background-colored {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
   padding: 100px 0px;
 }
 
@@ -73,4 +73,8 @@
       margin-left: 0px;
     }
   }
+}
+
+#pages-home .footer {
+  margin-top: 0px !important;
 }
