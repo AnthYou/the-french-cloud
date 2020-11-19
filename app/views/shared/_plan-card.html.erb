@@ -12,5 +12,5 @@
       <h3 class="text-center lead">10 DAYS FREE TRIAL</h3>
     <% end %>
   </div>
-  <%= link_to "Subscribe", plan_path(plan), class: 'btn btn-primary mt-3', style: 'width: 350px;' %>
+  <%= link_to "#{ plan.sku == 'curieux' ? 'Try it for free' : 'Subscribe' }", plan_path(plan), class: 'btn btn-primary mt-3', style: 'width: 350px;' %>
 </div>
