@@ -14,7 +14,7 @@
       <%= @article.rich_body %>
     </div>
     <div class="article-container-right-side responsive-hidden">
-      <h2 class="text-center mb-4">Last articles</h2>
+      <h2 class="text-center mb-4">Latest articles</h2>
       <ul>
         <% Article.all.last(5).each do |article| %>
           <%= link_to article_path(article) do %>
