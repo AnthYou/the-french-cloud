@@ -14,7 +14,7 @@
             </div>
             <div class="right-side">
               <h2><%= article.title %></h2>
-              <p><%= article.description %></p>
+              <p class="responsive-hidden"><%= article.description %></p>
             </div>
             <p class="learn-more">Learn more</p>
           </div>
@@ -23,10 +23,8 @@
     </div>
   <% end %>
 
-  <hr>
-
-
   <% if user_signed_in? && current_user.admin? %>
+    <hr>
     <%= link_to "New article", new_article_path, class: 'btn btn-primary' %>
   <% end %>
 
