@@ -77,5 +77,20 @@
 .article-container-left-side {
   width: 100%;
   border-top: 1px $my-white solid;
+  border-bottom: 1px $my-white solid;
   padding: 15px;
+}
+
+.article-comments {
+  padding: 15px;
+
+  .comment {
+    padding: 15px 0px;
+    .comment-content {
+      background-color: $my-white;
+      border-radius: 15px 15px 15px 0px;
+      padding: 15px;
+    }
+  }
+
 }
