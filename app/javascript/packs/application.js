@@ -25,3 +25,6 @@ import { revealAnswers } from '../components/revealanswers';
 document.addEventListener('turbolinks:load', () => {
   revealAnswers();
 })
+
+require("trix")
+require("@rails/actiontext")

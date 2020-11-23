@@ -1,0 +1,59 @@
+.article-card-container {
+
+
+  .article-card {
+    background-color: $my-white;
+    overflow: hidden;
+    height: 150px;
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+    position: relative;
+
+    .left-side img {
+      height: 100%;
+      width: 150px;
+      border-radius: 15px 0px 0px 15px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .right-side {
+      padding: 15px;
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    .learn-more {
+      font-weight: bold;
+      position: absolute;
+      bottom: 0px;
+      right: 15px;
+    }
+  }
+
+}
+
+.article-header {
+  padding: 15px 0px;
+  height: 250px;
+  border-bottom: 1px $my-white solid;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .left-side img {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .right-side {
+    padding: 20px;
+  }
+}

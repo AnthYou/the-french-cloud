@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :plans, only: [:index, :show]
   resources :lessons, only: [:index, :show]
   resources :exercises, only: [:index, :show]
+  resources :articles
 
   resources :checkouts, only: [:create] do
     resources :charges, only: [:new]
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :create, :show] do
     resources :payments, only: :new
   end
+
   get 'order_cancelled', to: 'orders#cancelled', as: 'order_cancelled'
   get 'order_success', to: 'orders#success', as: 'order_success'
 
