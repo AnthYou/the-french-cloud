@@ -5,4 +5,5 @@ class Article < ApplicationRecord
   has_one_attached :photo
   has_rich_text :rich_body
   belongs_to :user
+  has_many :comments
 end
