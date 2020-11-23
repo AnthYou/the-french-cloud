@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="article-header">
+    <div class="left-side responsive-hidden">
+      <%= cl_image_tag @article.photo.key %>
+    </div>
+    <div class="right-side">
+      <h1><%= @article.title %></h1>
+      <p><%= @article.description %></p>
+      <p><%= cl_image_tag @article.user.photo.key, class: 'avatar' if @article.user.photo.attached? %> <em>by <%= @article.user.first_name %> on <%= @article.created_at.strftime("%b %d, %Y") %></em></p>
+    </div>
+  </div>
+  <div class="article-container">
+    <div class="article-container-left-side">
+      <%= @article.rich_body %>
+    </div>
+    <div class="article-container-right-side responsive-hidden">
+      <h2 class="text-center mb-4">Last articles</h2>
+      <ul>
+        <% Article.all.last(5).each do |article| %>
+          <%= link_to article_path(article) do %>
+            <li><%= article.title %></li>
+          <% end %>
+        <% end %>
+      </ul>
+
+      <hr>
+
+      <div class="links d-flex align-items-center justify-content-around">
+        <%= link_to "Back", articles_path, class: 'btn btn-secondary' %>
+
+        <% if user_signed_in? && current_user.admin? %>
+          <%= link_to "Edit article", edit_article_path(@article), class: 'btn btn-primary' %>
+          <%= link_to "Delete article", article_path(@article),
+                                        class: 'btn btn-danger',
+                                        method: :delete,
+                                        data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

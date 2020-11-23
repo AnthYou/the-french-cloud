@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :level, presence: true, inclusion: { in: LEVEL }
   has_many :checkouts, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :articles
   belongs_to :plan, optional: true
   has_one_attached :photo
 
