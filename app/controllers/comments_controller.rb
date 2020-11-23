@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
     @comment.article = @article
     @comment.user = current_user
     if @comment.save
-      redirect_to article_path(@article)
+      redirect_to article_path(@article, anchor: 'article-comments')
     else
       flash[:alert] = "Comment can't be blank."
-      redirect_to article_path(@article)
+      redirect_to article_path(@article, anchor: 'article-comments')
     end
   end
 

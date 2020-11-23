@@ -6,8 +6,13 @@
     <div class="right-side">
       <h1><%= @article.title %></h1>
       <p><%= @article.description %></p>
-      <p><%= cl_image_tag @article.user.photo.key, class: 'avatar' if @article.user.photo.attached? %> <em>by <%= @article.user.first_name %> on <%= @article.created_at.strftime("%b %d, %Y") %></em></p>
-      <p><%= pluralize @article.comments.count, 'comment' %></p>
+      <p><%= link_to user_path(@article.user) do %>
+        <%= cl_image_tag @article.user.photo.key, class: 'avatar' if @article.user.photo.attached? %>
+      <% end %>
+      <em>by <%= @article.user.first_name %> on <%= @article.created_at.strftime("%b %d, %Y") %></em></p>
+      <%= link_to article_path(@article, anchor: 'article-comments') do %>
+        <%= pluralize @article.comments.count, 'comment' %>
+      <% end %>
     </div>
   </div>
   <div class="article-container">
@@ -39,16 +44,19 @@
       </div>
     </div>
   </div>
-  <div class="article-comments">
+  <div class="article-comments" id="article-comments">
     <h3><%= pluralize @article.comments.count, 'comment' %></h3>
 
     <% if @article.comments.empty? %>
       <p>There are no comments yet. Be the first to post a comment!</p>
     <% else %>
-      <% @article.comments.each do |comment| %>
+      <% @article.comments.sort_by(&:created_at).reverse.each do |comment| %>
         <div class="comment">
-          <p><%= comment.content %></p>
-          <p>- <em>by <%= comment.user.first_name %> on <%= comment.created_at.strftime("%b %d, %Y") %></em></p>
+          <p class="comment-content"><%= comment.content %></p>
+          <%= link_to user_path(comment.user) do %>
+            <%= cl_image_tag comment.user.photo.key, class: 'avatar' if comment.user.photo.attached? %>
+          <% end %>
+          <em>by <%= comment.user.first_name %> on <%= comment.created_at.strftime("%b %d, %Y") %></em>
         </div>
       <% end %>
     <% end %>
