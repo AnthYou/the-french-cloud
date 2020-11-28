@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'rules', to: 'pages#rules', as: 'rules'
   get 'calendar', to: 'pages#calendar', as: 'calendar'
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :destroy]
 
   resources :plans, only: [:index, :show]
   resources :lessons, only: [:index, :show]

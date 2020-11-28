@@ -3,11 +3,22 @@ class UsersController < ApplicationController
   before_action :access_my_profile_only, only: :show
 
   def index
-    @users = User.all.select { |user| user.subscribed? || user.admin? }.sort_by(&:first_name)
+    @users = User.all.sort_by(&:first_name)
   end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    # Delete Stripe Account if it exists
+    Stripe::Customer.delete(@user.stripe_id)
+
+    flash[:notice] = "#{@user.first_name}'s account has been deleted successfully."
+    redirect_to users_path
   end
 
   private
