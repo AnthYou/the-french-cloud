@@ -303,15 +303,21 @@
 #                is_correct: false)
 
 # 01/12/2020
-ex5 = Exercise.create!(sku: "present-indicatif",
-                       title: "Le présent de l'indicatif",
-                       level: "A1",
-                       nature: Exercise::NATURES[1],
-                       category: Exercise::CATEGORIES[3],
-                       lesson: Lesson.find_by(sku: 'present-indicatif'))
-ex6 = Exercise.create!(sku: "passe-compose",
-                       title: "Le passé composé",
-                       level: "A2",
-                       nature: Exercise::NATURES[1],
-                       category: Exercise::CATEGORIES[3],
-                       lesson: Lesson.find_by(sku: 'passe-compose'))
+Exercise.create!(sku: "present-indicatif",
+                 title: "Le présent de l'indicatif",
+                 level: "A1",
+                 nature: Exercise::NATURES[1],
+                 category: Exercise::CATEGORIES[3],
+                 lesson: Lesson.find_by(sku: 'present-indicatif'))
+Exercise.create!(sku: "passe-compose",
+                 title: "Le passé composé",
+                 level: "A2",
+                 nature: Exercise::NATURES[1],
+                 category: Exercise::CATEGORIES[3],
+                 lesson: Lesson.find_by(sku: 'passe-compose'))
+Exercise.create!(sku: "passe-compose-imparfait",
+                 title: "Passé composé ou imparfait ?",
+                 level: "A2",
+                 nature: Exercise::NATURES[1],
+                 category: Exercise::CATEGORIES[3],
+                 lesson: Lesson.find_by(sku: 'passe-compose-imparfait'))

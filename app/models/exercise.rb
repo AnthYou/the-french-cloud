@@ -17,6 +17,8 @@ class Exercise < ApplicationRecord
       'grey'
     when CATEGORIES[2]
       'purple'
+    when CATEGORIES[3]
+      'green'
     end
   end
 end
