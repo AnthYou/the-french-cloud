@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Exercise correction: <%= @exercise.title %></h1>
+  <h2 class="mb-4">Your score: <%= @score %></h2>
+  <%= render "exercises/content/#{@exercise.sku}" %>
+  <hr>
+  <%= link_to "Back", :back, class: 'btn btn-secondary' %>
+
+  <% if @exercise.lesson %>
+    <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn btn-primary' %>
+  <% end %>
+</div>

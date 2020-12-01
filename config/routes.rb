@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :plans, only: [:index, :show]
   resources :lessons, only: [:index, :show]
   resources :exercises, only: [:index, :show]
+
+  get 'exercises/:id/correction', to: 'exercises#correction', as: 'correction'
+
   resources :articles do
     resources :comments, only: [:create]
   end
