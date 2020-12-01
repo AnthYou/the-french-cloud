@@ -309,3 +309,9 @@ ex5 = Exercise.create!(sku: "present-indicatif",
                        nature: Exercise::NATURES[1],
                        category: Exercise::CATEGORIES[3],
                        lesson: Lesson.find_by(sku: 'present-indicatif'))
+ex6 = Exercise.create!(sku: "passe-compose",
+                       title: "Le passé composé",
+                       level: "A2",
+                       nature: Exercise::NATURES[1],
+                       category: Exercise::CATEGORIES[3],
+                       lesson: Lesson.find_by(sku: 'passe-compose'))

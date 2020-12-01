@@ -49,12 +49,16 @@ la maison là-bas ?</p>
 pas déménager à Paris.</p>
 
 <p>Pierre et Paul
-<input type="text" name="disent" placeholder="dire" value="<%= params["disent"]%>" required><span class="wrong"><%= params["disent"] == "disent" ? "✅" : "❌ (#{"disent"})" unless params["disent"].nil? %>
+<input type="text" name="disent" placeholder="dire" value="<%= params["disent"]%>" required>
+<span class="wrong">
+<%= params["disent"] == "disent" ? "✅" : "❌ (#{"disent"})" unless params["disent"].nil? %>
 </span>
 toujours la vérité.</p>
 
 <p>Il
-<input type="text" name="vient" placeholder="venir" value="<%= params["vient"]%>" required><span class="wrong"><%= params["vient"] == "vient" ? "✅" : "❌ (#{"vient"})" unless params["vient"].nil? %>
+<input type="text" name="vient" placeholder="venir" value="<%= params["vient"]%>" required>
+<span class="wrong">
+<%= params["vient"] == "vient" ? "✅" : "❌ (#{"vient"})" unless params["vient"].nil? %>
 </span>
 avec nous dimanche ?</p>
 

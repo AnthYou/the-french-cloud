@@ -30,8 +30,10 @@
 
       <% if @exercise.lesson %>
         <hr>
-        <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn btn-secondary' %>
+        <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn btn-secondary mb-3' %>
       <% end %>
+
+      <%= link_to "Back to exercises", exercises_path, class: 'btn btn-secondary' %>
 
     </div>
   </div>
