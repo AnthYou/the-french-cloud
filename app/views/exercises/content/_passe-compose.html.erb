@@ -1,87 +1,89 @@
 <h2 class="lead mb-4">Complétez les phrases ci-dessous avec la bonne conjugaison.</h2>
 
-<p>Hier soir, un journaliste
-<input type="text" name="a interviewé" placeholder="interviewer" value="<%= params["a interviewé"]%>" required>
-<span class="wrong"><%= params["a interviewé"] == "a interviewé" ? "✅" : "❌ (#{"a interviewé"})" unless params["a interviewé"].nil? %>
-</span>
-le premier ministre.</p>
+<ol>
+  <li>Hier soir, un journaliste
+  <input type="text" name="a interviewé" placeholder="interviewer" value="<%= params["a interviewé"]%>" required>
+  <span class="wrong"><%= params["a interviewé"] == "a interviewé" ? "✅" : "❌ (#{"a interviewé"})" unless params["a interviewé"].nil? %>
+  </span>
+  le premier ministre.</li>
 
-<p>L'année dernière, la consommation d'énergie
-<input type="text" name="a augmenté" placeholder="augmenter" value="<%= params["a augmenté"]%>" required>
-<span class="wrong">
-<%= params["a augmenté"] == "a augmenté" ? "✅" : "❌ (#{"a augmenté"})" unless params["a augmenté"].nil? %>
-</span>
-.</p>
+  <li>L'année dernière, la consommation d'énergie
+  <input type="text" name="a augmenté" placeholder="augmenter" value="<%= params["a augmenté"]%>" required>
+  <span class="wrong">
+  <%= params["a augmenté"] == "a augmenté" ? "✅" : "❌ (#{"a augmenté"})" unless params["a augmenté"].nil? %>
+  </span>
+  .</li>
 
-<p>Il y a deux semaines, ce journal
-<input type="text" name="a publié" placeholder="publier" value="<%= params["a publié"]%>" required>
-<span class="wrong">
-<%= params["a publié"] == "a publié" ? "✅" : "❌ (#{"a publié"})" unless params["a publié"].nil? %>
-</span>
-un reportage intéressant.</p>
+  <li>Il y a deux semaines, ce journal
+  <input type="text" name="a publié" placeholder="publier" value="<%= params["a publié"]%>" required>
+  <span class="wrong">
+  <%= params["a publié"] == "a publié" ? "✅" : "❌ (#{"a publié"})" unless params["a publié"].nil? %>
+  </span>
+  un reportage intéressant.</li>
 
-<p>Hier j'
-<input type="text" name="ai déjeuné" placeholder="déjeuner" value="<%= params["ai déjeuné"]%>" required>
-<span class="wrong">
-<%= params["ai déjeuné"] == "ai déjeuné" ? "✅" : "❌ (#{"ai déjeuné"})" unless params["ai déjeuné"].nil? %>
-</span>
-avec Sarah.</p>
+  <li>Hier j'
+  <input type="text" name="ai déjeuné" placeholder="déjeuner" value="<%= params["ai déjeuné"]%>" required>
+  <span class="wrong">
+  <%= params["ai déjeuné"] == "ai déjeuné" ? "✅" : "❌ (#{"ai déjeuné"})" unless params["ai déjeuné"].nil? %>
+  </span>
+  avec Sarah.</li>
 
-<p>Nous
-<input type="text" name="sommes allés" placeholder="aller" value="<%= params["sommes allés"]%>" required>
-<span class="wrong">
-<%= params["sommes allés"] == "sommes allés" ? "✅" : "❌ (#{"sommes allés"})" unless params["sommes allés"].nil? %>
-</span>
-au marché ce matin.</p>
+  <li>Nous
+  <input type="text" name="sommes allés" placeholder="aller" value="<%= params["sommes allés"]%>" required>
+  <span class="wrong">
+  <%= params["sommes allés"] == "sommes allés" ? "✅" : "❌ (#{"sommes allés"})" unless params["sommes allés"].nil? %>
+  </span>
+  au marché ce matin.</li>
 
-<p>Vous
-<input type="text" name="êtes partis" placeholder="partir" value="<%= params["êtes partis"]%>" required>
-<span class="wrong">
-<%= params["êtes partis"] == "êtes partis" ? "✅" : "❌ (#{"êtes partis"})" unless params["êtes partis"].nil? %>
-</span>
-en vacances en Italie.</p>
+  <li>Vous
+  <input type="text" name="êtes partis" placeholder="partir" value="<%= params["êtes partis"]%>" required>
+  <span class="wrong">
+  <%= params["êtes partis"] == "êtes partis" ? "✅" : "❌ (#{"êtes partis"})" unless params["êtes partis"].nil? %>
+  </span>
+  en vacances en Italie.</li>
 
-<p>Il
-<input type="text" name="a chanté" placeholder="chanter" value="<%= params["a chanté"]%>" required>
-<span class="wrong">
-<%= params["a chanté"] == "a chanté" ? "✅" : "❌ (#{"a chanté"})" unless params["a chanté"].nil? %>
-</span>
-une chanson devant tout le monde.</p>
+  <li>Il
+  <input type="text" name="a chanté" placeholder="chanter" value="<%= params["a chanté"]%>" required>
+  <span class="wrong">
+  <%= params["a chanté"] == "a chanté" ? "✅" : "❌ (#{"a chanté"})" unless params["a chanté"].nil? %>
+  </span>
+  une chanson devant tout le monde.</li>
 
-<p>Je
-<input type="text" name="suis sorti" placeholder="sortir (masculin)" value="<%= params["suis sorti"]%>" required>
-<span class="wrong">
-<%= params["suis sorti"] == "suis sorti" ? "✅" : "❌ (#{"suis sorti"})" unless params["suis sorti"].nil? %>
-</span>
-de la maison à 8h hier matin.</p>
+  <li>Je
+  <input type="text" name="suis sorti" placeholder="sortir (masculin)" value="<%= params["suis sorti"]%>" required>
+  <span class="wrong">
+  <%= params["suis sorti"] == "suis sorti" ? "✅" : "❌ (#{"suis sorti"})" unless params["suis sorti"].nil? %>
+  </span>
+  de la maison à 8h hier matin.</li>
 
-<p>Marie et Charles
-<input type="text" name="ont bu" placeholder="boire" value="<%= params["ont bu"]%>" required>
-<span class="wrong">
-<%= params["ont bu"] == "ont bu" ? "✅" : "❌ (#{"ont bu"})" unless params["ont bu"].nil? %>
-</span>
-tout le jus de fruit !</p>
+  <li>Marie et Charles
+  <input type="text" name="ont bu" placeholder="boire" value="<%= params["ont bu"]%>" required>
+  <span class="wrong">
+  <%= params["ont bu"] == "ont bu" ? "✅" : "❌ (#{"ont bu"})" unless params["ont bu"].nil? %>
+  </span>
+  tout le jus de fruit !</li>
 
-<p>
-<input type="text" name="As" placeholder="Avoir" value="<%= params["As"]%>" required>
-<span class="wrong">
-<%= params["As"] == "As" ? "✅" : "❌ (#{"As"})" unless params["As"].nil? %>
-</span>
--tu
-<input type="text" name="pensé" placeholder="penser" value="<%= params["pensé"]%>" required>
-<span class="wrong">
-<%= params["pensé"] == "pensé" ? "✅" : "❌ (#{"pensé"})" unless params["pensé"].nil? %>
-</span>
-à fermer la maison à clé hier ?</p>
+  <li>
+  <input type="text" name="As" placeholder="Avoir" value="<%= params["As"]%>" required>
+  <span class="wrong">
+  <%= params["As"] == "As" ? "✅" : "❌ (#{"As"})" unless params["As"].nil? %>
+  </span>
+  -tu
+  <input type="text" name="pensé" placeholder="penser" value="<%= params["pensé"]%>" required>
+  <span class="wrong">
+  <%= params["pensé"] == "pensé" ? "✅" : "❌ (#{"pensé"})" unless params["pensé"].nil? %>
+  </span>
+  à fermer la maison à clé hier ?</li>
 
-<p>Lors de notre voyage, nous n'
-<input type="text" name="avons" placeholder="avoir" value="<%= params["avons"]%>" required>
-<span class="wrong">
-<%= params["avons"] == "avons" ? "✅" : "❌ (#{"avons"})" unless params["avons"].nil? %>
-</span>
-pas
-<input type="text" name="pris" placeholder="prendre" value="<%= params["pris"]%>" required>
-<span class="wrong">
-<%= params["pris"] == "pris" ? "✅" : "❌ (#{"pris"})" unless params["pris"].nil? %>
-</span>
-les transports en commun.</p>
+  <li>Lors de notre voyage, nous n'
+  <input type="text" name="avons" placeholder="avoir" value="<%= params["avons"]%>" required>
+  <span class="wrong">
+  <%= params["avons"] == "avons" ? "✅" : "❌ (#{"avons"})" unless params["avons"].nil? %>
+  </span>
+  pas
+  <input type="text" name="pris" placeholder="prendre" value="<%= params["pris"]%>" required>
+  <span class="wrong">
+  <%= params["pris"] == "pris" ? "✅" : "❌ (#{"pris"})" unless params["pris"].nil? %>
+  </span>
+  les transports en commun.</li>
+</ol>
