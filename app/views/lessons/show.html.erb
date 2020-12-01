@@ -2,6 +2,11 @@
   <div class="lesson-showcard">
     <h2 class="text-center lead mb-5"><%= @lesson.category %></h2>
     <h1 class="text-center mb-5"><%= @lesson.title %></h1>
+
+    <% if @lesson.exercise %>
+      <%= link_to "Take the exercise", exercise_path(@lesson.exercise), class: 'btn btn-primary', style: 'position: absolute; top: 15px; left: 15px' %>
+    <% end %>
+
     <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= @lesson.level %></span>
     <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= @lesson.color %>"></div>
     <h3>Remember!</h3>

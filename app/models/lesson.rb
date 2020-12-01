@@ -4,6 +4,7 @@ class Lesson < ApplicationRecord
   validates :sku, presence: true, uniqueness: true
   validates :level, presence: true, inclusion: { in: User::LEVEL }
   validates :category, inclusion: { in: CATEGORIES }
+  has_one :exercise
 
   def color
     case category
