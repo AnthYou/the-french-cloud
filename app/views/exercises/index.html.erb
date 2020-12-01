@@ -60,4 +60,24 @@
       <% end %>
     </div>
   <% end %>
+  <h2 class="text-center mt-5 mb-4">Verbal tenses (<%= @verbalexercises.size %>)</h2>
+  <% if @verbalexercises.empty? %>
+    <p class="text-center">There is no verbal tenses exercises available yet.</p>
+  <% else %>
+    <div class="usercard-container">
+      <% @verbalexercises.each do |exercise| %>
+        <%= link_to exercise_path(exercise) do  %>
+          <div class="lesson-card">
+            <div class="lesson-card-left">
+              <h1><%= exercise.title %></h1>
+            </div>
+            <div class="lesson-card-right">
+              <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= exercise.level %></span>
+              <div class="dot" style="position: absolute; top: 16px; right: 45px; background-color: <%= exercise.color %>"></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

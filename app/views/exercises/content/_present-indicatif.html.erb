@@ -1,0 +1,72 @@
+<h2 class="lead mb-4">Complétez les phrases ci-dessous avec la bonne conjugaison.</h2>
+
+<ol>
+  <li>Je
+  <input type="text" name="vais" placeholder="aller" value="<%= params["vais"]%>" required>
+  <span class="wrong"><%= params["vais"] == "vais" ? "✅" : "❌ (#{"vais"})" unless params["vais"].nil? %>
+  </span>
+  au travail tous les jours.</li>
+
+  <li>Tu
+  <input type="text" name="as" placeholder="avoir" value="<%= params["as"]%>" required>
+  <span class="wrong">
+  <%= params["as"] == "as" ? "✅" : "❌ (#{"as"})" unless params["as"].nil? %>
+  </span>
+  de la chance de vivre ici.</li>
+
+  <li>Elle
+  <input type="text" name="peut" placeholder="pouvoir" value="<%= params["peut"]%>" required>
+  <span class="wrong">
+  <%= params["peut"] == "peut" ? "✅" : "❌ (#{"peut"})" unless params["peut"].nil? %>
+  </span>
+  aller à l'université à pied.</li>
+
+  <li>Jean
+  <input type="text" name="fait" placeholder="faire" value="<%= params["fait"]%>" required>
+  <span class="wrong">
+  <%= params["fait"] == "fait" ? "✅" : "❌ (#{"fait"})" unless params["fait"].nil? %>
+  </span>
+  la cuisine le soir.</li>
+
+  <li>Nous
+  <input type="text" name="allons" placeholder="aller" value="<%= params["allons"]%>" required>
+  <span class="wrong">
+  <%= params["allons"] == "allons" ? "✅" : "❌ (#{"allons"})" unless params["allons"].nil? %>
+  </span>
+  en vacances en Croatie.</li>
+
+  <li>Vous
+  <input type="text" name="voyez" placeholder="voir" value="<%= params["voyez"]%>" required>
+  <span class="wrong">
+  <%= params["voyez"] == "voyez" ? "✅" : "❌ (#{"voyez"})" unless params["voyez"].nil? %>
+  </span>
+  la maison là-bas ?</li>
+
+  <li>Elles ne
+  <input type="text" name="veulent" placeholder="vouloir" value="<%= params["veulent"]%>" required>
+  <span class="wrong">
+  <%= params["veulent"] == "veulent" ? "✅" : "❌ (#{"veulent"})" unless params["veulent"].nil? %>
+  </span>
+  pas déménager à Paris.</li>
+
+  <li>Pierre et Paul
+  <input type="text" name="disent" placeholder="dire" value="<%= params["disent"]%>" required>
+  <span class="wrong">
+  <%= params["disent"] == "disent" ? "✅" : "❌ (#{"disent"})" unless params["disent"].nil? %>
+  </span>
+  toujours la vérité.</li>
+
+  <li>Il
+  <input type="text" name="vient" placeholder="venir" value="<%= params["vient"]%>" required>
+  <span class="wrong">
+  <%= params["vient"] == "vient" ? "✅" : "❌ (#{"vient"})" unless params["vient"].nil? %>
+  </span>
+  avec nous dimanche ?</li>
+
+  <li>Vous n'
+  <input type="text" name="aimez" placeholder="aimer" value="<%= params["aimez"]%>" required>
+  <span class="wrong">
+  <%= params["aimez"] == "aimez" ? "✅" : "❌ (#{"aimez"})" unless params["aimez"].nil? %>
+  </span>
+  pas la vie à la campagne.</li>
+</ol>

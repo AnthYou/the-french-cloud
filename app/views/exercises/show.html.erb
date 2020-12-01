@@ -5,21 +5,36 @@
     <div class="d-flex flex-column justify-content-center align-items-center">
       <h2 class="text-center lead mb-5"><%= @exercise.category %></h2>
       <h1 class="mb-5"><%= @exercise.title %></h1>
-      <%= render "exercises/content/#{@exercise.sku}" %>
-      <h2 class="my-5">Questions</h2>
-      <div class="text-left">
-        <% @exercise.questions.each do |question| %>
-          <%= question.prompt %>
-          <ol>
-            <% question.answers.shuffle.each do |answer| %>
-              <li class="<%= "good-answer" if answer.is_correct %>"><%= answer.content %></li>
-            <% end %>
-          </ol>
-        <% end %>
-      </div>
-      <div class="btn btn-primary" id="reveal-answers">Show answers</div>
-      <%#= link_to "Show answers", "#", class: "btn btn-primary", id: "reveal-answers" %>
+
+      <% if @exercise.nature == Exercise::NATURES[0] %>
+        <%= render "exercises/content/#{@exercise.sku}" %>
+        <h2 class="my-5">Questions</h2>
+        <div class="text-left">
+          <% @exercise.questions.each do |question| %>
+            <%= question.prompt %>
+            <ol>
+              <% question.answers.shuffle.each do |answer| %>
+                <li class="<%= "good-answer" if answer.is_correct %>"><%= answer.content %></li>
+              <% end %>
+            </ol>
+          <% end %>
+        </div>
+        <div class="btn btn-primary" id="reveal-answers">Show answers</div>
+
+      <% elsif @exercise.nature == Exercise::NATURES[1] %>
+        <form action="<%= "#{@exercise.id}/correction" %>" method="get">
+          <%= render "exercises/content/#{@exercise.sku}" %>
+          <input type="submit" class="btn btn-primary">
+        </form>
+      <% end %>
+
+      <% if @exercise.lesson %>
+        <hr>
+        <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn btn-success mb-3' %>
+      <% end %>
+
+      <%= link_to "Back to exercises", exercises_path, class: 'btn btn-secondary' %>
+
     </div>
   </div>
 </div>
-
