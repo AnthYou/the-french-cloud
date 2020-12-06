@@ -1,0 +1,65 @@
+<h2 class="lead mb-4">Complétez les phrases ci-dessous avec la bonne conjugaison.</h2>
+
+<ol>
+  <li>Laurent annonce en
+  <input type="text" name="riant" placeholder="rire" value="<%= params["riant"]%>" required>
+  <span class="wrong"><%= params["riant"] == "riant" ? "✅" : "❌ (#{"riant"})" unless params["riant"].nil? %>
+  </span>
+  qu'il a mangé tout le chocolat.</li>
+
+  <li>Nous crions en
+  <input type="text" name="levant" placeholder="lever" value="<%= params["levant"]%>" required>
+  <span class="wrong">
+  <%= params["levant"] == "levant" ? "✅" : "❌ (#{"levant"})" unless params["levant"].nil? %>
+  </span>
+  levant les bras au ciel.</li>
+
+  <li>Elle fait toujours la vaisselle en
+  <input type="text" name="écoutant" placeholder="écouter" value="<%= params["écoutant"]%>" required>
+  <span class="wrong">
+  <%= params["écoutant"] == "écoutant" ? "✅" : "❌ (#{"écoutant"})" unless params["écoutant"].nil? %>
+  </span>
+  de la musique.</li>
+
+  <li>En
+  <input type="text" name="allant" placeholder="aller" value="<%= params["allant"]%>" required>
+  <span class="wrong">
+  <%= params["allant"] == "allant" ? "✅" : "❌ (#{"allant"})" unless params["allant"].nil? %>
+  </span>
+  à l'université, je deviendrai plus cultivé.</li>
+
+  <li>Amélie a glissé en
+  <input type="text" name="descendant" placeholder="descendre" value="<%= params["descendant"]%>" required>
+  <span class="wrong">
+  <%= params["descendant"] == "descendant" ? "✅" : "❌ (#{"descendant"})" unless params["descendant"].nil? %>
+  </span>
+  les escaliers.</li>
+
+  <li>Le professeur distribue les cahiers en
+  <input type="text" name="félicitant" placeholder="féliciter" value="<%= params["félicitant"]%>" required>
+  <span class="wrong">
+  <%= params["félicitant"] == "félicitant" ? "✅" : "❌ (#{"félicitant"})" unless params["félicitant"].nil? %>
+  </span>
+  ses élèves.</li>
+
+  <li>Vous vous êtes trompés en
+  <input type="text" name="remplissant" placeholder="remplir" value="<%= params["remplissant"]%>" required>
+  <span class="wrong">
+  <%= params["remplissant"] == "remplissant" ? "✅" : "❌ (#{"remplissant"})" unless params["remplissant"].nil? %>
+  </span>
+  le formulaire ?</li>
+
+  <li>Tu n'écoutes pas la radio en
+  <input type="text" name="faisant" placeholder="faire" value="<%= params["faisant"]%>" required>
+  <span class="wrong">
+  <%= params["faisant"] == "faisant" ? "✅" : "❌ (#{"faisant"})" unless params["faisant"].nil? %>
+  </span>
+  tes devoirs.</li>
+
+  <li>Je me douche toujours en
+  <input type="text" name="chantant" placeholder="chanter" value="<%= params["chantant"]%>" required>
+  <span class="wrong">
+  <%= params["chantant"] == "chantant" ? "✅" : "❌ (#{"chantant"})" unless params["chantant"].nil? %>
+  </span>
+  .</li>
+</ol>

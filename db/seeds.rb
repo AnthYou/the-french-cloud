@@ -303,21 +303,35 @@
 #                is_correct: false)
 
 # 01/12/2020
-Exercise.create!(sku: "present-indicatif",
-                 title: "Le présent de l'indicatif",
-                 level: "A1",
-                 nature: Exercise::NATURES[1],
-                 category: Exercise::CATEGORIES[3],
-                 lesson: Lesson.find_by(sku: 'present-indicatif'))
-Exercise.create!(sku: "passe-compose",
-                 title: "Le passé composé",
+# Exercise.create!(sku: "present-indicatif",
+#                  title: "Le présent de l'indicatif",
+#                  level: "A1",
+#                  nature: Exercise::NATURES[1],
+#                  category: Exercise::CATEGORIES[3],
+#                  lesson: Lesson.find_by(sku: 'present-indicatif'))
+# Exercise.create!(sku: "passe-compose",
+#                  title: "Le passé composé",
+#                  level: "A2",
+#                  nature: Exercise::NATURES[1],
+#                  category: Exercise::CATEGORIES[3],
+#                  lesson: Lesson.find_by(sku: 'passe-compose'))
+# Exercise.create!(sku: "passe-compose-imparfait",
+#                  title: "Passé composé ou imparfait ?",
+#                  level: "A2",
+#                  nature: Exercise::NATURES[1],
+#                  category: Exercise::CATEGORIES[3],
+#                  lesson: Lesson.find_by(sku: 'passe-compose-imparfait'))
+
+# 06/12/2020
+Lesson.create!(sku: "gerondif",
+               title: "Le gérondif",
+               level: "A2",
+               category: Lesson::CATEGORIES[1],
+               description_en: "\"Le gérondif\": the word may scare you, but in reality, the concept is easy and very useful to express. It is a verbal form composed of \"en\" + present participle of the verb.",
+               description_fr: "\"Le gérondif\": le mot peut vous faire peur, mais en réalité, le concept est facile et très utile pour s’exprimer. C’est une forme verbale composée de \"en\" + participe présent du verbe.")
+Exercise.create!(sku: "gerondif",
+                 title: "Le gérondif",
                  level: "A2",
                  nature: Exercise::NATURES[1],
                  category: Exercise::CATEGORIES[3],
-                 lesson: Lesson.find_by(sku: 'passe-compose'))
-Exercise.create!(sku: "passe-compose-imparfait",
-                 title: "Passé composé ou imparfait ?",
-                 level: "A2",
-                 nature: Exercise::NATURES[1],
-                 category: Exercise::CATEGORIES[3],
-                 lesson: Lesson.find_by(sku: 'passe-compose-imparfait'))
+                 lesson: Lesson.find_by(sku: 'gerondif'))
