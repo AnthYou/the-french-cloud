@@ -18,12 +18,24 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
     @goodanswers = []
     @useranswers = []
-    answers = params.reject { |k, _| params[k] == params[:id] || params[k] == params[:controller] || params[k] == params[:action] }
+    answers = params.reject do |k, _|
+      params[k] == params[:id] ||
+        params[k] == params[:controller] ||
+        params[k] == params[:action] ||
+        params[k] == params[:correction]
+    end
+
     answers.each do |k, v|
       @useranswers << v
       @goodanswers << k
     end
-    @score = score(@goodanswers, @useranswers)
+
+    if params[:correction]
+      good_answers = params[:correction].split(" ")
+      @score = score(good_answers, @useranswers)
+    else
+      @score = score(@goodanswers, @useranswers)
+    end
   end
 
   private
@@ -44,6 +56,9 @@ class ExercisesController < ApplicationController
 
   def score(goodanswers, useranswers)
     max_score = goodanswers.size
-    "#{max_score - (goodanswers - useranswers).size}/#{max_score}"
+    comparison = goodanswers.map
+                            .each_with_index { |answer, index| answer == useranswers[index] }
+                            .reject { |answer| answer }
+    "#{max_score - comparison.size}/#{max_score}"
   end
 end

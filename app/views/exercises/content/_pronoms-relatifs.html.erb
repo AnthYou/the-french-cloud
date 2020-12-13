@@ -1,0 +1,74 @@
+<h2 class="lead mb-4">Complétez le texte par : qui / que / qu' / dont / où</h2>
+
+<ol>
+  <li>C'est un livre
+  <input type="text" name="rep1" placeholder="?" value="<%= params["rep1"]%>" required>
+  <span class="wrong"><%= params["rep1"] == "qui" ? "✅" : "❌ (#{"qui"})" unless params["rep1"].nil? %>
+  </span>
+  est passionnant.</li>
+
+  <li>C'est une ville
+  <input type="text" name="rep2" placeholder="?" value="<%= params["rep2"]%>" required>
+  <span class="wrong">
+  <%= params["rep2"] == "qui" ? "✅" : "❌ (#{"qui"})" unless params["rep2"].nil? %>
+  </span>
+  est magnifique.</li>
+
+  <li>C'est la femme
+  <input type="text" name="rep3" placeholder="?" value="<%= params["rep3"]%>" required>
+  <span class="wrong">
+  <%= params["rep3"] == "que" ? "✅" : "❌ (#{"que"})" unless params["rep3"].nil? %>
+  </span>
+  j'aime.</li>
+
+  <li>Comment s'appelle la ville
+  <input type="text" name="rep4" placeholder="?" value="<%= params["rep4"]%>" required>
+  <span class="wrong">
+  <%= params["rep4"] == "où" ? "✅" : "❌ (#{"où"})" unless params["rep4"].nil? %>
+  </span>
+  vous partez en vacances ?</li>
+
+  <li>C'est le garçon
+  <input type="text" name="rep5" placeholder="?" value="<%= params["rep5"]%>" required>
+  <span class="wrong">
+  <%= params["rep5"] == "qu\'" ? "✅" : "❌ (#{"qu\'"})" unless params["rep5"].nil? %>
+  </span>
+  elle a rencontré hier.</li>
+
+  <li>C'est une personne
+  <input type="text" name="rep6" placeholder="?" value="<%= params["rep6"]%>" required>
+  <span class="wrong">
+  <%= params["rep6"] == "dont" ? "✅" : "❌ (#{"dont"})" unless params["rep6"].nil? %>
+  </span>
+  on parle beaucoup.</li>
+
+  <li>2017, c'est l'année
+  <input type="text" name="rep7" placeholder="?" value="<%= params["rep7"]%>" required>
+  <span class="wrong">
+  <%= params["rep7"] == "où" ? "✅" : "❌ (#{"où"})" unless params["rep7"].nil? %>
+  </span>
+  j'ai déménagé à Paris.</li>
+
+  <li>C'est la solution
+  <input type="text" name="rep8" placeholder="?" value="<%= params["rep8"]%>" required>
+  <span class="wrong">
+  <%= params["rep8"] == "que" ? "✅" : "❌ (#{"que"})" unless params["rep8"].nil? %>
+  </span>
+  tout le monde préfère.</li>
+
+  <li>C'est la solution
+  <input type="text" name="rep9" placeholder="?" value="<%= params["rep9"]%>" required>
+  <span class="wrong">
+  <%= params["rep9"] == "dont" ? "✅" : "❌ (#{"dont"})" unless params["rep9"].nil? %>
+  </span>
+  tout le monde parle.</li>
+
+  <li>C'est la solution
+  <input type="text" name="rep10" placeholder="?" value="<%= params["rep10"]%>" required>
+  <span class="wrong">
+  <%= params["rep10"] == "qui" ? "✅" : "❌ (#{"qui"})" unless params["rep10"].nil? %>
+  </span>
+  me convient.</li>
+</ol>
+
+<%= hidden_field_tag :correction, %w[qui qui que où qu' dont où que dont qui] %>
