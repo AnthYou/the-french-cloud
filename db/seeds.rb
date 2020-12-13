@@ -323,15 +323,29 @@
 #                  lesson: Lesson.find_by(sku: 'passe-compose-imparfait'))
 
 # 06/12/2020
-Lesson.create!(sku: "gerondif",
-               title: "Le gérondif",
-               level: "A2",
-               category: Lesson::CATEGORIES[1],
-               description_en: "\"Le gérondif\": the word may scare you, but in reality, the concept is easy and very useful to express. It is a verbal form composed of \"en\" + present participle of the verb.",
-               description_fr: "\"Le gérondif\": le mot peut vous faire peur, mais en réalité, le concept est facile et très utile pour s’exprimer. C’est une forme verbale composée de \"en\" + participe présent du verbe.")
-Exercise.create!(sku: "gerondif",
-                 title: "Le gérondif",
-                 level: "A2",
+# Lesson.create!(sku: "gerondif",
+#                title: "Le gérondif",
+#                level: "A2",
+#                category: Lesson::CATEGORIES[1],
+#                description_en: "\"Le gérondif\": the word may scare you, but in reality, the concept is easy and very useful to express. It is a verbal form composed of \"en\" + present participle of the verb.",
+#                description_fr: "\"Le gérondif\": le mot peut vous faire peur, mais en réalité, le concept est facile et très utile pour s’exprimer. C’est une forme verbale composée de \"en\" + participe présent du verbe.")
+# Exercise.create!(sku: "gerondif",
+#                  title: "Le gérondif",
+#                  level: "A2",
+#                  nature: Exercise::NATURES[1],
+#                  category: Exercise::CATEGORIES[3],
+#                  lesson: Lesson.find_by(sku: 'gerondif'))
+
+# 13/12/2020
+Lesson.create!(sku: "pronoms-relatifs",
+               title: "Les pronoms relatifs simples",
+               level: "B1",
+               category: Lesson::CATEGORIES[0],
+               description_en: "A relative pronoun connects two sentences where the noun is repeated. They replace a word called \"antecedent\" which is usually placed in front. It introduces a subordinate proposition relating to the complement of the antecedent.",
+               description_fr: "Un pronom relatif relie deux phrases où le nom se répète. Ils remplacent un mot appelé \"antécédent\" qui est généralement placé devant. Il introduit une proposition subordonnée relative au complément de l'antécédent.")
+Exercise.create!(sku: "pronoms-relatifs",
+                 title: "Les pronoms relatifs simples",
+                 level: "B1",
                  nature: Exercise::NATURES[1],
-                 category: Exercise::CATEGORIES[3],
-                 lesson: Lesson.find_by(sku: 'gerondif'))
+                 category: Exercise::CATEGORIES[2],
+                 lesson: Lesson.find_by(sku: 'pronoms-relatifs'))
