@@ -1,0 +1,79 @@
+<h2 class="lead">Complétez avec :</h2>
+<ul class="lead mb-4">
+  <li>auquel, à laquelle, auxquels, auxquelles</li>
+  <li>lequel, à laquelle, lesquels, lesquelles</li>
+  <li>duquel, de laquelle, desquels, desquelles</li>
+</ul>
+
+<ol>
+  <li>J'ai enfin choisi le thème sur
+  <input type="text" name="rep1" placeholder="?" value="<%= params["rep1"]%>" required>
+  <span class="wrong"><%= params["rep1"] == "lequel" ? "✅" : "❌ (#{"lequel"})" unless params["rep1"].nil? %>
+  </span>
+  je veux faire mon exposé.</li>
+
+  <li>Les tuteurs
+  <input type="text" name="rep2" placeholder="?" value="<%= params["rep2"]%>" required>
+  <span class="wrong">
+  <%= params["rep2"] == "auxquels" ? "✅" : "❌ (#{"auxquels"})" unless params["rep2"].nil? %>
+  </span>
+  j'ai écrit ont tous répondu.</li>
+
+  <li>La personne avec
+  <input type="text" name="rep3" placeholder="?" value="<%= params["rep3"]%>" required>
+  <span class="wrong">
+  <%= params["rep3"] == "laquelle" ? "✅" : "❌ (#{"laquelle"})" unless params["rep3"].nil? %>
+  </span>
+  tu parlais, c'est ma prof de maths.</li>
+
+  <li>Au loin on aperçoit les collines au-dessus
+  <input type="text" name="rep4" placeholder="?" value="<%= params["rep4"]%>" required>
+  <span class="wrong">
+  <%= params["rep4"] == "desquelles" ? "✅" : "❌ (#{"desquelles"})" unless params["rep4"].nil? %>
+  </span>
+  s'accumulent des nuages.</li>
+
+  <li>Les personnes derrière
+  <input type="text" name="rep5" placeholder="?" value="<%= params["rep5"]%>" required>
+  <span class="wrong">
+  <%= params["rep5"] == "lesquelles" ? "✅" : "❌ (#{"lesquelles"})" unless params["rep5"].nil? %>
+  </span>
+  tu te trouvais tout à l'heure sont très importantes.</li>
+
+  <li>Les chemins le long
+  <input type="text" name="rep6" placeholder="?" value="<%= params["rep6"]%>" required>
+  <span class="wrong">
+  <%= params["rep6"] == "desquels" ? "✅" : "❌ (#{"desquels"})" unless params["rep6"].nil? %>
+  </span>
+  nous marchons sont en terre.</li>
+
+  <li>Le texte
+  <input type="text" name="rep7" placeholder="?" value="<%= params["rep7"]%>" required>
+  <span class="wrong">
+  <%= params["rep7"] == "auquel" ? "✅" : "❌ (#{"auquel"})" unless params["rep7"].nil? %>
+  </span>
+  tu fais référence a été publié en 1956.</li>
+
+  <li>C'est la personne à côté de
+  <input type="text" name="rep8" placeholder="?" value="<%= params["rep8"]%>" required>
+  <span class="wrong">
+  <%= params["rep8"] == "laquelle" ? "✅" : "❌ (#{"laquelle"})" unless params["rep8"].nil? %>
+  </span>
+  je travaille.</li>
+
+  <li>Le bâtiment à côté
+  <input type="text" name="rep9" placeholder="?" value="<%= params["rep9"]%>" required>
+  <span class="wrong">
+  <%= params["rep9"] == "duquel" ? "✅" : "❌ (#{"duquel"})" unless params["rep9"].nil? %>
+  </span>
+  nous avons pris un café c'est l'université.</li>
+
+  <li>Tu sais où se trouvent les bureaux dans
+  <input type="text" name="rep10" placeholder="?" value="<%= params["rep10"]%>" required>
+  <span class="wrong">
+  <%= params["rep10"] == "lesquels" ? "✅" : "❌ (#{"lesquels"})" unless params["rep10"].nil? %>
+  </span>
+  il travaille ?</li>
+</ol>
+
+<%= hidden_field_tag :correction, %w[lequel auxquels laquelle desquelles lesquelles desquels auquel laquelle duquel lesquels] %>
