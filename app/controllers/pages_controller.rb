@@ -21,4 +21,7 @@ class PagesController < ApplicationController
 
   def calendar
   end
+
+  def french_school
+  end
 end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'legal', to: 'pages#legal', as: 'legal'
   get 'rules', to: 'pages#rules', as: 'rules'
   get 'calendar', to: 'pages#calendar', as: 'calendar'
+  get 'french_school', to: 'pages#french_school', as: 'french_school'
 
   resources :users, only: [:index, :show, :destroy]
 
