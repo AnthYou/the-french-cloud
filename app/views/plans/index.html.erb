@@ -1,15 +1,67 @@
 <div class="container">
-  <h1 class="text-center mb-3">Subscription plans</h1>
-  <h3 class="text-center mb-5">No commitment</h3>
+  <h1 class="text-center mb-3">Conversation sessions</h1>
+  <h3 class="text-center mb-4">Improve your oral skills</h3>
+  <h4 class="text-center mb-5">I created them so that you can speak in French in a small group, because language must be dynamic as it is made to communicate and to share. Sessions are the best way to progress.</h4>
+
+  <!-- What is the club -->
+  <div class="container my-5">
+    <div class="what-is-it-grid">
+      <div class="left-side-grid responsive-hidden">
+        <%= image_tag "zoom-example.jpg" %>
+      </div>
+      <div class="right-side-grid">
+        <h3 class="mb-3">Conversation sessions every week</h3>
+        <p>Conversation sessions are perfect to express yourself in French! There are different groups of levels, each session has a theme so you can prepare yourself if you wish. There is a restricted number of people, to make sure that everyone can express themselves. I am always there to lead the conversation, and to give you vocabulary or correct you if you wish. Each session lasts 1 hour, it takes place on Zoom. Good mood guaranteed!</p>
+        <%= link_to "Sessions of the month", calendar_path, class: 'btn-alternate' %>
+      </div>
+      <div class="left-side-grid responsive-hidden">
+        <%= image_tag "slack-mockups.png" %>
+      </div>
+      <div class="right-side-grid">
+        <h3 class="mb-3">Discuss in French from anywhere</h3>
+        <p>Slack is the collaborative platform that allows you to interact with each other, to complete exercises that I suggest and correct every day. You can ask all the questions you want, share your discoveries, your questions, or just discuss in French. Everything is sorted by thematic channels: you are free to see the content that interests you. For example, if you are a beginner, there is a dedicated channel in which I suggest adapted content. If you want to work on listening comprehension, the "listening" channel is made for you!</p>
+        <%= link_to "Join the community", plans_path, class: 'btn-alternate' %>
+      </div>
+      <div class="left-side-grid responsive-hidden">
+        <%= image_tag "lesson-example.png" %>
+      </div>
+      <div class="right-side-grid">
+        <h3 class="mb-3">Access to lessons and exercises</h3>
+        <p>On this website, once you have chosen your subscription, you will have access to a toolbox with grammar lessons, dialogues with pronunciation and exercises in French. All the theory you need to progress that you can consult at any time if you need it. You can switch your subscription plan to another at any time.</p>
+        <%= link_to "View lessons", lessons_path, class: 'btn-alternate' %>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mb-3">Testimonials</h2>
+  <p>“I'm glad I found this club. It is really helpful to improve your french. Our teacher Nelly is wonderful and really patient with us. Also, we come to know people of different cultures from different parts of the world! Everyone, including our teacher, is really friendly here."</p>
+  <p>Ankan, India</p>
+  <br>
+  <p>"L’abonnement premium m’aide avec la grammaire. Ça me motive de ne pas oublier que la grammaire est très importante. Il y aussi assez de exercices sur Slack et Nelly est conviviale. C'est très utile!"</p>
+  <p>Tatiana, Russia</p>
+  <br>
+  <p>"Ce n’est pas un p’tit progrès que cet abonnement m’apporte mais plutôt des grands avec des exercices ludiques et fun. La solide connaissance de Nelly fortifie ma compétance remarquablement"</p>
+  <p>Kazuki, Japan</p>
+  <%= link_to "View more", testimonials_path %>
+
+  <hr>
+
+  <div class="text-center my-5">
+    <h2 class="mb-4">Try one session for free</h2>
+    <%= link_to "Free trial", "mailto:contact@thefrenchcloud.com?subject=Free%20trial%20request&body=Hello,%0dI%20would%20like%20to%20participate%20to%20the%20next%20conversation%20session%20as%20part%20of%20the%20free%20trial.", class: 'btn-main' %>
+  </div>
+
+  <hr>
+
+  <h2 class="text-center">Choose your plan</h2>
+  <h3 class="text-center mb-5">Without commitment</h3>
+  
   <div class="plan-cards-container my-4">
     <% @plans.each do |plan| %>
       <%= render 'shared/plan-card', plan: plan %>
     <% end %>
   </div>
-  <div class="text-center my-5">
-    <p>Not sure of your choice? Take a look to our current month sessions program!</p>
-    <%= link_to "View current month sessions", calendar_path, class: 'btn-alternate' %>
-  </div>
+  
   <hr>
   <h2 class="text-center mb-4">Private lessons</h2>
   <div class="d-flex flex-column align-items-center">

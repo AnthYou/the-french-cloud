@@ -44,7 +44,7 @@
 .navbar-light .navbar-nav .nav-link {
   color: white;
   &:hover {
-    color: $my-red;
+    color: $my-white;
   }
 }
 
@@ -59,6 +59,10 @@
   &:hover {
     color: $my-red;
   }
+}
+
+.avatar.dropdown-toggle:hover {
+  cursor: pointer;
 }
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {

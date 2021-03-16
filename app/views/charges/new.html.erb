@@ -3,15 +3,10 @@
 
     <h1 class="mb-5 text-center">Checkout summary</h1>
 
-    <p class="text-center">Subscription to <strong><%= @checkout.plan.name %></strong>
-      <% if @checkout.plan.sku == 'curieux' %>
-        with <strong>10 days of free trial</strong>, then <strong><%= humanized_money_with_symbol @checkout.plan.price %></strong>/month
-      <% else %>
-        for <strong><%= humanized_money_with_symbol @checkout.plan.price %></strong>/month
-      <% end %>
+    <p class="text-center">Subscription to <strong><%= @checkout.plan.name %></strong> for <strong><%= humanized_money_with_symbol @checkout.plan.price %></strong>/month
     </p>
 
-    <button id="pay" class="btn-main"><%= @checkout.plan.sku == 'curieux' ? 'Start my free trial' : 'Subscribe now' %></button>
+    <button id="pay" class="btn-main">Subscribe now</button>
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>

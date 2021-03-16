@@ -1,13 +1,21 @@
 <div class="container">
   <h1 class="text-center mb-5"><%= @plan.name %></h1>
-  <% out = "<ul>" %>
-  <% @plan.description.split('- ')[1..-1].each {|s| out += ("<li>" + s.to_s + "</li>")} %>
-  <% out += "</ul>" %>
-  <%= out.html_safe %>
+  
+  
+  <% if @plan.sku == 'curieux' %>
+    <%= render 'plans/partials/curieux' %>
+  <% else %>
+    <%= render 'plans/partials/ptit-french' %>
+  <% end %>
+  
+
+  <%# out = "<ul>" %>
+  <%# @plan.description.split('- ')[1..-1].each {|s| out += ("<li>" + s.to_s + "</li>")} %>
+  <%# out += "</ul>" %>
+  <%#= out.html_safe %>
 
   <div class="d-flex flex-column align-items-center mt-5">
     <h2><%= humanized_money_with_symbol(@plan.price) %><span>/month</span></h2>
-    <h3 class="lead"><%= '10 DAYS FREE TRIAL' if @plan.sku == 'curieux' %></h3>
 
     <% if user_signed_in? && current_user.plan == @plan %>
       <p><em>You already subscribed to <%= @plan.name %>!</em></p>
