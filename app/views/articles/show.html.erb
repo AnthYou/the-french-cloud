@@ -32,10 +32,10 @@
       <hr>
 
       <div class="links d-flex align-items-center justify-content-around">
-        <%= link_to "Back", articles_path, class: 'btn btn-secondary' %>
+        <%= link_to "Back", articles_path, class: 'btn-alternate' %>
 
         <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "Edit article", edit_article_path(@article), class: 'btn btn-primary' %>
+          <%= link_to "Edit article", edit_article_path(@article), class: 'btn-main' %>
           <%= link_to "Delete article", article_path(@article),
                                         class: 'btn btn-danger',
                                         method: :delete,
@@ -66,13 +66,13 @@
       <h3 class="mb-3">Post a comment</h3>
       <%= simple_form_for [ @article, @comment ] do |f| %>
         <%= f.input :content %>
-        <%= f.submit "Submit comment", class: "btn btn-primary" %>
+        <%= f.submit "Submit comment", class: "btn-main" %>
       <% end %>
 
     <% else %>
 
       <p>You must be logged in to post a comment.</p>
-      <%= link_to "Log in", new_user_session_path, class: 'btn btn-primary' %>
+      <%= link_to "Log in", new_user_session_path, class: 'btn-main' %>
 
     <% end %>
 

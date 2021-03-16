@@ -1,12 +1,18 @@
 <!-- Banner -->
-<div class="home-video-wrapper">
-  <%= video_tag "banner_video_blur.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video", poster: "poster.jpg" %>
-  <div class="container d-flex flex-column align-items-center">
-    <div class="whitesq">
-      <h1>A NEW WAY TO PRACTICE FRENCH</h1>
-      <p>Join our community of <%= User.count %> French learners</p>
-      <%= link_to "FREE TRIAL", plan_path(Plan.find_by(sku: 'curieux')), class: "btn btn-primary", style: "width: 300px;"  %>
-    </div>
+<div class="banner" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= image_path "poster.jpg" %>');">
+  <div class="container text-center">
+    <h1>A NEW WAY TO PRACTICE FRENCH</span></h1>
+    <p class="mb-5">Join our community of <%= User.count %> learners</p>
+    <%= link_to "Free trial", "#", class: 'btn-main' %>
+  </div>
+</div>
+
+<!-- The French School -->
+<div class="banner" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1609751351848-1da0b4379d68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3134&q=80');">
+  <div class="container text-center">
+    <h1>THE FRENCH SCHOOL</h1>
+    <p class="mb-5">Upgrade your level of French</p>
+    <%= link_to "Learn more", "#", class: 'btn-main' %>
   </div>
 </div>
 
@@ -19,7 +25,7 @@
     <div class="right-side-grid">
       <h3 class="mb-3">Conversation sessions every week</h3>
       <p>Conversation sessions are perfect to express yourself in French! There are different groups of levels, each session has a theme so you can prepare yourself if you wish. There is a restricted number of people, to make sure that everyone can express themselves. I am always there to lead the conversation, and to give you vocabulary or correct you if you wish. Each session lasts 1 hour, it takes place on Zoom. Good mood guaranteed!</p>
-      <%= link_to "Sessions of the month", calendar_path, class: 'btn btn-secondary' %>
+      <%= link_to "Sessions of the month", calendar_path, class: 'btn-alternate' %>
     </div>
     <div class="left-side-grid responsive-hidden">
       <%= image_tag "slack-mockups.png" %>
@@ -27,7 +33,7 @@
     <div class="right-side-grid">
       <h3 class="mb-3">Discuss in French from anywhere</h3>
       <p>Slack is the collaborative platform that allows you to interact with each other, to complete exercises that I suggest and correct every day. You can ask all the questions you want, share your discoveries, your questions, or just discuss in French. Everything is sorted by thematic channels: you are free to see the content that interests you. For example, if you are a beginner, there is a dedicated channel in which I suggest adapted content. If you want to work on listening comprehension, the "listening" channel is made for you!</p>
-      <%= link_to "Join the community", plans_path, class: 'btn btn-secondary' %>
+      <%= link_to "Join the community", plans_path, class: 'btn-alternate' %>
     </div>
     <div class="left-side-grid responsive-hidden">
       <%= image_tag "lesson-example.png" %>
@@ -35,7 +41,7 @@
     <div class="right-side-grid">
       <h3 class="mb-3">Access to lessons and exercises</h3>
       <p>On this website, once you have chosen your subscription, you will have access to a toolbox with grammar lessons, dialogues with pronunciation and exercises in French. All the theory you need to progress that you can consult at any time if you need it. You can switch your subscription plan to another at any time.</p>
-      <%= link_to "View lessons", lessons_path, class: 'btn btn-secondary' %>
+      <%= link_to "View lessons", lessons_path, class: 'btn-alternate' %>
     </div>
   </div>
 </div>
@@ -73,7 +79,7 @@
       <p>My name is Nelly, I am a French teacher graduated from the Université de Paris.</p>
       <p>By creating the French Cloud, I wanted to create a safe place where we can put aside our apprehensions to learn and progress together.
       No judgment, no pressure, but a lot of mutual help and kindness.</p>
-      <%= link_to "Learn more", about_me_path, class: 'btn btn-secondary' %>
+      <%= link_to "Learn more", about_me_path, class: 'btn-alternate' %>
     </div>
   </div>
 </div>
@@ -137,6 +143,15 @@
       </div>
   </div>
     <div class="d-flex justify-content-center">
-      <%= link_to "Read the testimonials", testimonials_path, class: 'btn btn-secondary' %>
+      <%= link_to "Read the testimonials", testimonials_path, class: 'btn-alternate' %>
     </div>
+</div>
+
+<!-- Newsletter subscription -->
+<div class="container text-center my-5">
+  <h2 class="mb-4">Subscribe to my newsletter</h2>
+  <form>
+    <input type="email" placeholder="Your email">
+    <button type="submit">Subscribe</button>
+  </form>
 </div>

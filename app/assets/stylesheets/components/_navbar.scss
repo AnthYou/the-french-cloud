@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  height: $navbar-height;
-  background-color: $my-blue;
+  min-height: $navbar-height;
+  background: linear-gradient(45deg, $my-blue, $my-red);
   .dropdown-menu {
     overflow: hidden;
   }

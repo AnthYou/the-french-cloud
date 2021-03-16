@@ -11,7 +11,7 @@
       <% end %>
     </p>
 
-    <button id="pay" class="btn btn-primary"><%= @checkout.plan.sku == 'curieux' ? 'Start my free trial' : 'Subscribe now' %></button>
+    <button id="pay" class="btn-main"><%= @checkout.plan.sku == 'curieux' ? 'Start my free trial' : 'Subscribe now' %></button>
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>

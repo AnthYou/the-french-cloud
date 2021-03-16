@@ -4,7 +4,7 @@
     <h1 class="text-center mb-5"><%= @lesson.title %></h1>
 
     <% if @lesson.exercise %>
-      <%= link_to "Take the exercise", exercise_path(@lesson.exercise), class: 'btn btn-primary', style: 'position: absolute; top: 15px; left: 15px' %>
+      <%= link_to "Exercise", exercise_path(@lesson.exercise), class: 'btn-main', style: 'position: absolute; top: 15px; left: 15px' %>
     <% end %>
 
     <span class="badge badge-primary" style="position: absolute; top: 15px; right: 15px"><%= @lesson.level %></span>

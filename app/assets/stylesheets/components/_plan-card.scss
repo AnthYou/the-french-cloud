@@ -29,7 +29,7 @@
 .plan-card-top {
   background-color: $my-red;
   height: 75px;
-  width: 350px;
+  max-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@
   background-color: $my-white;
   border-radius: 0px 0px 15px 15px;
   padding: 20px;
-  width: 350px;
+  max-width: 350px;
   ul {
     margin-top: 20px;
   }

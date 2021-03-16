@@ -11,7 +11,7 @@
       <p><em>Member since <%= @user.created_at.strftime('%B %Y') %></em></p>
 
       <% if @user == current_user %>
-        <%= link_to 'Edit profile', edit_registration_path(current_user), class: 'btn btn-primary', style: "position: absolute; top: 15px; left: 15px;" %>
+        <%= link_to 'Edit profile', edit_registration_path(current_user), class: 'btn-main', style: "position: absolute; top: 15px; left: 15px;" %>
       <% end %>
 
       <% if current_user.admin? && !@user.admin? %>

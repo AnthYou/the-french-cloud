@@ -8,13 +8,13 @@
   </div>
   <div class="text-center my-5">
     <p>Not sure of your choice? Take a look to our current month sessions program!</p>
-    <%= link_to "View current month sessions", calendar_path, class: 'btn btn-secondary' %>
+    <%= link_to "View current month sessions", calendar_path, class: 'btn-alternate' %>
   </div>
   <hr>
   <h2 class="text-center mb-4">Private lessons</h2>
   <div class="d-flex flex-column align-items-center">
     <p>Book an 1-hour private lesson with Nelly, no matter your level</p>
     <h2><%= humanized_money_with_symbol(34.9) %><span style="font-size: 24px;">/hour</span></h2>
-    <%= link_to "Book now", new_order_path, class: 'btn btn-primary' %>
+    <%= link_to "Book now", new_order_path, class: 'btn-main' %>
   </div>
 </div>

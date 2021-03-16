@@ -8,9 +8,10 @@
     <% out += "</ul>" %>
     <%= out.html_safe %>
     <h2 class="text-center" style="<%= 'margin-bottom: 10px;' if plan.sku == 'curieux' %>"><%= humanized_money_with_symbol(plan.price) %><span>/month</span></h2>
-    <% if plan.sku == 'curieux' %>
-      <h3 class="text-center lead">10 DAYS FREE TRIAL</h3>
-    <% end %>
   </div>
-  <%= link_to "#{ plan.sku == 'curieux' ? 'Try it for free' : 'Subscribe' }", plan_path(plan), class: 'btn btn-primary mt-3', style: 'width: 350px;' %>
+  <%= link_to plan_path(plan) do %>
+    <div class="btn-main mt-3">
+      Learn more
+    </div>
+  <% end %>
 </div>
