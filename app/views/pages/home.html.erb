@@ -121,8 +121,10 @@
 <!-- Newsletter subscription -->
 <div class="container text-center my-5">
   <h2 class="mb-4">Subscribe to my newsletter</h2>
-  <form>
-    <input type="email" placeholder="Your email">
+  
+  <form action="/newsletter" method="POST">
+    <input type="email" placeholder="Your email" name="email" required>
     <button type="submit">Subscribe</button>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   </form>
 </div>

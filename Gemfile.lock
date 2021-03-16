@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/mailchimp/mailchimp-marketing-ruby.git
+  revision: 13d8f81b812e6a9c2318176aa605561460e5db06
+  specs:
+    MailchimpMarketing (3.0.34)
+      excon (~> 0.76.0)
+      json (~> 2.1, >= 2.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -101,6 +109,7 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.9.0)
+    excon (0.76.0)
     execjs (2.7.0)
     ffi (1.13.1)
     font-awesome-sass (5.6.1)
@@ -289,6 +298,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  MailchimpMarketing!
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
@@ -325,4 +335,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.1.4
+   2.2.6
