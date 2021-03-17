@@ -29,7 +29,7 @@
 .plan-card-top {
   background-color: $my-red;
   height: 75px;
-  width: 350px;
+  max-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@
   background-color: $my-white;
   border-radius: 0px 0px 15px 15px;
   padding: 20px;
-  width: 350px;
+  max-width: 350px;
   ul {
     margin-top: 20px;
   }
@@ -56,5 +56,87 @@
     span {
       font-size: 24px;
     }
+  }
+}
+
+.levelbox-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  grid-gap: 50px;
+}
+
+@media (max-width: 992px) {
+  .levelbox-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.levelbox {
+  background: linear-gradient(45deg, $my-blue, $my-red);
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  
+  h2, h3 {
+    color: white;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.box-fs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-gap: 50px;
+
+  .box-fs {
+    background-color: $my-blue;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+
+    h3 {
+      color: white;
+    }
+
+    a {
+      color: $my-white;
+    }
+  }
+
+}
+
+@media (max-width: 992px) {
+  .box-fs-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px;
+  }
+
+  .body {
+    font-style: italic;
   }
 }

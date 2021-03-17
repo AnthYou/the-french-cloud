@@ -1,6 +1,6 @@
 .footer {
-  height: $footer-height;
-  background-color: $my-blue;
+  min-height: $footer-height;
+  background: linear-gradient(45deg, $my-blue, $my-red);
   padding: 40px 0;
   color: white;
   font-size: 14px;

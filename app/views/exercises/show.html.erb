@@ -19,21 +19,21 @@
             </ol>
           <% end %>
         </div>
-        <div class="btn btn-primary" id="reveal-answers">Show answers</div>
+        <div class="btn-main" id="reveal-answers">Show answers</div>
 
       <% elsif @exercise.nature == Exercise::NATURES[1] %>
         <form action="<%= "#{@exercise.id}/correction" %>" method="get">
           <%= render "exercises/content/#{@exercise.sku}" %>
-          <input type="submit" class="btn btn-primary">
+          <input type="submit" class="btn-main">
         </form>
       <% end %>
 
       <% if @exercise.lesson %>
         <hr>
-        <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn btn-success mb-3' %>
+        <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn-alternate mb-3' %>
       <% end %>
 
-      <%= link_to "Back to exercises", exercises_path, class: 'btn btn-secondary' %>
+      <%= link_to "Back to exercises", exercises_path, class: 'btn-alternate' %>
 
     </div>
   </div>

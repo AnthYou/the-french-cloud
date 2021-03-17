@@ -17,6 +17,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'rename'
 gem 'letter_opener', group: :development
 gem 'postmark-rails'
+gem 'MailchimpMarketing', :git => 'https://github.com/mailchimp/mailchimp-marketing-ruby.git'
 # ================
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

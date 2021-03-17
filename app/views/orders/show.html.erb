@@ -5,7 +5,7 @@
     <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
     <li><strong>TOTAL</strong> <%= humanized_money_with_symbol (34.9) %></li>
   </ul>
-  <p>You can now <%= link_to "send a mail", "mailto:thefrenchclub@gmail.com?subject=Private%20lesson%20request%20by%20#{current_user.first_name}%20#{current_user.last_name}%20-%20Order%20##{@order.id}&body=Hello,%20I%20just%20booked%20a%20lesson%20on%20the%20platform.%20I%20am%20available%20on:%0d-%20[INSERT%20TIME%20SLOTS%20HERE]%0d-%20[INSERT%20TIME%20SLOTS%20HERE]%0d-%20[INSERT%20TIME%20SLOTS%20HERE]%0d(careful:%20please%20use%20Paris%20timezone)" %> to Nelly with 3 time slots proposals!</p>
+  <p>You can now <%= link_to "send a mail", "mailto:contact@thefrenchcloud.com?subject=Private%20lesson%20request%20by%20#{current_user.first_name}%20#{current_user.last_name}%20-%20Order%20##{@order.id}&body=Hello,%20I%20just%20booked%20a%20lesson%20on%20the%20platform.%20I%20am%20available%20on:%0d-%20[INSERT%20TIME%20SLOTS%20HERE]%0d-%20[INSERT%20TIME%20SLOTS%20HERE]%0d-%20[INSERT%20TIME%20SLOTS%20HERE]%0d(careful:%20please%20use%20Paris%20timezone)" %> to Nelly with 3 time slots proposals!</p>
   <hr>
   <%= link_to "Back to my private lessons", orders_path %>
 </div>

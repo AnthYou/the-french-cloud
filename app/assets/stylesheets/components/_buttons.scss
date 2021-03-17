@@ -2,3 +2,43 @@
   font-weight: bold;
   color: white;
 }
+
+button.btn-main, .btn-main {
+  border: none;
+  background-color: $my-red;
+  background-image: linear-gradient(45deg, $my-blue, rgba(255, 255, 255, 0));
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: $headers-font;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  transition: background-color 1s;
+  //transition: 0.3s;
+
+  &:hover {
+    color: white;
+    background-color: $my-blue;
+  }
+}
+
+button.btn-alternate, .btn-alternate {
+  border: none;
+  background-color: $my-black;
+  background-image: linear-gradient(45deg, $my-black, rgba(255, 255, 255, 0));
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 15px 30px;
+  transition: background-color 1s;
+  //transition: 0.3s;
+
+  &:hover {
+    color: white;
+    background-color: $my-red;
+  }
+}

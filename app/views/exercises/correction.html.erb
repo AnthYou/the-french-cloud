@@ -5,10 +5,10 @@
     <%= render "exercises/content/#{@exercise.sku}" %>
     <hr>
     <%= link_to "Try again", :back, class: 'btn btn-info' %>
-    <%= link_to "Back to exercises", exercises_path, class: 'btn btn-secondary' %>
+    <%= link_to "Back to exercises", exercises_path, class: 'btn-alternate' %>
 
     <% if @exercise.lesson %>
-      <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn btn-primary' %>
+      <%= link_to "View lesson", lesson_path(@exercise.lesson), class: 'btn-main' %>
     <% end %>
   </div>
 </div>

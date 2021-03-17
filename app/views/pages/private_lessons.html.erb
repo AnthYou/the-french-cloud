@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="text-center">Private lessons</h1>
+  <h2 class="text-center">Achieve your goals</h2>
+  <h3 class="text-center lead">Personalized coaching is the best solution to achieve your goals.</h3>
+  <br>
+  <h3 class="text-center">If you are here, maybe it is because you have a specific goal in French</h3>
+  <ul>
+    <li>To take an exam (DELF, DALF, TCF...)</li>
+    <li>To move in a French speaking place (France, Quebec, Belgium, Switzerland...)</li>
+    <li>To find a job in France, an internship</li>
+    <li>To complete a Master's degree</li>
+    <li>... or just a passionate who wants to talk in French?</li>
+  </ul>
+  <div class="mt-5">
+    <h2 class="text-center mb-3">Testimonials</h2>
+    <div class="testimonial">
+      <%= image_tag "ps_robert.png", alt: "Robert" %>
+      <div class="body">
+        <p>"The French Cloud m'a aidé à me préparer à un entretien d'embauche en français. Je suis vraiment satisfait de coaching que j'ai reçu de Nelly.  Elle m'a aidé sur ma prononciation, la grammaire et la vocabulaire. Je recommande vivement!"</p>
+        <p>Robert, France</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="text-center my-5">
+    <h3>Whatever your goals are, I am here to help you achieve them.</h3>
+    <p class="mb-5">Book an interview with me (free of charge) to discuss your needs and get to know each other. That is important so I can accompany you as much as possible towards YOUR goals.</p>
+    <%= link_to "Book a free interview", "mailto:contact@thefrenchcloud.com?subject=Private%20lesson%20appointment&body=Hello,%0dI%20want%20to%20book%20a%20meeting%20in%20order%20the%20be%20coached.%20[COMPLETE%20YOUR%20MAIL]", class: 'btn-main' %>
+  </div>
+  <hr>
+  <div class="text-center">
+    <h3>Ready?</h3>
+    <p class="mb-4">After your interview with me, click on the button below to follow with the payment for 1 hour of coaching.</p>
+    <%= link_to "Pay here", new_order_path, class: 'btn-main' %>
+  </div>
+</div>
