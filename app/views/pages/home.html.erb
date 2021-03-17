@@ -123,8 +123,14 @@
   <h2 class="mb-4">Subscribe to my newsletter</h2>
   
   <form action="/newsletter" method="POST">
-    <input type="email" placeholder="Your email" name="email" required>
-    <button type="submit">Subscribe</button>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="row g-3 align-items-center justify-content-center">
+      <div class="col-6">
+        <input type="email" placeholder="Your email" name="email" class="form-control" required>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn-main">Subscribe</button>
+      </div>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </div>
   </form>
 </div>

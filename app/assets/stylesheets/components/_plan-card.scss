@@ -91,3 +91,34 @@
     font-size: 18px;
   }
 }
+
+.box-fs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-gap: 50px;
+
+  .box-fs {
+    background-color: $my-blue;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+
+    h3 {
+      color: white;
+    }
+
+    a {
+      color: $my-white;
+    }
+  }
+
+}
+
+@media (max-width: 992px) {
+  .box-fs-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
