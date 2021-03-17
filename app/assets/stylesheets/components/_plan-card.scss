@@ -122,3 +122,21 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px;
+  }
+
+  .body {
+    font-style: italic;
+  }
+}

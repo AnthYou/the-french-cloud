@@ -7,7 +7,7 @@
   <div class="container my-5">
     <div class="what-is-it-grid">
       <div class="left-side-grid responsive-hidden">
-        <%= image_tag "zoom-example.jpg" %>
+        <%= image_tag "cs_zoom.png" %>
       </div>
       <div class="right-side-grid">
         <h3 class="mb-3">Conversation sessions every week</h3>
@@ -34,15 +34,38 @@
   </div>
 
   <h2 class="mb-3">Testimonials</h2>
-  <p>“I'm glad I found this club. It is really helpful to improve your french. Our teacher Nelly is wonderful and really patient with us. Also, we come to know people of different cultures from different parts of the world! Everyone, including our teacher, is really friendly here."</p>
-  <p>Ankan, India</p>
+  <div class="testimonial">
+    <%= image_tag "cs_ankan.jpg", alt: "Ankan" %>
+    <div class="body">
+      <p>“I'm glad I found this club. It is really helpful to improve your french. Our teacher Nelly is wonderful and really patient with us. Also, we come to know people of different cultures from different parts of the world! Everyone, including our teacher, is really friendly here."</p>
+      <p>Ankan, India</p>
+    </div>
+  </div>
   <br>
-  <p>"L’abonnement premium m’aide avec la grammaire. Ça me motive de ne pas oublier que la grammaire est très importante. Il y aussi assez de exercices sur Slack et Nelly est conviviale. C'est très utile!"</p>
-  <p>Tatiana, Russia</p>
+  <div class="testimonial">
+    <%= image_tag "cs_tatiana.png", alt: "Tatiana" %>
+    <div class="body">
+      <p>"L’abonnement premium m’aide avec la grammaire. Ça me motive de ne pas oublier que la grammaire est très importante. Il y aussi assez de exercices sur Slack et Nelly est conviviale. C'est très utile!"</p>
+      <p>Tatiana, Russia</p>
+    </div>
+  </div>
   <br>
-  <p>"Ce n’est pas un p’tit progrès que cet abonnement m’apporte mais plutôt des grands avec des exercices ludiques et fun. La solide connaissance de Nelly fortifie ma compétance remarquablement"</p>
-  <p>Kazuki, Japan</p>
+  <div class="testimonial">
+    <%= image_tag "cs_kazuki.png", alt: "Kazuki" %>
+    <div class="body">
+      <p>"Ce n’est pas un p’tit progrès que cet abonnement m’apporte mais plutôt des grands avec des exercices ludiques et fun. La solide connaissance de Nelly fortifie ma compétance remarquablement"</p>
+      <p>Kazuki, Japan</p>
+    </div>
+  </div>
+  <br>
   <%= link_to "View more", testimonials_path %>
+
+  <h2 class="mt-5 mb-3">Pictures</h2>
+  <div class="row justify-content-around align-items-center">
+    <%= image_tag "fs_zoom.png", alt: 'Zoom', class: "col-xs-12", style: "width: 300px; object-fit: cover; padding: 5px;" %>
+    <%= image_tag "fs_zoom2.png", alt: 'Zoom', class: "col-xs-12", style: "width: 300px; object-fit: cover; padding: 5px;" %>
+    <%= image_tag "cs_zoom2.png", alt: 'Zoom', class: "col-xs-12", style: "width: 300px; object-fit: cover; padding: 5px;" %>
+  </div>
 
   <hr>
 
@@ -60,13 +83,5 @@
     <% @plans.each do |plan| %>
       <%= render 'shared/plan-card', plan: plan %>
     <% end %>
-  </div>
-  
-  <hr>
-  <h2 class="text-center mb-4">Private lessons</h2>
-  <div class="d-flex flex-column align-items-center">
-    <p>Book an 1-hour private lesson with Nelly, no matter your level</p>
-    <h2><%= humanized_money_with_symbol(34.9) %><span style="font-size: 24px;">/hour</span></h2>
-    <%= link_to "Book now", new_order_path, class: 'btn-main' %>
   </div>
 </div>
