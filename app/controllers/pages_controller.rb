@@ -25,6 +25,9 @@ class PagesController < ApplicationController
   def french_school
   end
 
+  def private_lessons
+  end
+
   def newsletter
     require 'MailchimpMarketing'
 

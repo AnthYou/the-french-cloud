@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'rules', to: 'pages#rules', as: 'rules'
   get 'calendar', to: 'pages#calendar', as: 'calendar'
   get 'french_school', to: 'pages#french_school', as: 'french_school'
+  get 'private_lessons', to: 'pages#private_lessons', as: 'private_lessons'
+
+  # Newsletter routes
   post 'newsletter', to: 'pages#newsletter', as: 'newsletter'
   get 'success', to: 'pages#success', as: 'success'
   get 'failure', to: 'pages#failure', as: 'failure'
