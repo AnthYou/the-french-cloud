@@ -108,19 +108,30 @@
     </div>
 </div>
 
+<!-- Spotify podcast -->
+<div class="container my-5">
+  <h2 class="mb-4">Listen to my podcast</h2>
+  <iframe src="https://open.spotify.com/embed-podcast/show/1Sz3z8bjp4iGbieIpUs2qJ" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
+
+<br>
+
 <!-- Newsletter subscription -->
-<div class="container text-center my-5">
-  <h2 class="mb-4">Subscribe to my newsletter</h2>
-  
-  <form action="/newsletter" method="POST">
-    <div class="row g-3 align-items-center justify-content-center">
-      <div class="col-6">
-        <input type="email" placeholder="Your email" name="email" class="form-control" required>
+<div class="background-colored">
+  <div class="container text-center">
+    <h2 class="mb-4">Subscribe to my newsletter</h2>
+    <p>Find tips to learn French, French news, club news, and more!</p>
+    
+    <form action="/newsletter" method="POST">
+      <div class="row g-3 align-items-center justify-content-center">
+        <div class="col-6">
+          <input type="email" placeholder="Your email" name="email" class="form-control" required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn-main">Subscribe</button>
+        </div>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       </div>
-      <div class="col-auto">
-        <button type="submit" class="btn-main">Subscribe</button>
-      </div>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
