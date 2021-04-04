@@ -6,12 +6,12 @@
   <div class="box-fs-container mt-5">
     <div class="box-fs" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1609751364867-ea05342563b7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3151&q=80');">
       <h3>What is it?</h3>
-      <p>A trimester of french group courses according to your level. It allows you to increase your level of French. 
+      <p>A trimester of french group courses according to your level. It allows you to increase your level of French.
       We work on all aspects of the language: grammar, vocabulary, written and oral expression skills, and comprehension also.</p>
       <p>In addition, French culture is an important element that we talk about a lot during the classes. We use a textbook to have a good progression.</p>
       <p>Some tests and homework will help to improve, become aware of your abilities and track your progress.</p>
     </div>
-    
+
     <div class="box-fs" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1471623320832-752e8bbf8413?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2149&q=80');">
       <h3>Perfect for you if...</h3>
       <ul>
@@ -22,7 +22,7 @@
         <li>You are benevolent and kind and want to learn in a friendly atmosphere</li>
       </ul>
     </div>
-    
+
     <div class="box-fs" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= image_path('home_nelly.jpg') %>');">
       <h3>I am Nelly, your French teacher!</h3>
       <%= link_to "Learn more", about_me_path %>
@@ -36,7 +36,7 @@
     <li>Follow the program with the book Edito of your level (separated purchase)</li>
     <li>Fixed price for 3 months: <span style="font-size: 32px; font-weight: bold; color: #3a429f;">only 159.90 euros</span></li>
   </ul>
-  
+
   <div class="levelbox-container mt-5">
     <div class="levelbox text-left">
       <h2>Objectif A1</h2>
@@ -55,7 +55,7 @@
     </div>
 
     <%= image_tag "edito_a1.png", alt: "Edito A1", class: 'edito-picture' %>
-    
+
     <div class="levelbox text-left">
       <h2>Objectif A2</h2>
       <h2>At the end, you will know how to:</h2>
@@ -116,5 +116,40 @@
     <%= link_to "I want to join", "https://docs.google.com/forms/d/e/1FAIpQLSeOsZIqEgB8fK1w7lTE0bCFod8haE9xoDEd_wmNU4BCBoKnjQ/viewform?fbclid=IwAR3E6ZOs6Yajetxii3yVf4htu6Ow5uBxJYdc_TbB-PgG4Q0g414m43vcfIM", class: 'btn-main' %>
     <p class="mt-5">Deadline: April 15th. Fill the form by clicking above to book your seat.</p>
     <p>NB: Classes will begin if there are at least 5 students per group. Payment will be made after the confirmation of your class.</p>
+  </div>
+
+  <hr class="mt-4">
+  <div id="carouselExampleSlidesOnly" class="carousel slide my-5" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="7000">
+        <div class="testimonial">
+          <%= image_tag "cs_tatiana.png", alt: "Tatiana" %>
+          <div class="body">
+            <p>"L’abonnement premium m’aide avec la grammaire. Ça me motive de ne pas oublier que la grammaire est très importante. Il y aussi assez de exercices sur Slack et Nelly est conviviale. C'est très utile!"</p>
+            <p>Tatiana, Russia</p>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class="carousel-item" data-interval="7000">
+        <div class="testimonial">
+          <%= image_tag "cs_ankan.jpg", alt: "Ankan" %>
+          <div class="body">
+            <p>“I'm glad I found this club. It is really helpful to improve your french. Our teacher Nelly is wonderful and really patient with us. Also, we come to know people of different cultures from different parts of the world! Everyone, including our teacher, is really friendly here."</p>
+            <p>Ankan, India</p>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class="carousel-item" data-interval="7000">
+        <div class="testimonial">
+          <%= image_tag "cs_kazuki.png", alt: "Kazuki" %>
+          <div class="body">
+            <p>"Ce n’est pas un p’tit progrès que cet abonnement m’apporte mais plutôt des grands avec des exercices ludiques et fun. La solide connaissance de Nelly fortifie ma compétance remarquablement"</p>
+            <p>Kazuki, Japan</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

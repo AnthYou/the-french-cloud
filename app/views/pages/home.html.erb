@@ -1,8 +1,28 @@
 <!-- The French School -->
 <div class="banner" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1609751351848-1da0b4379d68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3134&q=80');">
   <div class="container text-center">
-    <h1><strong>NEW:</strong> THE FRENCH SCHOOL</h1>
-    <p class="mb-5">Upgrade your level of French</p>
+    <div class="whitesq mb-5">
+      <h2>Learning French at home, is it really possible?</h2>
+      <p>Many people try to learn French, but get frustrated in the first few months for several reasons:</p>
+      <div class="key-selling-points">
+        <div class="ksp">
+          <%= image_tag "lost.png", alt: "community", width: 125 %>
+          <p>Too much information on the Internet confuses them and they don't know where to start</p>
+        </div>
+        <div class="ksp">
+          <%= image_tag "compliant.png", alt: "community", width: 125 %>
+          <p>They want absolutely free courses, but you know that quality education cannot be free (it however remains accessible)</p>
+        </div>
+        <div class="ksp">
+          <%= image_tag "tired.png", alt: "community", width: 125 %>
+          <p>They don't have an effective study technique to get good results, they get demotivated and give up eventually</p>
+        </div>
+      </div>
+      <p>But, I can tell you that it is extremely possible to start learning French at home on the internet, and the best part is that it is simple, practical, fun and much faster than you would have ever imagined.</p>
+      <h1 class="mt-5">THE FRENCH SCHOOL <strong>(NEW)</strong></h1>
+      <p>Upgrade your level of French</p>
+      <h3>€159.- <span>/ semester</span></h3>
+    </div>
     <%= link_to "Learn more", french_school_path, class: 'btn-main' %>
   </div>
 </div>
@@ -10,34 +30,30 @@
 <!-- Conversation sessions -->
 <div class="banner" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1612831457048-9823ce1ebb6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80');">
   <div class="container text-center">
-    <h1>CONVERSATION SESSIONS</h1>
-    <p class="mb-5">Practice your oral French every week</p>
+    <div class="whitesq mb-5">
+      <h2>The conversation club</h2>
+      <p>Why join the club?</p>
+      <div class="key-selling-points">
+        <div class="ksp">
+          <%= image_tag "humanity.png", alt: "community", width: 125 %>
+          <p>A community of motivated and friendly French learners from all around the world</p>
+        </div>
+        <div class="ksp">
+          <%= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
+          <p>Certified French teachers to answer all your questions, suggest exercises and correct your mistakes</p>
+        </div>
+        <div class="ksp">
+          <%= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
+          <p>Online conversation sessions every week in small groups of level lead by teachers</p>
+        </div>
+      </div>
+      <h1 class="mt-5">CONVERSATION SESSIONS</h1>
+      <p>Practice your oral French every week</p>
+      <h3><span>Starting from</span> €12.90 <span>/ month</span></h3>
+    </div>
     <%= link_to "Learn more", plans_path, class: 'btn-main' %>
   </div>
 </div>
-
-<!-- Why join the club -->
-<div class="background-colored mb-5">
-  <div class="container">
-    <h2>Why join the club?</h2>
-    <div class="key-selling-points">
-      <div class="ksp">
-        <%= image_tag "humanity.png", alt: "community", width: 125 %>
-        <p>A community of motivated and friendly French learners from all around the world</p>
-      </div>
-      <div class="ksp">
-        <%= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
-        <p>Certified French teachers to answer all your questions, suggest exercises and correct your mistakes</p>
-      </div>
-      <div class="ksp">
-        <%= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
-        <p>Online conversation sessions every week in small groups of level lead by teachers</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br>
 
 <div class="container my-5">
   <div class="what-is-it-grid">
@@ -47,7 +63,7 @@
     <div class="right-side-grid">
       <h2 class="mb-3">Who am I?</h2>
       <p>My name is Nelly, I am a French teacher graduated from the Université de Paris.</p>
-      <p>By creating the French Cloud, I wanted to create a safe place where we can put aside our apprehensions to learn and progress together.
+      <p class="mb-4">By creating the French Cloud, I wanted to create a safe place where we can put aside our apprehensions to learn and progress together.
       No judgment, no pressure, but a lot of mutual help and kindness.</p>
       <%= link_to "Learn more", about_me_path, class: 'btn-alternate' %>
     </div>
@@ -56,7 +72,7 @@
 
 <br>
 
-  <!-- Carousel -->
+<!-- Carousel -->
 <div class="background-colored mt-5">
   <div class="container">
     <h2 class="mb-4">They improved their French with us</h2>
@@ -121,7 +137,7 @@
   <div class="container text-center">
     <h2 class="mb-4">Subscribe to my newsletter</h2>
     <p>Find tips to learn French, French news, club news, and more!</p>
-    
+
     <form action="/newsletter" method="POST">
       <div class="row g-3 align-items-center justify-content-center">
         <div class="col-6">
