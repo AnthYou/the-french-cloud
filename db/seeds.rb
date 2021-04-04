@@ -196,7 +196,7 @@
 
 # puts 'Done! 🍺'
 
-# 09/11/2020
+# # 09/11/2020
 # Lesson.create!(sku: "participe-passe-irreguliers",
 #                title: "Principaux participes passés irréguliers",
 #                level: "A2",
@@ -302,7 +302,7 @@
 #                question: ex4q4,
 #                is_correct: false)
 
-# 01/12/2020
+# # 01/12/2020
 # Exercise.create!(sku: "present-indicatif",
 #                  title: "Le présent de l'indicatif",
 #                  level: "A1",
@@ -322,7 +322,7 @@
 #                  category: Exercise::CATEGORIES[3],
 #                  lesson: Lesson.find_by(sku: 'passe-compose-imparfait'))
 
-# 06/12/2020
+# # 06/12/2020
 # Lesson.create!(sku: "gerondif",
 #                title: "Le gérondif",
 #                level: "A2",
@@ -336,7 +336,7 @@
 #                  category: Exercise::CATEGORIES[3],
 #                  lesson: Lesson.find_by(sku: 'gerondif'))
 
-# 13/12/2020
+# # 13/12/2020
 # Lesson.create!(sku: "pronoms-relatifs",
 #                title: "Les pronoms relatifs simples",
 #                level: "A2",
@@ -350,16 +350,16 @@
 #                  category: Exercise::CATEGORIES[2],
 #                  lesson: Lesson.find_by(sku: 'pronoms-relatifs'))
 
-# 01/02/2021
-Lesson.create!(sku: "pronoms-relatifs-composes",
-               title: "Les pronoms relatifs composés",
-               level: "B1",
-               category: Lesson::CATEGORIES[0],
-               description_en: "A pronoun is used to replace a noun already used to avoid repetition.\nA relative pronoun is used to link two simple sentences together to create a complex sentence.",
-               description_fr: "Un pronom sert à remplacer un nom déjà cité pour éviter des répétitions.\nUn pronom relatif permet de relier deux phrases simples entre elles pour créer une phrase complexe.")
-Exercise.create!(sku: "pronoms-relatifs-composes",
-                 title: "Les pronoms relatifs composés",
-                 level: "B1",
-                 nature: Exercise::NATURES[1],
-                 category: Exercise::CATEGORIES[2],
-                 lesson: Lesson.find_by(sku: 'pronoms-relatifs-composes'))
+# # 01/02/2021
+# Lesson.create!(sku: "pronoms-relatifs-composes",
+#                title: "Les pronoms relatifs composés",
+#                level: "B1",
+#                category: Lesson::CATEGORIES[0],
+#                description_en: "A pronoun is used to replace a noun already used to avoid repetition.\nA relative pronoun is used to link two simple sentences together to create a complex sentence.",
+#                description_fr: "Un pronom sert à remplacer un nom déjà cité pour éviter des répétitions.\nUn pronom relatif permet de relier deux phrases simples entre elles pour créer une phrase complexe.")
+# Exercise.create!(sku: "pronoms-relatifs-composes",
+#                  title: "Les pronoms relatifs composés",
+#                  level: "B1",
+#                  nature: Exercise::NATURES[1],
+#                  category: Exercise::CATEGORIES[2],
+#                  lesson: Lesson.find_by(sku: 'pronoms-relatifs-composes'))
