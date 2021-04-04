@@ -51,8 +51,11 @@
 }
 
 .background-colored {
-  background-color: $my-white;
+  background: linear-gradient(45deg, rgba(58, 66, 159, 0.5), rgba(197, 72, 72, 0.5));
   padding: 100px 0px;
+  h2, p {
+    color: white;
+  }
 }
 
 @media (max-width: 768px) {
