@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
       type: 'card'
     }).data.to_json)
     last_payment_method = payment_methods.first
-    Stripe::PaymentMethod.detach(last_payment_method["id"])
+    Stripe::PaymentMethod.detach(last_payment_method["id"]) if last_payment_method
     flash[:notice] = "You have successfully booked a private lesson."
     redirect_to order_path(@order)
   end
