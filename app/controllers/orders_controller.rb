@@ -40,12 +40,12 @@ class OrdersController < ApplicationController
   def success
     @order = current_user.orders.last
     @order.update(state: 'completed')
-    payment_methods = JSON.parse(Stripe::PaymentMethod.list({
-      customer: current_user.stripe_id,
-      type: 'card'
-    }).data.to_json)
-    last_payment_method = payment_methods.first
-    Stripe::PaymentMethod.detach(last_payment_method["id"]) if last_payment_method
+    # payment_methods = JSON.parse(Stripe::PaymentMethod.list({
+    #   customer: current_user.stripe_id,
+    #   type: 'card'
+    # }).data.to_json)
+    # last_payment_method = payment_methods.first
+    # Stripe::PaymentMethod.detach(last_payment_method["id"]) if last_payment_method
     flash[:notice] = "You have successfully booked a private lesson."
     redirect_to order_path(@order)
   end
