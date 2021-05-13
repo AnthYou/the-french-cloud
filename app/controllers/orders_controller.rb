@@ -3,6 +3,16 @@ class OrdersController < ApplicationController
   end
 
   def create
+    if params['amount'] == '1' || params['amount'] == 1
+      product = 'price_1HkoImAFmCis7vEtKfijVfv7'
+      price = 34.9
+    elsif params['amount'] == '10' || params['amount'] == 10
+      product = 'price_1IqeudAFmCis7vEtr5uWroCH'
+      price = 314.1
+    else
+      raise StandardError
+    end
+
     order = Order.create!(user: current_user, state: 'pending')
     session = Stripe::Checkout::Session.create(
       client_reference_id: current_user.stripe_id,
@@ -10,14 +20,14 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: [{
-        price: 'price_1HkoImAFmCis7vEtKfijVfv7',
+        price: product,
         quantity: 1
       }],
       success_url: order_success_url,
       cancel_url: order_cancelled_url
     )
     order.update(checkout_session_id: session.id)
-    redirect_to new_order_payment_path(order)
+    redirect_to new_order_payment_path(order, product: params['amount'], price: price)
   end
 
   def show
@@ -40,6 +50,7 @@ class OrdersController < ApplicationController
   def success
     @order = current_user.orders.last
     @order.update(state: 'completed')
+    
     # payment_methods = JSON.parse(Stripe::PaymentMethod.list({
     #   customer: current_user.stripe_id,
     #   type: 'card'
