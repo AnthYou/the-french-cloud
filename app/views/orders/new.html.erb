@@ -7,6 +7,17 @@
     <li>Nelly will get back to you and send you all the information for the 1:1</li>
   </ol>
   <%= form_tag orders_path do %>
-    <%= submit_tag "Book now", class: 'btn-main', id: 'pay' %>
+    <%= hidden_field_tag 'amount', 1 %>
+    <%= submit_tag "Book 1 hour now", class: 'btn-main', id: 'pay' %>
+  <% end -%>
+
+  <br>
+  <hr>
+
+  <h2>NEW: Book 10 hours of private lessons</h2>
+  <p>Get a 10% discount on the package! Pay €314.10 instead of €349.90 for 10 hours of private lessons.</p>
+  <%= form_tag orders_path do %>
+    <%= hidden_field_tag 'amount', 10 %>
+    <%= submit_tag "Book 10 hours now", class: 'btn-main', id: 'pay' %>
   <% end -%>
 </div>
