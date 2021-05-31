@@ -27,3 +27,15 @@
   font-size: 24px;
   margin-left: 5px;
 }
+
+.special-holiday-badge {
+  background-color: red;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1030;
+
+  p {
+    margin: 0px;  
+  }
+}
