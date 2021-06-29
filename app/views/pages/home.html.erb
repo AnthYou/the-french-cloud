@@ -10,33 +10,46 @@
 -->
 
 <!-- Conversation sessions -->
+<!--
 <div class="banner" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1612831457048-9823ce1ebb6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80');">
   <div class="container text-center">
     <h1>CONVERSATION SESSIONS</h1>
     <p class="mb-5">Practice your oral French every week</p>
-    <%= link_to "Learn more", plans_path, class: 'btn-main' %>
+    <%#= link_to "Learn more", plans_path, class: 'btn-main' %>
     <p class="mt-3"><strong>⚠️ Registrations currently closed. Opening July 1st. ⚠️</strong></p>
   </div>
 </div>
+-->
 
 <!-- Why join the club -->
+<!--
 <div class="background-colored mb-5">
   <div class="container">
     <h2>Why join the club?</h2>
     <div class="key-selling-points">
       <div class="ksp">
-        <%= image_tag "humanity.png", alt: "community", width: 125 %>
+        <%#= image_tag "humanity.png", alt: "community", width: 125 %>
         <p>A community of motivated and friendly French learners from all around the world</p>
       </div>
       <div class="ksp">
-        <%= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
+        <%#= image_tag "teacher.png", alt: "certified teachers", width: 125 %>
         <p>Certified French teachers to answer all your questions, suggest exercises and correct your mistakes</p>
       </div>
       <div class="ksp">
-        <%= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
+        <%#= image_tag "conversation.png", alt: "conversation sessions", width: 125 %>
         <p>Online conversation sessions every week in small groups of level lead by teachers</p>
       </div>
     </div>
+  </div>
+</div>
+--->
+
+<div class="banner" style="background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1609751351848-1da0b4379d68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3134&q=80');">
+  <div class="container text-center">
+    <h1>PRIVATE LESSONS</h1>
+    <p>Improve your French with an individual coaching</p>
+    <p><strong>Starting from €34.90/hour</strong></p>
+    <%= link_to "Book now", private_lessons_path, class: 'btn-main' %>
   </div>
 </div>
 
@@ -50,7 +63,7 @@
     <div class="right-side-grid">
       <h2 class="mb-3">Who am I?</h2>
       <p>My name is Nelly, I am a French teacher graduated from the Université de Paris.</p>
-      <p>By creating the French Cloud, I wanted to create a safe place where we can put aside our apprehensions to learn and progress together.
+      <p class="mb-4">By creating the French Cloud, I wanted to create a safe place where we can put aside our apprehensions to learn and progress together.
       No judgment, no pressure, but a lot of mutual help and kindness.</p>
       <%= link_to "Learn more", about_me_path, class: 'btn-alternate' %>
     </div>

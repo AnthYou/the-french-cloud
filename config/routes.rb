@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'about_me', to: 'pages#about_me', as: 'about_me'
   get 'faq', to: 'pages#faq', as: 'faq'
   get 'legal', to: 'pages#legal', as: 'legal'
-  get 'rules', to: 'pages#rules', as: 'rules'
-  get 'calendar', to: 'pages#calendar', as: 'calendar'
-  get 'french_school', to: 'pages#french_school', as: 'french_school'
+  # get 'rules', to: 'pages#rules', as: 'rules'
+  # get 'calendar', to: 'pages#calendar', as: 'calendar'
+  # get 'french_school', to: 'pages#french_school', as: 'french_school'
   get 'private_lessons', to: 'pages#private_lessons', as: 'private_lessons'
 
   # Newsletter routes
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :destroy]
 
-  resources :plans, only: [:index, :show]
+  # resources :plans, only: [:index, :show]
   resources :lessons, only: [:index, :show]
   resources :exercises, only: [:index, :show]
 
