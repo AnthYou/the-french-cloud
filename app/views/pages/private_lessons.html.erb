@@ -16,21 +16,31 @@
     <div class="testimonial">
       <%= image_tag "ps_robert.png", alt: "Robert" %>
       <div class="body">
-        <p>"The French Cloud m'a aidé à me préparer à un entretien d'embauche en français. Je suis vraiment satisfait de coaching que j'ai reçu de Nelly.  Elle m'a aidé sur ma prononciation, la grammaire et la vocabulaire. Je recommande vivement!"</p>
+        <p>"The French Cloud m'a aidé à me préparer à un entretien d'embauche en français. Je suis vraiment satisfait de coaching que j'ai reçu de Nelly. Elle m'a aidé sur ma prononciation, la grammaire et la vocabulaire. Je recommande vivement !"</p>
         <p>Robert, France</p>
       </div>
     </div>
   </div>
-  <hr>
+</div>
+<br>
+<div class="background-colored">
+  <div class="container">
+    <h2 class="text-center mb-3">Pricing</h2>
+    <h4 class="text-center">1-hour private lesson: <strong>€34.90</strong></h4>
+    <h4 class="text-center">10-hours private lessons <strong>(-10%)</strong>: <strong>€314.10</strong> <strike>€340.90</strike></h4>
+  </div>
+</div>
+<br>
+<div class="container">
   <div class="text-center my-5">
     <h3>Whatever your goals are, I am here to help you achieve them.</h3>
     <p class="mb-5">Book an interview with me (free of charge) to discuss your needs and get to know each other. That is important so I can accompany you as much as possible towards YOUR goals.</p>
     <%= link_to "Book a free interview", "mailto:contact@thefrenchcloud.com?subject=Private%20lesson%20appointment&body=Hello,%0dI%20want%20to%20book%20a%20meeting%20in%20order%20the%20be%20coached.%20[COMPLETE%20YOUR%20MAIL]", class: 'btn-main' %>
   </div>
   <hr>
-  <div class="text-center">
+  <div class="text-center my-5">
     <h3>Ready?</h3>
-    <p class="mb-4">After your interview with me, click on the button below to follow with the payment for 1 hour of coaching.</p>
+    <p class="mb-5">After your interview with me, click on the button below to follow with the payment for 1 hour of coaching.</p>
     <%= link_to "Pay here", new_order_path, class: 'btn-main' %>
   </div>
 </div>
