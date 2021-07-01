@@ -58,8 +58,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     customer = Stripe::Customer.create(email: current_user.email)
     current_user.stripe_id = customer.id
     current_user.save
-    mail = UserMailer.with(user: current_user).new_user
-    mail.deliver_now
+    # mail = UserMailer.with(user: current_user).new_user
+    # mail.deliver_now
     super(resource)
   end
 
